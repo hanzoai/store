@@ -3,7 +3,7 @@
   "name": "solana_token_swap_quote",
   "description": "Gets price quotes for swapping Solana tokens using Jupiter Aggregator API",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::solana_token_swap_quote",
   "license": "MIT",
   "category": "Crypto",

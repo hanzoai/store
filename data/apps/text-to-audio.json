@@ -3,7 +3,7 @@
   "name": "Text to Audio",
   "description": "Converts text files (.txt or .md) to audio files using high-quality text-to-speech synthesis",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::text_to_audio",
   "license": "MIT",
   "category": "Utilities",

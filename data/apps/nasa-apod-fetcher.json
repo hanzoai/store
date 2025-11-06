@@ -3,7 +3,7 @@
   "name": "NASA APOD Fetcher",
   "description": "Fetches the Astronomy Picture of the Day from NASA's API.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::nasa_apod_fetcher",
   "license": "MIT",
   "category": "Entertainment",

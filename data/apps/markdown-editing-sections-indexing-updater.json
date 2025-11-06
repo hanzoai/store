@@ -3,7 +3,7 @@
   "name": "Markdown Editing - Sections Indexing Updater",
   "description": "Instantly fixes inconsistent and messy section numbering in any Markdown file. This tool logically re-calculates the entire heading hierarchy to ensure it's correct. It then uses an LLM to format the numbering according to your instructions (e.g., \"use roman numerals\") and safely remove old numerical prefixes from the titles. It's smart enough to preserve legitimate numbers that are part of a title, like \"2024 Project Goals.\"",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_editing___sections_indexing_updater",
   "license": "MIT",
   "category": "Utilities",

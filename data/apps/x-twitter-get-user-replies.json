@@ -3,7 +3,7 @@
   "name": "X/Twitter Get User Replies",
   "description": "Function to fetch reply tweets made by a specific Twitter user.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_get_user_replies",
   "license": "MIT",
   "category": "Social Networking",

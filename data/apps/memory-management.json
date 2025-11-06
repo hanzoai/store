@@ -3,7 +3,7 @@
   "name": "Memory Management",
   "description": "Handles memory storage and retrieval using a database. It has two types of memories: general and specific. Specific memories are stored in a Hashmap, and can be retrieved by a key.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::memory_management",
   "license": "MIT",
   "category": "Developer Tools",

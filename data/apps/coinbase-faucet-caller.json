@@ -3,7 +3,7 @@
   "name": "Coinbase Faucet Caller",
   "description": "Tool for calling a faucet on Coinbase",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coinbase_faucet_caller",
   "license": "MIT",
   "category": "Crypto",

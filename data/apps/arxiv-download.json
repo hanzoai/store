@@ -3,7 +3,7 @@
   "name": "arxiv-download",
   "description": "Download an arXiv paper PDF and optionally convert it to Markdown",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::arxiv_download",
   "license": "MIT",
   "category": "Reference",

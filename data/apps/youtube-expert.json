@@ -3,7 +3,7 @@
   "name": "Youtube Expert",
   "description": "This expert has access to youtube search (using serpapi) and to download video transcripts. If a video doesn't have a transcript, it can download the audio and then process it to extract its transcript.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::youtube_expert",
   "license": "MIT",
   "category": "Utilities",

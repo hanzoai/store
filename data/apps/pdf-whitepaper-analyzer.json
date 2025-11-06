@@ -3,7 +3,7 @@
   "name": "PDF Whitepaper Analyzer",
   "description": "A tool to analyze PDF documents by extracting text and processing it with language models and search engines.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::pdf_whitepaper_analyzer",
   "license": "MIT",
   "category": "Business",

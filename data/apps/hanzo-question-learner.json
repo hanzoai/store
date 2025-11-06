@@ -1,9 +1,9 @@
 {
   "id": "shinkai-question-learner",
-  "name": "Shinkai Question Learner",
+  "name": "Hanzo Question Learner",
   "description": "Learns from web pages by generating questions and answers, and interacts with users based on these questions. If the action was 'ask' it returns a question, always include the question number when referencing it",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::shinkai_question_learner",
   "license": "MIT",
   "category": "Education",

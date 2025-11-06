@@ -3,7 +3,7 @@
   "name": "SVG to PNG Converter - using Inkscape",
   "description": "Automates the conversion of an SVG vector file into a PNG image by using a local Inkscape installation. This tool constructs and executes the appropriate command-line operation, allowing the user to control the output quality by specifying the resolution in DPI (Dots Per Inch). The resulting PNG file is saved in the same directory as the source SVG and shares the same base name.\nYou need Inkscape installed first.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::svg_to_png_converter___using_inkscape",
   "license": "MIT",
   "category": "Graphics & Design",

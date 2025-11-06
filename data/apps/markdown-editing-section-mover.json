@@ -3,7 +3,7 @@
   "name": "Markdown Editing - Section Mover",
   "description": "Moves an existing section of a markdown file to another location (after or before another section) based on a user prompt, preserving the eventual section hierarchy.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_editing___section_mover",
   "license": "MIT",
   "category": "Utilities",

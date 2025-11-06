@@ -3,7 +3,7 @@
   "name": "Coinbase Transaction Sender",
   "description": "Tool for restoring a Coinbase wallet and sending a transaction",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coinbase_transaction_sender",
   "license": "MIT",
   "category": "Crypto",

@@ -3,7 +3,7 @@
   "name": "Google News Search",
   "description": "Searches Google News for headlines and articles via SerpAPI. Requires SERP_API_KEY in configuration.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::google_news_search",
   "license": "MIT",
   "category": "News",

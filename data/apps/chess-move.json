@@ -3,7 +3,7 @@
   "name": "Chess Move",
   "description": "Apply a move in UCI format to a given FEN and return the resulting position",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::chess_move",
   "license": "MIT",
   "category": "Games",

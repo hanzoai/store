@@ -3,7 +3,7 @@
   "name": "Coinmarketcap - current data for selected coins",
   "description": "Fetches cryptocurrency data from CoinMarketCap API and filters it using specified cryptocurrencies.\n\nThe data output includes : name, symbol, rank, price, % price change (1h, 24h, 7d, 30d, 60d, 90d), market cap, fully diluted market cap, max supply, circulating supply, % market cap dominance, volume 24h, and time of last update.\n\nThe tool requires an API key.\n\nIn configuration, set the list of cryptocurrencies you are interested in, as well as the fiat currency to convert to.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::coinmarketcap___current_data_for_selected_coins",
   "license": "MIT",
   "category": "Finance",

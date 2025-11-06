@@ -3,7 +3,7 @@
   "name": "Mind Map Creator",
   "description": "Converts content into an interactive Mind Map. Can fetch content from URLs too.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::mind_map_creator",
   "license": "MIT",
   "category": "Graphics & Design",

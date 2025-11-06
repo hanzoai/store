@@ -3,7 +3,7 @@
   "name": "Markdown File Reader",
   "description": "Reads the content of a markdown file from a given file path and returns the full markdown content or an explanation if an error occurs.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_file_reader",
   "license": "MIT",
   "category": "Utilities",

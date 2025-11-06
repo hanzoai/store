@@ -3,7 +3,7 @@
   "name": "Chess Generate Image",
   "description": "Generate a PNG image of a chess position from FEN notation with optional last move highlighting",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::chess_generate_image",
   "license": "MIT",
   "category": "Games",

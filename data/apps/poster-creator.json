@@ -3,7 +3,7 @@
   "name": "Poster Creator",
   "description": "Image generation Agent specialized in creating posters. Feel free to equip it with a different image generation tool.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::poster_creator",
   "license": "MIT",
   "category": "Graphics & Design",

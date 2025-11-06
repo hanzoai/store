@@ -3,7 +3,7 @@
   "name": "Google Drive Developer API",
   "description": "Tool to make requests to the Google Drive Developer API using OAuth for authentication.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::google_drive_developer_api",
   "license": "MIT",
   "category": "Developer Tools",

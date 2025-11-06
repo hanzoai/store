@@ -3,7 +3,7 @@
   "name": "Markdown editing - Section Updater",
   "description": "Updates only the most relevant section of a markdown file using an LLM, based on a user prompt.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_editing___section_updater",
   "license": "MIT",
   "category": "Utilities",

@@ -3,7 +3,7 @@
   "name": "Audio to Text Transcription",
   "description": "This tool transcribes audio files to text using the faster-whisper model.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::audio_to_text_transcription",
   "license": "MIT",
   "category": "Utilities",

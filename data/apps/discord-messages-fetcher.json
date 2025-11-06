@@ -3,7 +3,7 @@
   "name": "Discord Messages Fetcher",
   "description": "Fetches a limited number of messages from a specified Discord channel using a bot token.\n\nSet your bot token in config.\nChoose the channel ID to fetch.\nSet a limit on the number of messages to fetch.\nFilter by user if needed.\n\nYou must first create a discord bot (https://discord.com/developers/applications), invite it to a server you administrate, and give it the permissions it requires.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::discord_messages_fetcher",
   "license": "MIT",
   "category": "Social Networking",

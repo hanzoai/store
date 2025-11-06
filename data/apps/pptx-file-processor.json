@@ -3,7 +3,7 @@
   "name": "PPTX File Processor",
   "description": "Processes and analyzes PowerPoint files, allowing for reading, retrieving content, analyzing data, and updating slides.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::pptx_file_processor",
   "license": "MIT",
   "category": "Developer Tools",

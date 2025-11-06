@@ -3,7 +3,7 @@
   "name": "Twitter Expert (Read Only)",
   "description": "This expert has access to multiple tools to analyze and extract any information needed from X (Twitter)",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::twitter_expert___read_only",
   "license": "MIT",
   "category": "Social Networking",

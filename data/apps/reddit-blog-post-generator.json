@@ -3,7 +3,7 @@
   "name": "Reddit Blog Post Generator",
   "description": "Generates a blog post about Reddit posts based on user input.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::reddit_blog_post_generator",
   "license": "MIT",
   "category": "Social Networking",

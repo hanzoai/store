@@ -3,7 +3,7 @@
   "name": "Chess Evaluate",
   "description": "Evaluate a chess position using Stockfish at a given depth",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::chess_evaluate",
   "license": "MIT",
   "category": "Games",

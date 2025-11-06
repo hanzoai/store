@@ -3,7 +3,7 @@
   "name": "Stock Technical Analysis",
   "description": "Fetches historical stock data from Tiingo and calculates basic technical indicators (SMA, RSI, MACD, ATR, etc.), then returns a structured analysis of the trend.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::stock_technical_analysis",
   "license": "MIT",
   "category": "Finance",

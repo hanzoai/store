@@ -3,7 +3,7 @@
   "name": "macos-finder",
   "description": "Manage files in Finder via AppleScript",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::macos_finder",
   "license": "MIT",
   "category": "Utilities",

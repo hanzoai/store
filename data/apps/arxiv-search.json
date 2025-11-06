@@ -3,7 +3,7 @@
   "name": "arxiv-search",
   "description": "Search for papers on arXiv with optional date range and category filters",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::arxiv_search",
   "license": "MIT",
   "category": "Reference",

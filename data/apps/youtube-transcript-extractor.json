@@ -3,7 +3,7 @@
   "name": "Youtube Transcript Extractor",
   "description": "Extracts and saves YouTube video transcripts",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::youtube_transcript_extractor_2_0",
   "license": "MIT",
   "category": "Utilities",

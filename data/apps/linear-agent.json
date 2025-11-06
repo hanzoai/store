@@ -3,7 +3,7 @@
   "name": "Linear Agent",
   "description": "https://linear.app/ task manager.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::linear_agent",
   "license": "MIT",
   "category": "Developer Tools",

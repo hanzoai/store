@@ -3,7 +3,7 @@
   "name": "Linear Fetch Workflow States",
   "description": "Fetches workflow states for all Teams or for a specific team using Linear API.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::linear_fetch_workflow_states",
   "license": "MIT",
   "category": "Developer Tools",

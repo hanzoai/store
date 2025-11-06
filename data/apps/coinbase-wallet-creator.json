@@ -3,7 +3,7 @@
   "name": "Coinbase Wallet Creator",
   "description": "Tool for creating a Coinbase wallet",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coinbase_wallet_creator",
   "license": "MIT",
   "category": "Crypto",

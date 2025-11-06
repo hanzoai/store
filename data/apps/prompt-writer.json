@@ -3,7 +3,7 @@
   "name": "Prompt writer",
   "description": "Writes and improves prompts using its knowledge of system prompts from major AI models and agents.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::prompt_writer",
   "license": "MIT",
   "category": "Utilities",

@@ -3,7 +3,7 @@
   "name": "Download Pages",
   "description": "Downloads a URL and converts its HTML content to Markdown",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::download_pages",
   "license": "MIT",
   "category": "Utilities",

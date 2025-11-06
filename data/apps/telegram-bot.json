@@ -3,7 +3,7 @@
   "name": "Telegram Bot",
   "description": "Manages a Telegram bot to fetch messages and respond to users based on chat history.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::telegram_bot",
   "license": "MIT",
   "category": "Social Networking",

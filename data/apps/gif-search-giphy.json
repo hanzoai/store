@@ -3,7 +3,7 @@
   "name": "GIF search - Giphy",
   "description": "Searches the Giphy API for GIFs based on query and parameters.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::gif_search___giphy",
   "license": "MIT",
   "category": "Entertainment",

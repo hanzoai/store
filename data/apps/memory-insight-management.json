@@ -3,7 +3,7 @@
   "name": "Memory Insight Management",
   "description": "Handles memory insights. Can store and retrive insights. It has two types of insights: GENERAL and SPECIFIC. GENERAL is to store any context data or that is not related to a specific user or identifier. SPECIFIC is to store insights related to a specific user or element identifier.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::memory_insights_management",
   "license": "MIT",
   "category": "Developer Tools",

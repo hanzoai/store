@@ -3,7 +3,7 @@
   "name": "X/Twitter Search Top",
   "description": "Function to search for top tweets on Twitter based on a query string.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_search_top",
   "license": "MIT",
   "category": "Social Networking",

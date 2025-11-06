@@ -3,7 +3,7 @@
   "name": "PDF Text Extractor",
   "description": "Downloads a PDF from a URL, saves it to user-specified location, extracts its text content, saves the content as a text file, and returns the file paths and extracted text.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::pdf_text_extractor",
   "license": "MIT",
   "category": "Utilities",

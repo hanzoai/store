@@ -3,7 +3,7 @@
   "name": "macos-clipboard",
   "description": "Manage macOS clipboard via AppleScript",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::macos_clipboard",
   "license": "MIT",
   "category": "Utilities",

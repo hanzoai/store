@@ -3,7 +3,7 @@
   "name": "X/Twitter Post",
   "description": "Function to post a tweet to Twitter.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_post",
   "license": "MIT",
   "category": "Social Networking",

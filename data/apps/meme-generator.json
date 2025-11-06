@@ -3,7 +3,7 @@
   "name": "Meme Generator",
   "description": "Generates a meme image based on a joke by selecting a template and splitting the joke into appropriate parts.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::meme_generator",
   "license": "MIT",
   "category": "Entertainment",

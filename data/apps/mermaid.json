@@ -3,7 +3,7 @@
   "name": "mermaid",
   "description": "Generate diagrams and flowcharts using Mermaid syntax, it receives a natural language description and returns a PNG image and the final Mermaid code",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::mermaid",
   "license": "MIT",
   "category": "Graphics & Design",

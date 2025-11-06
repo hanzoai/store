@@ -1,9 +1,9 @@
 {
   "id": "options-selection-human-in-the-loop",
   "name": "Options Selection – Human In The Loop",
-  "description": "Opens a configurable dialog with options to select from, and outputs the choice made by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the options buttons.\n\nWhen included inside another tool using Shinkai's AI tool building assistant, the LLM should be able to automatically adapt the title, the text, the number of options and the buttons of the dialog, as well as use the choice made by the user to trigger the appropriate next step in your tool flow.\n\nIf the options are generated together by a prompt processing, make sure to force the LLM to format things well (options titles and separator) so that options splitting and then processing are done correctly.\n\nIf you want to add a Custom option button for which the user can then add information, on top of proposed options, create a Custom button option that triggers the tool Clarification Dialog - Human In The Loop.",
+  "description": "Opens a configurable dialog with options to select from, and outputs the choice made by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the options buttons.\n\nWhen included inside another tool using Hanzo's AI tool building assistant, the LLM should be able to automatically adapt the title, the text, the number of options and the buttons of the dialog, as well as use the choice made by the user to trigger the appropriate next step in your tool flow.\n\nIf the options are generated together by a prompt processing, make sure to force the LLM to format things well (options titles and separator) so that options splitting and then processing are done correctly.\n\nIf you want to add a Custom option button for which the user can then add information, on top of proposed options, create a Custom button option that triggers the tool Clarification Dialog - Human In The Loop.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::options_selection___human_in_the_loop",
   "license": "MIT",
   "category": "Utilities",

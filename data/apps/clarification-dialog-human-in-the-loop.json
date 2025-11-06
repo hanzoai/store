@@ -1,9 +1,9 @@
 {
   "id": "clarification-dialog-human-in-the-loop",
   "name": "Clarification Dialog - Human In The Loop",
-  "description": "Opens a configurable dialog to request clarification, precision, additional information, etc. and outputs the information given by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the 'submit' and 'ignore' buttons.\n\nWhen included inside another tool using Shinkai's AI tool building assistant, the LLM should be able to automatically adapt the title, text, and buttons of the dialog to suit your tool.\n\nYou can couple this tool with the Prompt Processor to process the extra information returned from the user and enrich the next step in your tool flow.",
+  "description": "Opens a configurable dialog to request clarification, precision, additional information, etc. and outputs the information given by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the 'submit' and 'ignore' buttons.\n\nWhen included inside another tool using Hanzo's AI tool building assistant, the LLM should be able to automatically adapt the title, text, and buttons of the dialog to suit your tool.\n\nYou can couple this tool with the Prompt Processor to process the extra information returned from the user and enrich the next step in your tool flow.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::clarification_dialog___human_in_the_loop",
   "license": "MIT",
   "category": "Utilities",

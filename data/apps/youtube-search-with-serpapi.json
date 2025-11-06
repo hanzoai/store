@@ -3,7 +3,7 @@
   "name": "youtube_search_with_serpapi",
   "description": "Performs a YouTube search using SerpAPI and returns the results in JSON or HTML format.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::youtube_search_with_serpapi",
   "license": "MIT",
   "category": "Reference",

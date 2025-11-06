@@ -3,7 +3,7 @@
   "name": "Update File with Prompt",
   "description": "Applies a prompt to the file contents.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::update_file_with_prompt",
   "license": "MIT",
   "category": "Utilities",

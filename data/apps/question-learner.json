@@ -3,7 +3,7 @@
   "name": "Question Learner",
   "description": "Learns from web pages by generating questions and answers, and interacts with users based on these questions.",
   "version": "1.0.0",
-  "author": "@guille.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__guille_sep_shinkai:::question_learner",
   "license": "MIT",
   "category": "Education",

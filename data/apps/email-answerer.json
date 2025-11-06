@@ -3,7 +3,7 @@
   "name": "Email Answerer",
   "description": "Generates responses to emails based on a given context and memory, and logs answered emails in a database.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::email_answerer",
   "license": "MIT",
   "category": "Business",

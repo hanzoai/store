@@ -3,7 +3,7 @@
   "name": "Prompt Refiner",
   "description": "Tool for refining user prompts to make them more effective for LLMs and AI Agents by classifying them into categories and adding specific instructions.\n\nUse this tool as a first step in an AI/LLM task to improve the quality of user inputs and obtain better outputs.\n\nFork this tool and define customized categories and related instructions to fit your specific use cases.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::prompt_refiner",
   "license": "MIT",
   "category": "Utilities",

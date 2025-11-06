@@ -3,7 +3,7 @@
   "name": "Send Email",
   "description": "Sends an email using SMTP.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::send_email",
   "license": "MIT",
   "category": "Business",

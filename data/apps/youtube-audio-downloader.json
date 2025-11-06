@@ -3,7 +3,7 @@
   "name": "youtube_audio_downloader",
   "description": "Downloads audio from a YouTube video URL and converts it to MP3 format using yt-dlp.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::youtube_audio_downloader",
   "license": "MIT",
   "category": "Utilities",

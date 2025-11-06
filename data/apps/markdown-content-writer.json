@@ -3,7 +3,7 @@
   "name": "Markdown content writer",
   "description": "Generates and edits markdown files precisely, targeting specific sections.\nLink it to diverse search, file reader, and media generation tools to automate content creation in markdown.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_content_writer",
   "license": "MIT",
   "category": "Utilities",

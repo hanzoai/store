@@ -3,7 +3,7 @@
   "name": "Markdown Editing - Section Reader",
   "description": "Reads a markdown file and, given a user prompt, selects and returns the most relevant section's title, content and hierarchy, along with the file path.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_editing___section_reader",
   "license": "MIT",
   "category": "Utilities",

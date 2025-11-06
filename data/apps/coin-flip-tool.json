@@ -3,7 +3,7 @@
   "name": "Coin Flip Tool",
   "description": "Flip a coin with n sides using true randomness from random.org. Supports custom side names and various meta-usage patterns.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coin_flip_tool",
   "license": "MIT",
   "category": "Utilities",

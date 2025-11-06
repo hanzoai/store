@@ -3,7 +3,7 @@
   "name": "Markdown Exporter",
   "description": "A tool to export text content to a Markdown (.md) file.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_exporter",
   "license": "MIT",
   "category": "Utilities",

@@ -3,7 +3,7 @@
   "name": "Library Genesis Search",
   "description": "Searches Library Genesis for books and returns download links and other information.\n\nSearch by author, format, title and year.\n\nYou might need to connect to a VPN to use this tool.\n\nNote : The reliability of this tool might fluctuate because mirrors are frequently shut down, and ebooks databases are sometimes separated by library, repository, or genre, each with different link formats.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::library_genesis_search",
   "license": "MIT",
   "category": "Books",

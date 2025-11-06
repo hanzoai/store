@@ -3,7 +3,7 @@
   "name": "Stagehand Runner",
   "description": "Automates web interactions and extracts data using Stagehand.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::stagehand_runner",
   "license": "MIT",
   "category": "Utilities",

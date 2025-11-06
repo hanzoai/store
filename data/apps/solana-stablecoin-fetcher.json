@@ -3,7 +3,7 @@
   "name": "solana_stablecoin_fetcher",
   "description": "Fetches a list of stablecoins from the Solana blockchain",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::solana_stablecoin_fetcher",
   "license": "MIT",
   "category": "Crypto",
