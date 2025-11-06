@@ -89,7 +89,7 @@ export default function StorePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between gap-4 mb-3">
             <div className="flex items-center gap-4">
-              <HanzoLogo variant="mono" size={40} className="text-foreground" />
+              <HanzoLogo size={40} className="text-foreground" />
               <div>
                 <h1 className="text-3xl font-bold tracking-tight">Hanzo Store</h1>
                 <p className="text-sm text-muted-foreground">MCP Server Marketplace</p>
