@@ -15,20 +15,26 @@ jobs:
 
       - name: Validate JSON files
         run: |
-          for file in data/apps/*.json; do
-            echo "Validating $file"
-            if ! jq empty "$file" 2>/dev/null; then
-              echo "❌ Invalid JSON in $file"
-              exit 1
+          for dir in data/agents data/tools; do
+            if [ -d "$dir" ]; then
+              echo "Validating $dir..."
+              for file in $dir/*.json; do
+                [ -e "$file" ] || continue
+                echo "  Checking $file"
+                if ! jq empty "$file" 2>/dev/null; then
+                  echo "❌ Invalid JSON in $file"
+                  exit 1
+                fi
+                # Check required fields
+                for field in id name description version author category tags createdAt updatedAt; do
+                  if ! jq -e ".$field" "$file" >/dev/null; then
+                    echo "❌ Missing required field '$field' in $file"
+                    exit 1
+                  fi
+                done
+              done
+              echo "✅ All files valid in $dir"
             fi
-            # Check required fields
-            for field in id name description version author category tags createdAt updatedAt; do
-              if ! jq -e ".$field" "$file" >/dev/null; then
-                echo "❌ Missing required field '$field' in $file"
-                exit 1
-              fi
-            done
-            echo "✅ Valid: $file"
           done
 
   build:

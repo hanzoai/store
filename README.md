@@ -54,12 +54,11 @@ hanzo-store/
 ├── app/                    # Next.js app directory
 │   ├── layout.tsx         # Root layout
 │   ├── page.tsx           # Main store page
-│   ├── globals.css        # Global styles
-│   └── api/
-│       └── store/
-│           └── route.ts   # API endpoint (dev only)
+│   └── globals.css        # Global styles
 ├── data/
-│   └── apps/              # Flatfile database (one JSON per app)
+│   ├── agents/            # AI agents (one JSON per agent)
+│   │   └── *.json
+│   └── tools/             # Automation tools (one JSON per tool)
 │       └── *.json
 ├── scripts/
 │   └── generate-store.js  # Generates public/store.json
@@ -77,7 +76,7 @@ Click the "Fork" button on GitHub to create your own copy.
 
 ### 2. Create an App JSON File
 
-Create a new file in `data/apps/` with your app's information:
+Create a new file in `data/agents/` (for AI agents) or `data/tools/` (for automation tools) with your app's information:
 
 ```json
 {
