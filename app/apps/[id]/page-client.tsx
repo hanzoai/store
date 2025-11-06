@@ -208,19 +208,18 @@ export function AppDetailPageClient({ id }: { id: string }) {
             {/* Install Button */}
             <Card>
               <CardContent className="pt-6">
-                {isConnected ? (
+                <a
+                  href={`hanzo://config?tool=${encodeURIComponent(app.homepage)}`}
+                  className="block w-full"
+                >
                   <Button className="w-full" size="lg">
                     <Download className="mr-2 h-4 w-4" />
-                    Install
+                    Open in Hanzo Desktop
                   </Button>
-                ) : (
-                  <div className="text-center">
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Connect wallet to install
-                    </p>
-                    <ConnectButton />
-                  </div>
-                )}
+                </a>
+                <p className="text-xs text-muted-foreground text-center mt-3">
+                  Requires Hanzo Desktop app
+                </p>
               </CardContent>
             </Card>
 
