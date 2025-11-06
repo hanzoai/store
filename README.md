@@ -1,10 +1,10 @@
-# Hanzo Store
+# Hanzo AI Store
 
-The official marketplace for MCP (Model Context Protocol) servers for Hanzo Desktop.
+The official AI agent tools and MCP server marketplace for Hanzo Desktop.
 
 ## Overview
 
-Hanzo Store is a simple, flatfile-based app store that allows users to discover and install MCP servers. It's built with Next.js and uses a git-based submission workflow via Pull Requests.
+Hanzo AI Store is a simple, flatfile-based marketplace that allows users to discover and install AI agent tools and MCP servers. It's built with Next.js and uses a git-based submission workflow via Pull Requests.
 
 ## Features
 

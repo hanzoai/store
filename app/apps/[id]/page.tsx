@@ -8,7 +8,7 @@ import { HanzoLogo } from '@hanzo/logo'
 import { Button, Badge, Card, CardContent, CardHeader } from '@hanzo/ui'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
-import { apps } from '@/lib/apps-data'
+import { apps } from '../../../lib/apps-data'
 
 export default function AppDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)

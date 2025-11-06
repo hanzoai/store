@@ -85,19 +85,19 @@ export default function StorePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-card/50 backdrop-blur sticky top-0 z-10 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between gap-4 mb-3">
+      <header className="border-b border-border/40 bg-card/50 backdrop-blur-md sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-4">
-              <HanzoLogo size={40} className="text-foreground" />
+              <HanzoLogo size={48} className="text-foreground" />
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">Hanzo Store</h1>
-                <p className="text-sm text-muted-foreground">MCP Server Marketplace</p>
+                <h1 className="text-3xl font-semibold tracking-tight">Hanzo AI Store</h1>
+                <p className="text-sm text-muted-foreground">AI Agent Tools & MCP Servers</p>
               </div>
             </div>
             <ConnectButton />
           </div>
-          <p className="text-muted-foreground max-w-3xl">
+          <p className="text-muted-foreground max-w-2xl text-sm leading-relaxed">
             Boost your AI agents with ready-to-go, tailor-made automations for seamless tech integration
           </p>
           <div className="mt-4 flex gap-4 text-sm text-muted-foreground">
@@ -113,7 +113,7 @@ export default function StorePage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
           {/* Search */}
@@ -124,7 +124,7 @@ export default function StorePage() {
               placeholder="Search apps..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-12 text-base"
+              className="pl-10 h-11 border-border/40 focus:border-border/60"
             />
           </div>
 
@@ -192,8 +192,8 @@ export default function StorePage() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 border-t bg-card/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <footer className="mt-20 border-t border-border/40 bg-card/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center text-muted-foreground">
             <p className="font-medium text-foreground mb-2">Want to add your MCP server?</p>
             <p className="text-sm">
@@ -237,10 +237,10 @@ function AppCard({ app, walletAddress, isWalletConnected }: {
   };
 
   return (
-    <Card className={app.featured ? 'border-primary shadow-lg' : ''}>
+    <Card className={app.featured ? 'border-primary/50' : 'border-border/40 hover:border-border/60 transition-colors'}>
       <CardHeader>
         {app.featured && (
-          <Badge variant="default" className="w-fit mb-2">
+          <Badge variant="default" className="w-fit mb-3">
             ⭐ Featured
           </Badge>
         )}

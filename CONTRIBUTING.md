@@ -1,6 +1,6 @@
-# Contributing to Hanzo Store
+# Contributing to Hanzo AI Store
 
-Thank you for your interest in contributing to Hanzo Store! This document provides guidelines and instructions for adding your MCP server to the store.
+Thank you for your interest in contributing to Hanzo AI Store! This document provides guidelines and instructions for adding your MCP server or AI agent tool to the store.
 
 ## Quick Start
 
