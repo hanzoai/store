@@ -1,0 +1,41 @@
+{
+  "id": "linear-agent",
+  "name": "Linear Agent",
+  "description": "https://linear.app/ task manager.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::linear_agent",
+  "license": "MIT",
+  "category": "Developer Tools",
+  "tags": [
+    "linear",
+    "agent",
+    "linear.app",
+    "task manager"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alinear_agent/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=416825ebe26815a302d1278c8231c7cbc60f0d8735ddf3ed982f949b9e5ed185&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alinear_agent/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=c1cbffa02a5582569bd21b7926b5149e38610976cf2623a6be4e019d2a2c0002&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::linear_agent"
+    ],
+    "env": {}
+  },
+  "downloads": 3076,
+  "createdAt": "2025-05-08T16:42:50.466Z",
+  "updatedAt": "2025-05-08T16:42:50.466Z",
+  "type": "Agent",
+  "toolLanguage": null,
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

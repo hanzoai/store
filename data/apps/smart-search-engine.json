@@ -1,0 +1,42 @@
+{
+  "id": "smart-search-engine",
+  "name": "Smart Search Engine",
+  "description": "This function takes a question as input and returns a comprehensive answer, along with the sources and statements used to generate the answer.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::smart_search_engine",
+  "license": "MIT",
+  "category": "Reference",
+  "tags": [
+    "search",
+    "answer generation",
+    "fact extraction",
+    "wikipedia",
+    "google"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Asmart_search_engine/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044120Z&X-Amz-Expires=86400&X-Amz-Signature=e9b371afeef7222569f6a9f9c53465207f977c0fbbf4f4ee15a87e42f59e1b3e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Asmart_search_engine/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044120Z&X-Amz-Expires=86400&X-Amz-Signature=c96718c6981b3eb0f015abff7b3f2d3a5c051cb65b99a560c6128eb109407fc9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::smart_search_engine"
+    ],
+    "env": {}
+  },
+  "downloads": 9,
+  "createdAt": "2025-01-27T13:43:46.171Z",
+  "updatedAt": "2025-01-27T13:43:46.171Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

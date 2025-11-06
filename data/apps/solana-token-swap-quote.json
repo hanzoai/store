@@ -1,0 +1,43 @@
+{
+  "id": "solana-token-swap-quote",
+  "name": "solana_token_swap_quote",
+  "description": "Gets price quotes for swapping Solana tokens using Jupiter Aggregator API",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::solana_token_swap_quote",
+  "license": "MIT",
+  "category": "Crypto",
+  "tags": [
+    "solana",
+    "token",
+    "swap",
+    "quote",
+    "jupiter",
+    "helius"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Asolana_token_swap_quote/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223013Z&X-Amz-Expires=86400&X-Amz-Signature=13818290f49fa0ee4ba85d9efe5c13a5bd0a549bf6f9098134afb1a491463534&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Asolana_token_swap_quote/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223013Z&X-Amz-Expires=86400&X-Amz-Signature=5bf824ce2fb4f9c9c8cfc3f66ba183ad890daa5b5570628bbbee3a51825e8795&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::solana_token_swap_quote"
+    ],
+    "env": {}
+  },
+  "downloads": 1056,
+  "createdAt": "2025-05-10T15:05:50.865Z",
+  "updatedAt": "2025-05-10T15:05:50.865Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

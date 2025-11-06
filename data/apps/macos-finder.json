@@ -1,0 +1,42 @@
+{
+  "id": "macos-finder",
+  "name": "macos-finder",
+  "description": "Manage files in Finder via AppleScript",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::macos_finder",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "macos",
+    "finder",
+    "files",
+    "automation",
+    "applescript"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amacos_finder/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=4ef1df49aeff17304d3588e8023b0461b7e396736b07d7d062101df0ec92e112&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amacos_finder/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=05d07020404bc72d896fa9f3e4b9e3f550b6986a94ef160f9083466138615698&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::macos_finder"
+    ],
+    "env": {}
+  },
+  "downloads": 5,
+  "createdAt": "2025-02-04T15:12:48.371Z",
+  "updatedAt": "2025-02-04T15:12:48.371Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

@@ -1,0 +1,43 @@
+{
+  "id": "nasa-apod-fetcher",
+  "name": "NASA APOD Fetcher",
+  "description": "Fetches the Astronomy Picture of the Day from NASA's API.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::nasa_apod_fetcher",
+  "license": "MIT",
+  "category": "Entertainment",
+  "tags": [
+    "NASA",
+    "APOD",
+    "astronomy",
+    "picture of the day",
+    "space"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anasa_apod_fetcher/nasa_apod_3.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=9914209d9772a7ce590894ed59aa37e799675d0d005aac923c314822148cec6e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anasa_apod_fetcher/nasa_APOD_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=bc2f4adf9dff26348edef9c4cf737f917f2b427069ed0d0d563edaacb9508d43&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anasa_apod_fetcher/nasa_APOD_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=984b5ae6b24188b4509418a2b4d71082f9fc9f6555e0acbd8c523e3f88002917&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::nasa_apod_fetcher"
+    ],
+    "env": {}
+  },
+  "downloads": 13,
+  "createdAt": "2025-02-18T12:09:31.118Z",
+  "updatedAt": "2025-02-18T12:09:31.118Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

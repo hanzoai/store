@@ -1,0 +1,43 @@
+{
+  "id": "chess-evaluate",
+  "name": "Chess Evaluate",
+  "description": "Evaluate a chess position using Stockfish at a given depth",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::chess_evaluate",
+  "license": "MIT",
+  "category": "Games",
+  "tags": [
+    "chess",
+    "stockfish",
+    "evaluation",
+    "analysis",
+    "engine",
+    "position"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Achess_evaluate/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=de2cc75cc588fcc6b302d7d5a53e175e30eda4d3ab552f2b0866e5ca7f4324e9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Achess_evaluate/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=cbc75d03c6ebb90d887c2698459883d929d4284bfbf84791f18c58f32968a248&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::chess_evaluate"
+    ],
+    "env": {}
+  },
+  "downloads": 3,
+  "createdAt": "2025-02-04T15:12:46.496Z",
+  "updatedAt": "2025-02-04T15:12:46.496Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

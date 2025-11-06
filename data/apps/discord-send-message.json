@@ -1,0 +1,42 @@
+{
+  "id": "discord-send-message",
+  "name": "Discord Send Message",
+  "description": "This tool sends a message to a specific Discord channel using a bot. It can also be used to reply to an existing message or mention a user.\n\nHow to Use:\n\n1.  Provide your Discord Bot Token for authentication. You need to set it up first (https://discord.com/developers/applications), and give the required permissions.\n2.  Set the ID of the channel where the message will be sent (numeric ID).\n3.  Write the text for your message.\n4.  Optional : Add the ID of a message to reply to it (numeric ID).\n5.  Optional : Add users' ID to mention them  (numeric ID).",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::discord_send_message",
+  "license": "MIT",
+  "category": "Social Networking",
+  "tags": [
+    "discord",
+    "message",
+    "send",
+    "reply",
+    "bot"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Adiscord_send_message/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=2676cebb8cab9ef6eca0c13af448681d227a87a7cb3ac395d65c7431590c21d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Adiscord_send_message/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=9f7f6456affb589eead14df00268ba33e6216de605348403d9897b88993f0af7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::discord_send_message"
+    ],
+    "env": {}
+  },
+  "downloads": 2,
+  "createdAt": "2025-10-17T08:36:02.144Z",
+  "updatedAt": "2025-10-17T08:36:02.144Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

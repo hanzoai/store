@@ -1,0 +1,42 @@
+{
+  "id": "text-to-image-generator-getimg-ai-flux-1",
+  "name": "Text to image generator - getimg.ai Flux.1",
+  "description": "Generates an image from a text prompt using the getimg.ai API and Flux.1 model.\n\nImage width and height from 256 to 1280 pixels (must be multiple of 8).\n\nFormat of the image can be jpeg or png (default is jpeg).\n\nNumber of denoising steps is from 1 to 6 (default is 4). More steps usually can produce higher quality images, but take more time to generate.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1",
+  "license": "MIT",
+  "category": "Photo & Video",
+  "tags": [
+    "image",
+    "image generation",
+    "text to image",
+    "getimg",
+    "flux"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Atext_to_image_generator___getimg_ai_flux_1/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=a9459ed8ce66fc9cd82ede40f1f3b9deb293f2005381d4df958f885e74f9f104&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Atext_to_image_generator___getimg_ai_flux_1/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=42f09d86bf701c8118d436d91a6223aa3de21620584cbf4bdcdb69af9f16d644&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1"
+    ],
+    "env": {}
+  },
+  "downloads": 5,
+  "createdAt": "2025-06-24T19:04:13.672Z",
+  "updatedAt": "2025-06-24T19:04:13.672Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

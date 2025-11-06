@@ -1,0 +1,46 @@
+{
+  "id": "coinmarketcap-current-data-for-selected-coins",
+  "name": "Coinmarketcap - current data for selected coins",
+  "description": "Fetches cryptocurrency data from CoinMarketCap API and filters it using specified cryptocurrencies.\n\nThe data output includes : name, symbol, rank, price, % price change (1h, 24h, 7d, 30d, 60d, 90d), market cap, fully diluted market cap, max supply, circulating supply, % market cap dominance, volume 24h, and time of last update.\n\nThe tool requires an API key.\n\nIn configuration, set the list of cryptocurrencies you are interested in, as well as the fiat currency to convert to.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::coinmarketcap___current_data_for_selected_coins",
+  "license": "MIT",
+  "category": "Finance",
+  "tags": [
+    "cryptocurrency",
+    "coinmarketcap",
+    "coin",
+    "crypto data",
+    "price",
+    "crypto"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acoinmarketcap___current_data_for_selected_coins/logo.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=d4ebd5317078325431d12595de07724986ec6abe3d5d858f8dca379ba6c624e0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acoinmarketcap___current_data_for_selected_coins/coinmarketcap1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=229b2e3446f6c25117582a6eda825d937b849e2af9766299e7eb44c0ba5d1325&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acoinmarketcap___current_data_for_selected_coins/coinmarketcap4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=08bb3db89c6bebe91e0d5ed4d16954cb17fda95b68ed42760894f520ed66ecef&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acoinmarketcap___current_data_for_selected_coins/coinmarketcap2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=f98117b64489f862b87f1f0e5e10f9bff3ee4363a9cfb520ff8e95c0f774d3d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acoinmarketcap___current_data_for_selected_coins/coinmarketcap3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=c9c52d0705750a84d91ccbcfd1b88acf50aad462a7305a1a9e1a4eda6b5b20ab&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::coinmarketcap___current_data_for_selected_coins"
+    ],
+    "env": {}
+  },
+  "downloads": 13,
+  "createdAt": "2025-02-18T12:50:12.289Z",
+  "updatedAt": "2025-02-18T12:50:12.289Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

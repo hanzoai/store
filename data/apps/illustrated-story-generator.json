@@ -1,0 +1,43 @@
+{
+  "id": "illustrated-story-generator",
+  "name": "Illustrated Story Generator",
+  "description": "This tool transforms a simple story idea into a complete, richly illustrated narrative.\n\nIt begins by expanding the user's description into a full story, then intelligently analyzes the new narrative to pinpoint the most visually compelling scenes. For each selected scene, it crafts a detailed, professional-grade prompt—incorporating any artistic style from the original description—to generate high-quality, stylistically coherent images. The final output is a single, ready-to-read story where the generated images are seamlessly embedded within the text, bringing the tale to life.\n\nFeel free to fork the tool to pick a different image generation tool : duplicate it, edit in the playground, unselect the current image generation tool and select yours, and instruct the AI tool builder to use this new image generation tool instead, without changing anything else.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::illustrated_story_generator",
+  "license": "MIT",
+  "category": "Entertainment",
+  "tags": [
+    "storytelling",
+    "image generation",
+    "illustration",
+    "story",
+    "illustrated story",
+    "image"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aillustrated_story_generator/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=7a61ffe1b3d4f1eee5df371dd2d4acdef48fc235bb9d7aa8664536c255688e38&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aillustrated_story_generator/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=1ea8246e51ec304beb149e40539a82b45867d58fd5d10c5a0484788d44157c3c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::illustrated_story_generator"
+    ],
+    "env": {}
+  },
+  "downloads": 1,
+  "createdAt": "2025-08-12T02:22:29.053Z",
+  "updatedAt": "2025-08-12T02:22:29.053Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

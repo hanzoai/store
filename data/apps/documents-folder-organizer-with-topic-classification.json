@@ -1,0 +1,49 @@
+{
+  "id": "documents-folder-organizer-with-topic-classification",
+  "name": "Documents Folder Organizer with Topic Classification",
+  "description": "This tool organizes documents by topic.\n\nIt scans a specified folder for supported file types (PDF, DOCX, ODT, PPTX, ODP, TXT, MD, CSV, XLSX, ODS), extracts text, generates summaries using an LLM, proposes and refines topic categories with user feedback, classifies files into topics, and moves them into corresponding subfolders. User confirmation is required before file movement. The tool handles errors, resolves file name conflicts, and provides a detailed process summary.\n\nWarning: High LLM usage may occur due to multiple calls per document. Configure the tool to use an LLM optimized for frequent calls to balance performance and cost.\n\nThis tools requires the 3 human-in-the-loop tools : options selection, confirmation dialog, clarification dialog.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::documents_folder_organizer_with_topic_classification",
+  "license": "MIT",
+  "category": "Productivity",
+  "tags": [
+    "documents",
+    "folder classifier",
+    "document sorting",
+    "topic",
+    "file mover",
+    "classify",
+    "organize"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_sorter_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=bb6be4d55cfeab4ae54c2ea94ca5516e19768a5bcd0e7447d614137a038e05fc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_organizer_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=7aaec0765a071c04846219e88f4dd28cac0749ffccb8df1f06e459ecad14559c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_organizer_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=cb26aef4c16b5b23449b2ab469bc2c7f9855a2c8d8dd44c0ce8eea65572d5501&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_sorter_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=9ac826d07427ea44ee2f696aba6a416fa66b5d4c340cefb9a5d800ae73b52930&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_sorter_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=348289c657460f884e2c9cb89ebf4acd66ebaa281ef2b46b37ecbfbaf446ae39&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_sorter_4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=0da725a9ee0e98526cbc8861ef10084c39bd5d0ddb8332b958191be18628b292&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Adocuments_folder_organizer_with_topic_classification/documents_folder_sorter_5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=4f83449022f292512a660c2aed37d05aacabaa369d1f8d11f8e408b130503b24&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::documents_folder_organizer_with_topic_classification"
+    ],
+    "env": {}
+  },
+  "downloads": 30,
+  "createdAt": "2025-05-12T13:27:21.697Z",
+  "updatedAt": "2025-05-12T13:27:21.697Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

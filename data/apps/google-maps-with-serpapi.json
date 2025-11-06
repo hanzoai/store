@@ -1,0 +1,42 @@
+{
+  "id": "google-maps-with-serpapi",
+  "name": "Google Maps with SerpAPI",
+  "description": "Performs a Google Maps search using SerpAPI and returns the results in JSON or HTML format.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::google_maps_with_serpapi",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "google",
+    "maps",
+    "search",
+    "serpapi",
+    "business"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agoogle_maps_with_serpapi/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=dbf9a493e8a13960a883d32256d9d8529695db399cf4135ba48566a91ca788df&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agoogle_maps_with_serpapi/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=2a28711ebe976f2000dd53724a5ea44ffab0e639bae3e0ce6aadac5f59654097&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::google_maps_with_serpapi"
+    ],
+    "env": {}
+  },
+  "downloads": 1,
+  "createdAt": "2025-08-18T17:27:37.179Z",
+  "updatedAt": "2025-08-18T17:27:37.179Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

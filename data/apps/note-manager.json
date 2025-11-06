@@ -1,0 +1,42 @@
+{
+  "id": "note-manager",
+  "name": "Note Manager",
+  "description": "This tool manages text-based notes across multiple .txt files using natural language prompts.\nIt leverages an LLM to interpret user requests, identify which file to use, and perform actions : read, add, update, delete, move note to top or bottom.\nIt uses confirmation messages before modifying notes.\n\nHow to Use:\n\n1. Set up multiple .txt files by topic with short clear distinct names, and add their path to file paths in configuration.\n\n2. In configuration, also pick which note file to use as default.\n\n3. Type a request in the prompt input. Make it clear which note file to use, and which action to perform.\n\n4. Confirm actions via GUI dialogs when required.\n\nExample Prompts:\n\n- \"Personal notes, add birthday party is at 6 pm on Wednesday.\"\n\n- \"What's the most urgent in my work notes?\"\n\n- \"Update family notes, bike is better gift idea for brother\"\n\n- \"Delete word notes, we're good with all clients calls \" → Removes specified note.\n\n- \"Move exercise plan to top of personal notes\" → Reorganizes note to top.\n\n- \"Open family notes\" → Opens file in default .txt editor.\n\nAdditionally, the tool can also use the content from an image uploaded in the chat to interact with the notes.\n\nTo note, within each file, this tool considers that each distinct paragrah is a different note (uses \"\\n\\n\" as separator).",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::note_manager",
+  "license": "MIT",
+  "category": "Productivity",
+  "tags": [
+    "note manager",
+    "notes",
+    "note"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anote_manager/note_manager_logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=7db60a70c3106bcbbb975a3ad878332e88a3a0505046eac6fb831bc1f0bceeaa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anote_manager/note_manager_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=670091d2c50515f39b0cca9e692ac2ca5c5666174489b8cf655b4ef2aebb8711&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anote_manager/note_manager_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=bdc4346342c10624d38db041d286d914a2a0199f6ae35337ede406a5e558ba92&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Anote_manager/note_manager_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=e700d1e6524a7c1b51f2612d2805e27bd072795fd0c99e4150c0e43691eac3c5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::note_manager"
+    ],
+    "env": {}
+  },
+  "downloads": 14,
+  "createdAt": "2025-04-30T15:48:04.131Z",
+  "updatedAt": "2025-04-30T15:48:04.131Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

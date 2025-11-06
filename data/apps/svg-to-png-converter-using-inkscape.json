@@ -1,0 +1,43 @@
+{
+  "id": "svg-to-png-converter-using-inkscape",
+  "name": "SVG to PNG Converter - using Inkscape",
+  "description": "Automates the conversion of an SVG vector file into a PNG image by using a local Inkscape installation. This tool constructs and executes the appropriate command-line operation, allowing the user to control the output quality by specifying the resolution in DPI (Dots Per Inch). The resulting PNG file is saved in the same directory as the source SVG and shares the same base name.\nYou need Inkscape installed first.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::svg_to_png_converter___using_inkscape",
+  "license": "MIT",
+  "category": "Graphics & Design",
+  "tags": [
+    "inkscape",
+    "svg",
+    "png",
+    "converter",
+    "image",
+    "graphics"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Asvg_to_png_converter___using_inkscape/logo.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=6b5f8b1717079ff4f1010b07d4f78edb0f1f177a580029f6b573d56a9c54026f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Asvg_to_png_converter___using_inkscape/banner.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=9d0e7b1be4636b0f7e5035972dbc4166cb1bb4b52a71ef011f008fcd1536db83&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::svg_to_png_converter___using_inkscape"
+    ],
+    "env": {}
+  },
+  "downloads": 1,
+  "createdAt": "2025-07-30T09:15:57.541Z",
+  "updatedAt": "2025-07-30T09:15:57.541Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

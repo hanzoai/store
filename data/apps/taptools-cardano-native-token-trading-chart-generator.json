@@ -1,0 +1,43 @@
+{
+  "id": "taptools-cardano-native-token-trading-chart-generator",
+  "name": "Taptools Cardano Native Token Trading Chart Generator",
+  "description": "Using the Taptools API, this tool generates a candlestick chart of token price (in Ada) and trading volume for the chosen token ticker. Choose your chart interval and number of intervals (default : 180) in your prompt. A Taptools API key is required. Make sure to use the configurations fields \"pages number\" and \"tokens per page\" adequately to access the tokens you are interested in. For intervals, options are : 3m, 5m, 15m, 30m, 1h, 2h, 4h, 12h, 1d, 3d, 1w, 1M (default 1d).  For the ticker, respect capital letters and symbols (e.g. IAGON, iUSD, $LOBSTER).",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::taptools_cardano_native_token_trading_chart_generator",
+  "license": "MIT",
+  "category": "Finance",
+  "tags": [
+    "TapTools",
+    "token data",
+    "candlestick chart",
+    "cryptocurrency"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=f8ca9865f74bdbb3947408140315761ffa1bb19c4078a07190fefed7857f550d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=a10a442f6a1fd6bed5e4cc03796006f948348a49960e57bddd9c32559798fb59&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=6fdc785f4e120ff4455f5c68eceaa3dd8c70bab8cf4ca8f36a41345972b3ab1b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=5b91c128549cf0c3b871d24d2d12fa05c82cb358d72935cb8237a7729c55bded&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::taptools_cardano_native_token_trading_chart_generator"
+    ],
+    "env": {}
+  },
+  "downloads": 7,
+  "createdAt": "2025-03-03T19:42:43.152Z",
+  "updatedAt": "2025-03-03T19:42:43.152Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

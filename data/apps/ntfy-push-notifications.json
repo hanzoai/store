@@ -1,0 +1,41 @@
+{
+  "id": "ntfy-push-notifications",
+  "name": "Ntfy Push Notifications",
+  "description": "Sends push notifications to specific groups using ntfy. Supports message priority, tags, and titles. Download the Apps and learn more here: https://ntfy.sh",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::ntfy_push_notifications",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "notification",
+    "ntfy",
+    "http api",
+    "message sender"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Antfy_push_notifications/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142244Z&X-Amz-Expires=86400&X-Amz-Signature=ee393a62b325ae48f6384dbea460f0bfda820c2ad26044110e425226cd276426&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Antfy_push_notifications/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142244Z&X-Amz-Expires=86400&X-Amz-Signature=66c915071ff92057cb0a4a20cc1bcfa0eff8edf8ed9ba209e713276142b90f34&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::ntfy_push_notifications"
+    ],
+    "env": {}
+  },
+  "downloads": 1516,
+  "createdAt": "2025-02-04T15:13:51.536Z",
+  "updatedAt": "2025-02-04T15:13:51.536Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

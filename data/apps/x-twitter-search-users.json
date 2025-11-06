@@ -1,0 +1,42 @@
+{
+  "id": "x-twitter-search-users",
+  "name": "X/Twitter Search Users",
+  "description": "Function to search for Twitter users based on a query string.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::x_twitter_search_users",
+  "license": "MIT",
+  "category": "Social Networking",
+  "tags": [
+    "twitter",
+    "user search",
+    "api",
+    "users",
+    "X"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_search_users/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=6a35926ca4c2dbb23d528b61d8c7b2bdd9f3de2112de7ff3f5b10d112d95ed6d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_search_users/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=3c4063f2e1e323d5f0444cbdaa6d3480c7901257e3c9d0b6da915b63a50030a3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::x_twitter_search_users"
+    ],
+    "env": {}
+  },
+  "downloads": 768,
+  "createdAt": "2025-04-09T22:12:00.745Z",
+  "updatedAt": "2025-04-09T22:12:00.745Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

@@ -1,0 +1,41 @@
+{
+  "id": "youtube-download-mp3",
+  "name": "Youtube Download MP3",
+  "description": "Downloads audio from a YouTube video and saves it as an MP3 file.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::youtube_download_mp3",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "youtube",
+    "mp3",
+    "downloader",
+    "audio"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_download_mp3/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=387bf534fc7bc3c14a81f45368bb06c9e3ee15cb3057a841c7aa20a19857f1aa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_download_mp3/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=a5193250435fd4746ba3e5ce67e510905304999075515b69929550a81f9b2842&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::youtube_download_mp3"
+    ],
+    "env": {}
+  },
+  "downloads": 12,
+  "createdAt": "2025-02-03T19:43:38.513Z",
+  "updatedAt": "2025-02-03T19:43:38.513Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

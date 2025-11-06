@@ -1,0 +1,42 @@
+{
+  "id": "linear-fetch-issues-by-user",
+  "name": "Linear Fetch Issues By User",
+  "description": "Fetches issues assigned to a user from Linear using an API key.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::linear_fetch_issues_by_user",
+  "license": "MIT",
+  "category": "Developer Tools",
+  "tags": [
+    "linear",
+    "API",
+    "issues",
+    "user",
+    "fetcher"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alinear_fetch_issues_by_user/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=5ddd7670b5cfbc277758c0506d1421f31e3b5f664858a4a2289fa4e31e8e57cd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alinear_fetch_issues_by_user/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=31f235b1336367ea4fad60ef4be6a78db84ba5eb9a28c123221ced6e799ca232&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::linear_fetch_issues_by_user"
+    ],
+    "env": {}
+  },
+  "downloads": 1,
+  "createdAt": "2025-05-05T19:04:06.901Z",
+  "updatedAt": "2025-05-05T19:04:06.901Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}
