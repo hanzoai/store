@@ -7,6 +7,29 @@ const AGENTS_DIR = path.join(__dirname, '..', 'data', 'agents');
 const TOOLS_DIR = path.join(__dirname, '..', 'data', 'tools');
 const OUTPUT_FILE = path.join(__dirname, '..', 'public', 'store.json');
 
+/**
+ * Convert old DID format to new npm-style format
+ * local:::__official_shinkai:::audio_insight → @hanzo/audio-insight
+ */
+function convertToNpmFormat(homepage) {
+  if (!homepage || typeof homepage !== 'string') return homepage;
+
+  // Check if it's the old format with :::
+  if (homepage.includes(':::')) {
+    // Extract the last part after :::
+    const parts = homepage.split(':::');
+    const name = parts[parts.length - 1];
+
+    // Convert underscores to hyphens
+    const normalizedName = name.replace(/_/g, '-');
+
+    // Return npm-style format
+    return `@hanzo/${normalizedName}`;
+  }
+
+  return homepage;
+}
+
 function generateStore() {
   console.log('Generating store data...\n');
 
@@ -22,7 +45,17 @@ function generateStore() {
 
   const apps = allFiles.map(({ dir, file }) => {
     const content = fs.readFileSync(path.join(dir, file), 'utf-8');
-    return JSON.parse(content);
+    const app = JSON.parse(content);
+
+    // Transform homepage to new format
+    app.homepage = convertToNpmFormat(app.homepage);
+
+    // Also transform mcpConfig.args if present
+    if (app.mcpConfig && app.mcpConfig.args && Array.isArray(app.mcpConfig.args)) {
+      app.mcpConfig.args = app.mcpConfig.args.map(arg => convertToNpmFormat(arg));
+    }
+
+    return app;
   });
 
   // Extract unique categories
