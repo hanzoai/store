@@ -1,6 +1,6 @@
 'use client'
 
-import { use } from 'react'
+import { use, useState, useEffect } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ChevronLeft, Download, Star, Tag, ExternalLink, Github } from 'lucide-react'
@@ -8,14 +8,36 @@ import { HanzoLogo } from '@hanzo/logo'
 import { Button, Badge, Card, CardContent, CardHeader } from '@hanzo/ui'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
-import { apps } from '../../../lib/apps-data'
+import type { StoreApp } from '@/types'
 
 export default function AppDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
   const { isConnected } = useAccount()
-  
-  const app = apps.find(a => a.id === id)
-  
+  const [app, setApp] = useState<StoreApp | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/store.json')
+      .then(res => res.json())
+      .then(data => {
+        const foundApp = data.apps.find((a: StoreApp) => a.id === id)
+        setApp(foundApp || null)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Failed to load app data:', err)
+        setLoading(false)
+      })
+  }, [id])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-xl text-muted-foreground">Loading...</div>
+      </div>
+    )
+  }
+
   if (!app) {
     notFound()
   }
@@ -28,8 +50,8 @@ export default function AppDetailPage({ params }: { params: Promise<{ id: string
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <HanzoLogo size={36} className="text-foreground" />
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1"
               >
                 <ChevronLeft className="h-4 w-4" />
@@ -50,8 +72,8 @@ export default function AppDetailPage({ params }: { params: Promise<{ id: string
             <div className="flex items-start gap-6">
               <div className="flex-shrink-0">
                 {app.icon ? (
-                  <img 
-                    src={app.icon} 
+                  <img
+                    src={app.icon}
                     alt={app.name}
                     className="w-24 h-24 rounded-xl object-cover"
                   />
@@ -93,83 +115,111 @@ export default function AppDetailPage({ params }: { params: Promise<{ id: string
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {app.tags?.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+            {app.tags && app.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {app.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
 
-            {/* Long Description */}
-            {app.longDescription && (
+            {/* Screenshots */}
+            {app.screenshots && app.screenshots.length > 0 && (
               <Card>
                 <CardHeader>
-                  <h2 className="text-xl font-semibold">About</h2>
+                  <h2 className="text-xl font-semibold">Screenshots</h2>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground whitespace-pre-wrap">
-                    {app.longDescription}
-                  </p>
+                  <div className="grid grid-cols-1 gap-4">
+                    {app.screenshots.map((screenshot, i) => (
+                      <img
+                        key={i}
+                        src={screenshot}
+                        alt={`Screenshot ${i + 1}`}
+                        className="w-full rounded-lg border border-border"
+                      />
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             )}
 
-            {/* Installation Instructions */}
+            {/* About */}
+            <Card>
+              <CardHeader>
+                <h2 className="text-xl font-semibold">About</h2>
+              </CardHeader>
+              <CardContent>
+                <p className="text-foreground/90 whitespace-pre-wrap">
+                  {app.description}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Installation */}
             <Card>
               <CardHeader>
                 <h2 className="text-xl font-semibold">Installation</h2>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-medium mb-2">Using Hanzo CLI</h3>
-                  <pre className="bg-secondary p-4 rounded-lg overflow-x-auto">
-                    <code className="text-sm">hanzo install {app.id}</code>
-                  </pre>
+                  <h3 className="text-sm font-semibold mb-2">Using Hanzo CLI:</h3>
+                  <div className="bg-muted p-3 rounded-md font-mono text-sm">
+                    <code>hanzo install {app.id}</code>
+                  </div>
                 </div>
-                {app.packageName && (
+
+                {app.installCommand && (
                   <div>
-                    <h3 className="font-medium mb-2">Manual Installation</h3>
-                    <pre className="bg-secondary p-4 rounded-lg overflow-x-auto">
-                      <code className="text-sm">npm install {app.packageName}</code>
-                    </pre>
+                    <h3 className="text-sm font-semibold mb-2">Manual Installation:</h3>
+                    <div className="bg-muted p-3 rounded-md font-mono text-sm">
+                      <code>{app.installCommand}</code>
+                    </div>
                   </div>
                 )}
               </CardContent>
             </Card>
 
-            {/* Usage Example */}
-            {app.usageExample && (
-              <Card>
-                <CardHeader>
-                  <h2 className="text-xl font-semibold">Usage Example</h2>
-                </CardHeader>
-                <CardContent>
-                  <pre className="bg-secondary p-4 rounded-lg overflow-x-auto">
-                    <code className="text-sm">{app.usageExample}</code>
-                  </pre>
-                </CardContent>
-              </Card>
-            )}
+            {/* Usage */}
+            <Card>
+              <CardHeader>
+                <h2 className="text-xl font-semibold">Usage</h2>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-foreground/90">
+                  After installation, you can use this {app.type.toLowerCase()} with Hanzo AI agents or compatible AI assistants.
+                </p>
+                {app.mcpConfig && (
+                  <div>
+                    <h3 className="text-sm font-semibold mb-2">MCP Configuration:</h3>
+                    <div className="bg-muted p-3 rounded-md font-mono text-xs overflow-x-auto">
+                      <pre>{JSON.stringify(app.mcpConfig, null, 2)}</pre>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
 
           {/* Right Column - Sidebar */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Install Button */}
             <Card>
-              <CardContent className="p-6 space-y-4">
-                <Button 
-                  size="lg" 
-                  className="w-full"
-                  disabled={!isConnected}
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Install in Hanzo
-                </Button>
-                {!isConnected && (
-                  <p className="text-xs text-center text-muted-foreground">
-                    Connect wallet to install
-                  </p>
+              <CardContent className="pt-6">
+                {isConnected ? (
+                  <Button className="w-full" size="lg">
+                    <Download className="mr-2 h-4 w-4" />
+                    Install
+                  </Button>
+                ) : (
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Connect wallet to install
+                    </p>
+                    <ConnectButton />
+                  </div>
                 )}
               </CardContent>
             </Card>
@@ -182,7 +232,7 @@ export default function AppDetailPage({ params }: { params: Promise<{ id: string
               <CardContent className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Version</span>
-                  <span className="font-medium">{app.version || '1.0.0'}</span>
+                  <span className="font-medium">{app.version}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Author</span>
@@ -190,12 +240,22 @@ export default function AppDetailPage({ params }: { params: Promise<{ id: string
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">License</span>
-                  <span className="font-medium">{app.license || 'MIT'}</span>
+                  <span className="font-medium">{app.license}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Category</span>
                   <span className="font-medium">{app.category}</span>
                 </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Type</span>
+                  <span className="font-medium">{app.type}</span>
+                </div>
+                {app.price !== undefined && (
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Price</span>
+                    <span className="font-medium">{app.price === 0 ? 'Free' : `$${app.price}`}</span>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
@@ -205,28 +265,15 @@ export default function AppDetailPage({ params }: { params: Promise<{ id: string
                 <h3 className="font-semibold">Links</h3>
               </CardHeader>
               <CardContent className="space-y-2">
-                {app.repository && (
-                  <a
-                    href={app.repository}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm hover:text-primary"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>View Source Code</span>
-                    <ExternalLink className="h-3 w-3 ml-auto" />
-                  </a>
-                )}
                 {app.homepage && (
                   <a
-                    href={app.homepage}
+                    href={app.homepage.startsWith('http') ? app.homepage : `https://${app.homepage}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm hover:text-primary"
+                    className="flex items-center gap-2 text-sm text-primary hover:underline"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    <span>Homepage</span>
-                    <ExternalLink className="h-3 w-3 ml-auto" />
+                    Homepage
                   </a>
                 )}
               </CardContent>
