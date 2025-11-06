@@ -39,19 +39,19 @@
   }
 
   .dark {
-    --background: oklch(0 0 0);
+    --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
-    --card: oklch(0.1 0 0);
+    --card: oklch(0.205 0 0);
     --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.1 0 0);
+    --popover: oklch(0.205 0 0);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(1 0 0);
-    --primary-foreground: oklch(0 0 0);
-    --secondary: oklch(0.15 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.15 0 0);
+    --muted: oklch(0.269 0 0);
     --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.15 0 0);
+    --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
@@ -62,11 +62,11 @@
     --chart-3: oklch(0.769 0.188 70.08);
     --chart-4: oklch(0.627 0.265 303.9);
     --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.1 0 0);
+    --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
     --sidebar-primary: oklch(0.922 0 0);
     --sidebar-primary-foreground: oklch(0 0 0);
-    --sidebar-accent: oklch(0.15 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
@@ -93,24 +93,24 @@
 
 /* Override RainbowKit variables to use Hanzo design tokens */
 .dark [data-rk] {
-  /* Colors - use Hanzo white/black theme */
+  /* Colors - use Hanzo neutral dark theme */
   --rk-colors-accentColor: white !important;
   --rk-colors-accentColorForeground: black !important;
-  --rk-colors-modalBackground: #1a1a1a !important;
+  --rk-colors-modalBackground: oklch(0.205 0 0) !important;
   --rk-colors-modalBorder: rgba(255, 255, 255, 0.1) !important;
   --rk-colors-modalText: white !important;
-  --rk-colors-modalTextSecondary: rgba(255, 255, 255, 0.7) !important;
+  --rk-colors-modalTextSecondary: oklch(0.708 0 0) !important;
   --rk-colors-modalTextDim: rgba(255, 255, 255, 0.5) !important;
   --rk-colors-generalBorder: rgba(255, 255, 255, 0.1) !important;
   --rk-colors-generalBorderDim: rgba(255, 255, 255, 0.05) !important;
   --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-actionButtonSecondaryBackground: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-connectButtonBackground: #1a1a1a !important;
+  --rk-colors-actionButtonSecondaryBackground: oklch(0.269 0 0) !important;
+  --rk-colors-connectButtonBackground: oklch(0.205 0 0) !important;
   --rk-colors-connectButtonText: white !important;
   --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)) !important;
-  --rk-colors-menuItemBackground: rgba(255, 255, 255, 0.05) !important;
+  --rk-colors-menuItemBackground: oklch(0.269 0 0) !important;
   --rk-colors-closeButton: rgba(255, 255, 255, 0.6) !important;
-  --rk-colors-closeButtonBackground: rgba(255, 255, 255, 0.1) !important;
+  --rk-colors-closeButtonBackground: oklch(0.269 0 0) !important;
   --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.8) !important;
   /* Border radius - match Hanzo */
   --rk-radii-modal: 10px !important;
