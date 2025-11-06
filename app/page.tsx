@@ -3,13 +3,14 @@
 import { useState, useMemo, useEffect } from 'react';
 import { HanzoLogo } from '@hanzo/logo/react';
 import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount } from 'wagmi';
+import { Button, Input, Card, CardContent, CardFooter, CardHeader } from '@hanzo/ui';
+import { Badge } from '@hanzo/ui/badge';
 import type { StoreData, StoreApp } from '@/types';
 
 export default function StorePage() {
+  const { address, isConnected } = useAccount();
   const [storeData, setStoreData] = useState<StoreData | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -86,12 +87,15 @@ export default function StorePage() {
       {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center gap-4 mb-3">
-            <HanzoLogo variant="mono" size={40} className="text-foreground" />
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight">Hanzo Store</h1>
-              <p className="text-sm text-muted-foreground">MCP Server Marketplace</p>
+          <div className="flex items-center justify-between gap-4 mb-3">
+            <div className="flex items-center gap-4">
+              <HanzoLogo variant="mono" size={40} className="text-foreground" />
+              <div>
+                <h1 className="text-3xl font-bold tracking-tight">Hanzo Store</h1>
+                <p className="text-sm text-muted-foreground">MCP Server Marketplace</p>
+              </div>
             </div>
+            <ConnectButton />
           </div>
           <p className="text-muted-foreground max-w-3xl">
             Boost your AI agents with ready-to-go, tailor-made automations for seamless tech integration
@@ -181,7 +185,7 @@ export default function StorePage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredApps.map(app => (
-              <AppCard key={app.id} app={app} />
+              <AppCard key={app.id} app={app} walletAddress={address} isWalletConnected={isConnected} />
             ))}
           </div>
         )}
@@ -204,7 +208,11 @@ export default function StorePage() {
   );
 }
 
-function AppCard({ app }: { app: StoreApp }) {
+function AppCard({ app, walletAddress, isWalletConnected }: {
+  app: StoreApp;
+  walletAddress?: `0x${string}`;
+  isWalletConnected: boolean;
+}) {
   const [copied, setCopied] = useState(false);
 
   const copyInstallCommand = () => {
@@ -218,7 +226,13 @@ function AppCard({ app }: { app: StoreApp }) {
   const installInHanzo = () => {
     // Open hanzo:// protocol to install the app
     // The desktop app will handle this URL and install the MCP server
-    const hanzoUrl = `hanzo://install/${encodeURIComponent(app.id)}?name=${encodeURIComponent(app.name)}&type=${encodeURIComponent(app.type || 'Tool')}`;
+    let hanzoUrl = `hanzo://install/${encodeURIComponent(app.id)}?name=${encodeURIComponent(app.name)}&type=${encodeURIComponent(app.type || 'Tool')}`;
+
+    // Add wallet address if connected
+    if (isWalletConnected && walletAddress) {
+      hanzoUrl += `&wallet=${encodeURIComponent(walletAddress)}`;
+    }
+
     window.location.href = hanzoUrl;
   };
 
@@ -233,7 +247,7 @@ function AppCard({ app }: { app: StoreApp }) {
 
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <CardTitle className="text-xl mb-2 truncate">{app.name}</CardTitle>
+            <h3 className="text-xl font-semibold mb-2 truncate">{app.name}</h3>
             <div className="flex items-center gap-2 flex-wrap">
               {app.type && (
                 <Badge variant="secondary">{app.type}</Badge>
@@ -255,7 +269,7 @@ function AppCard({ app }: { app: StoreApp }) {
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <CardDescription className="line-clamp-3">{app.description}</CardDescription>
+        <p className="text-sm text-muted-foreground line-clamp-3">{app.description}</p>
 
         <div className="flex flex-wrap gap-1.5">
           {app.tags.slice(0, 4).map(tag => (
@@ -321,9 +335,10 @@ function AppCard({ app }: { app: StoreApp }) {
               href={app.repository}
               target="_blank"
               rel="noopener noreferrer"
+              className="flex items-center gap-2 justify-center"
             >
               <ExternalLink className="h-3 w-3" />
-              View on GitHub
+              <span>View on GitHub</span>
             </a>
           </Button>
         )}
