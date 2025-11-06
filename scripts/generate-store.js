@@ -55,6 +55,13 @@ function generateStore() {
       app.mcpConfig.args = app.mcpConfig.args.map(arg => convertToNpmFormat(arg));
     }
 
+    // Add repository and path fields
+    app.repository = 'github.com/hanzoai/tools';
+
+    // Determine path based on type
+    const subdir = app.type === 'Agent' ? 'agents' : 'tools';
+    app.path = `/${subdir}/${app.id}`;
+
     return app;
   });
 
