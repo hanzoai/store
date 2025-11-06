@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { Providers } from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Hanzo Store - MCP Server Marketplace",
-  description: "Discover and install MCP servers for Hanzo Desktop",
+  description: "Boost your AI agents with ready-to-go, tailor-made automations for seamless tech integration",
 };
 
 export default function RootLayout({
@@ -12,9 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-gray-50 text-gray-900">
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased bg-background text-foreground">
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
