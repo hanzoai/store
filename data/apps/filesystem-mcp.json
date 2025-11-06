@@ -1,0 +1,18 @@
+{
+  "id": "filesystem-mcp",
+  "name": "Filesystem MCP Server",
+  "description": "Secure file system operations with read/write access controls",
+  "version": "1.2.0",
+  "author": "Hanzo AI",
+  "repository": "https://github.com/hanzo-ai/filesystem-mcp",
+  "license": "MIT",
+  "category": "File Management",
+  "tags": ["filesystem", "files", "io", "storage"],
+  "installCommand": "npx -y @hanzo/filesystem-mcp",
+  "mcpConfig": {
+    "command": "npx",
+    "args": ["-y", "@hanzo/filesystem-mcp"]
+  },
+  "createdAt": "2024-12-01T00:00:00Z",
+  "updatedAt": "2025-01-02T00:00:00Z"
+}
