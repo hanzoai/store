@@ -6,7 +6,7 @@ declare module '@hanzo/ui/badge' {
   export const Badge: any
 }
 
-declare module '@hanzo/logo/react' {
+declare module '@hanzo/logo' {
   import React from 'react'
   export interface HanzoLogoProps {
     variant?: 'color' | 'mono' | 'white'
