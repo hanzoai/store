@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
-import { HanzoLogo } from '@hanzo/logo/react'
+import { HanzoLogo } from '@hanzo/logo'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 export default function PrivacyPage() {
