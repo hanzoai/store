@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
+import Link from 'next/link';
 import { HanzoLogo } from '@hanzo/logo';
 import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { Button, Input, Card, CardContent, CardFooter, CardHeader } from '@hanzo/ui';
 import { Badge } from '@hanzo/ui/badge';
+import { sanitizeUrl } from '@/lib/url-utils';
 import type { StoreData, StoreApp } from '@/types';
 
 export default function StorePage() {
@@ -25,8 +27,7 @@ export default function StorePage() {
         setStoreData(data);
         setLoading(false);
       })
-      .catch(err => {
-        console.error('Failed to load store data:', err);
+      .catch(() => {
         setLoading(false);
       });
   }, []);
@@ -123,7 +124,7 @@ export default function StorePage() {
               type="text"
               placeholder="Search apps..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
               className="pl-10 h-11 border-border/40 focus:border-border/60"
             />
           </div>
@@ -194,13 +195,26 @@ export default function StorePage() {
       {/* Footer */}
       <footer className="mt-20 border-t border-border/40 bg-card/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center text-muted-foreground">
-            <p className="font-medium text-foreground mb-2">Want to add your MCP server?</p>
-            <p className="text-sm">
-              Fork the repository and submit a PR with your app's JSON file in{' '}
-              <code className="bg-muted px-2 py-0.5 rounded text-foreground">data/agents/</code> or{' '}
-              <code className="bg-muted px-2 py-0.5 rounded text-foreground">data/tools/</code>
-            </p>
+          <div className="space-y-6">
+            <div className="text-center text-muted-foreground">
+              <p className="font-medium text-foreground mb-2">Want to add your MCP server?</p>
+              <p className="text-sm">
+                Fork the repository and submit a PR with your app's JSON file in{' '}
+                <code className="bg-muted px-2 py-0.5 rounded text-foreground">data/agents/</code> or{' '}
+                <code className="bg-muted px-2 py-0.5 rounded text-foreground">data/tools/</code>
+              </p>
+            </div>
+            <div className="flex justify-center gap-6 text-sm">
+              <Link href="/guidelines" className="text-muted-foreground hover:text-foreground transition-colors">
+                Guidelines
+              </Link>
+              <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
@@ -291,9 +305,20 @@ function AppCard({ app, walletAddress, isWalletConnected }: {
       </CardContent>
 
       <CardFooter className="flex-col gap-2">
+        <Link href={`/apps/${app.id}`} className="w-full">
+          <Button
+            variant="default"
+            size="default"
+            className="w-full"
+          >
+            View Details
+          </Button>
+        </Link>
+
         <Button
-          className="w-full"
+          variant="outline"
           size="default"
+          className="w-full"
           onClick={installInHanzo}
         >
           <Download className="h-4 w-4" />
@@ -324,9 +349,9 @@ function AppCard({ app, walletAddress, isWalletConnected }: {
           </Button>
         )}
 
-        {app.repository && (
+        {app.repository && sanitizeUrl(app.repository) && (
           <a
-            href={app.repository}
+            href={sanitizeUrl(app.repository)!}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-full"
