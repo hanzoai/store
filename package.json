@@ -10,10 +10,17 @@
     "generate-store": "node scripts/generate-store.js"
   },
   "dependencies": {
+    "@hanzo/logo": "^1.0.2",
+    "@hanzo/ui": "^5.1.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.456.0",
     "next": "15.1.0",
+    "next-themes": "^0.4.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "next-themes": "^0.4.4"
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
