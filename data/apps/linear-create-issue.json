@@ -3,7 +3,7 @@
   "name": "Linear Create Issue",
   "description": "Creates a new issue in Linear using the Linear API.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::linear_create_issue",
   "license": "MIT",
   "category": "Developer Tools",

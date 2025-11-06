@@ -3,7 +3,7 @@
   "name": "Email Fetcher",
   "description": "Fetches emails from an IMAP server and returns their subject, date, sender, and text content.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::email_fetcher",
   "license": "MIT",
   "category": "Business",

@@ -3,7 +3,7 @@
   "name": "iterm-read",
   "description": "Reads output from the active iTerm terminal.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::iterm_read",
   "license": "MIT",
   "category": "Developer Tools",

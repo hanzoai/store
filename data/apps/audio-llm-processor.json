@@ -3,7 +3,7 @@
   "name": "Audio LLM Processor",
   "description": "Ask questions about any local audio file. This tool passes your audio and prompt to a multimodal LLM for analysis.\n\nFor long audio files, you might prefer to convert the audio to text first, and the use a LLM on the text.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::audio_llm_processor",
   "license": "MIT",
   "category": "Utilities",

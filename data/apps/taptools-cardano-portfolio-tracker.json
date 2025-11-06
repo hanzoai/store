@@ -3,7 +3,7 @@
   "name": "Taptools Cardano portfolio tracker",
   "description": "This tool analyses and visualizes cryptocurrency portfolio data for a specified Cardano wallet address using the TapTools API. It retrieves portfolio positions, including fungible tokens, NFTs, and liquidity provider positions, and calculates their values in both ADA and a user-defined quote currency (defaulting to USD). The tool can generate bar plots for portfolio positions and trend graphs for portfolio value over customizable timeframes (e.g., 24 hours, 30 days, or all time), with options to filter out low-value assets. It outputs detailed portfolio data and visualizations saved as PNG files, making it a versatile tool for cryptocurrency portfolio monitoring and analysis.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::taptools_cardano_portfolio_tracker",
   "license": "MIT",
   "category": "Finance",

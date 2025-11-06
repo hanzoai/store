@@ -3,7 +3,7 @@
   "name": "Key-Value Memory Management",
   "description": "Handles key-value memory storage and retrieval using a database. It stores memories with associated keys and can retrieve them by key.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::key_value_memory_management",
   "license": "MIT",
   "category": "Developer Tools",

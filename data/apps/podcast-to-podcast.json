@@ -3,7 +3,7 @@
   "name": "Podcast to Podcast",
   "description": "Converts a YouTube video transcript into a podcast using LLM processing.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::podcast_to_podcast",
   "license": "MIT",
   "category": "Entertainment",

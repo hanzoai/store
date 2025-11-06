@@ -3,7 +3,7 @@
   "name": "Brand Icons SVG Fetcher",
   "description": "Fetches brand icons in SVG format from the Simple Icons CDN (2000+ assets) based on the brand name and colour choice inputs.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::brand_icons_svg_fetcher",
   "license": "MIT",
   "category": "Graphics & Design",

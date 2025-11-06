@@ -3,7 +3,7 @@
   "name": "Transfer ERC20 Tokens",
   "description": "Sending ERC20 tokens specified address.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::transfer_erc20_tokens",
   "license": "MIT",
   "category": "Crypto",

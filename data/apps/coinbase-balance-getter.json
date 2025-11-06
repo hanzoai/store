@@ -3,7 +3,7 @@
   "name": "Coinbase Balance Getter",
   "description": "Tool for getting the balance of a Coinbase wallet after restoring it",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coinbase_balance_getter",
   "license": "MIT",
   "category": "Crypto",

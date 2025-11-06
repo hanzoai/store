@@ -3,7 +3,7 @@
   "name": "Strava API Caller",
   "description": "Calls the Strava API for athlete activities, athlete profile, and zones data using OAuth access token. Read how to use this tool in the [Strava API Documentation](https://developers.strava.com/docs/reference/)",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::strava_api_caller",
   "license": "MIT",
   "category": "Health & Fitness",

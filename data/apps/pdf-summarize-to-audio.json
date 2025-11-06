@@ -3,7 +3,7 @@
   "name": "PDF Summarize to Audio",
   "description": "Extracts text from a PDF, summarizes it, and converts the summary to speech.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::pdf_summarize_to_audio",
   "license": "MIT",
   "category": "Entertainment",

@@ -3,7 +3,7 @@
   "name": "Taptools Cardano NFT Market Stats Aggregator",
   "description": "This tool retrieves and presents Cardano NFT market data using the Taptools API. It retrieves overall market statistics (volume, buyers, sellers, and percentage changes), identifies today top NFT collections based on customizable ranking criteria (and fetches additional collection details like social links), calculates total trading volume over specified timeframes, and presents lists of top collections by volume. It delivers personalized and user-friendly summaries of the Cardano NFT market landscape.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::taptools_cardano_nft_market_stats_aggregator",
   "license": "MIT",
   "category": "Finance",

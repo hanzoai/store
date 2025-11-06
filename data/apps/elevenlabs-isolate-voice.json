@@ -3,7 +3,7 @@
   "name": "ElevenLabs Isolate Voice",
   "description": "Isolates audio from YouTube videos or processes local audio files using ElevenLabs API.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::elevenlabs_isolate_voice",
   "license": "MIT",
   "category": "Utilities",

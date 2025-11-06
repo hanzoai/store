@@ -3,7 +3,7 @@
   "name": "GitHub API Request",
   "description": "Tool to make requests to the GitHub API using OAuth for authentication.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "repository": "local:::__official_shinkai:::github_api_request",
   "homepage": "local:::__official_shinkai:::github_api_request",
   "license": "MIT",

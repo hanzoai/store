@@ -3,7 +3,7 @@
   "name": "Ntfy Push Notifications",
   "description": "Sends push notifications to specific groups using ntfy. Supports message priority, tags, and titles. Download the Apps and learn more here: https://ntfy.sh",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::ntfy_push_notifications",
   "license": "MIT",
   "category": "Utilities",

@@ -3,7 +3,7 @@
   "name": "Read File Contents",
   "description": "Reads the text contents of a file from the given path.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::read_file_contents",
   "license": "MIT",
   "category": "Utilities",

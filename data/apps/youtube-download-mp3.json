@@ -3,7 +3,7 @@
   "name": "Youtube Download MP3",
   "description": "Downloads audio from a YouTube video and saves it as an MP3 file.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::youtube_download_mp3",
   "license": "MIT",
   "category": "Utilities",

@@ -3,7 +3,7 @@
   "name": "Markdown Editing - Section Deleter",
   "description": "Deletes a section (and its sub-sections) from a markdown file based on a natural language prompt, using LLM to identify the relevant section.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_editing___section_deleter",
   "license": "MIT",
   "category": "Utilities",

@@ -3,7 +3,7 @@
   "name": "Webcam Capture Tool",
   "description": "Captures a single frame from a local webcam and returns it as a Base64-encoded image (PNG or JPEG). Example usage with Python + opencv.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::webcam_capture_tool",
   "license": "MIT",
   "category": "Photo & Video",

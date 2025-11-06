@@ -3,7 +3,7 @@
   "name": "Jupiter Stablecoin Arbitrager",
   "description": "Find and trade stablecoin arbitrage opportunities in Jupiter",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::jupiter_stablecoin_arbitrager",
   "license": "MIT",
   "category": "Crypto",

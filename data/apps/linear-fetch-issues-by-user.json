@@ -3,7 +3,7 @@
   "name": "Linear Fetch Issues By User",
   "description": "Fetches issues assigned to a user from Linear using an API key.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::linear_fetch_issues_by_user",
   "license": "MIT",
   "category": "Developer Tools",

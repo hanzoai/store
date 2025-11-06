@@ -3,7 +3,7 @@
   "name": "iterm-control",
   "description": "Sends a control character (like Ctrl-C) to the active iTerm terminal session.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::iterm_control",
   "license": "MIT",
   "category": "Developer Tools",

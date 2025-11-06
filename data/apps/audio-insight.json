@@ -3,7 +3,7 @@
   "name": "Audio Insight",
   "description": "An AI assistant that analyzes audio from any video or podcast URL to answer your questions about its content. Compatible with any website or platform supported by yt-dlp.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::audio_insight",
   "license": "MIT",
   "category": "Education",

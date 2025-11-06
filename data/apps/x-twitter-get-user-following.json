@@ -3,7 +3,7 @@
   "name": "X/Twitter Get User Following",
   "description": "Function to fetch the list of users a Twitter user is following.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_get_user_following",
   "license": "MIT",
   "category": "Social Networking",

@@ -3,7 +3,7 @@
   "name": "Ghost Post Blog",
   "description": "Creates an article in a Ghost CMS using Ghost Admin API.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::ghost_post_blog",
   "license": "MIT",
   "category": "Developer Tools",

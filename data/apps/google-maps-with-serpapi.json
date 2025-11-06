@@ -3,7 +3,7 @@
   "name": "Google Maps with SerpAPI",
   "description": "Performs a Google Maps search using SerpAPI and returns the results in JSON or HTML format.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::google_maps_with_serpapi",
   "license": "MIT",
   "category": "Utilities",

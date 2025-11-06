@@ -3,7 +3,7 @@
   "name": "Windows Local Text-to-Speech",
   "description": "Converts text to speech using local Windows TTS and voices.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::windows_local_text_to_speech",
   "license": "MIT",
   "category": "Utilities",

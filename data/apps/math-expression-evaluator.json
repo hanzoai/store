@@ -3,7 +3,7 @@
   "name": "Math Expression Evaluator",
   "description": "Parses and evaluates mathematical expressions. It’s a safer and more math-oriented alternative to using JavaScript’s eval function for mathematical expressions.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::math_expression_evaluator",
   "license": "MIT",
   "category": "Utilities",

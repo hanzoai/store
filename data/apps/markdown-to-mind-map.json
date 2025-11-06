@@ -3,7 +3,7 @@
   "name": "Markdown to Mind Map",
   "description": "Converts Markdown content into an interactive Markmap mind map HTML file, optionally opening the result in the browser. Supports export (PNG, JPG, SVG) and copying features.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::markdown_to_mind_map",
   "license": "MIT",
   "category": "Graphics & Design",

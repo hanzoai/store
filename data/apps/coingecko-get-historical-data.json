@@ -3,7 +3,7 @@
   "name": "coingecko-get-historical-data",
   "description": "Retrieves historical price, market-cap, and volume data for a coin over a date range (from_date to to_date).",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coingecko_get_historical_data",
   "license": "MIT",
   "category": "Crypto",

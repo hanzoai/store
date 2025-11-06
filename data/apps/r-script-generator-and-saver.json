@@ -3,7 +3,7 @@
   "name": "R Script Generator and Saver",
   "description": "Generates an R script based on a user prompt using LLM and saves it via a file dialog. Outputs the file path, status message, and code.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::r_script_generator_and_saver",
   "license": "MIT",
   "category": "Developer Tools",

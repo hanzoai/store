@@ -3,7 +3,7 @@
   "name": "Eleven Labs Text-to-Speech",
   "description": "Converts text to speech using Eleven Labs API and saves the audio as an MP3 file.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::eleven_labs_text_to_speech",
   "license": "MIT",
   "category": "Utilities",

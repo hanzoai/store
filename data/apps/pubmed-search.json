@@ -3,7 +3,7 @@
   "name": "PubMed Search",
   "description": "Search PubMed for scientific/medical literature and return MEDLINE records.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::pubmed_search",
   "license": "MIT",
   "category": "Medical",

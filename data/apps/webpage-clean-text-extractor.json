@@ -3,7 +3,7 @@
   "name": "Webpage clean text extractor",
   "description": "Fetches the clean, readable text from any webpage using the Jina AI Reader service and saves it to a local file.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::webpage_clean_text_extractor",
   "license": "MIT",
   "category": "Utilities",

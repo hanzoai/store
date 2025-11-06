@@ -3,7 +3,7 @@
   "name": "Write File Contents",
   "description": "Writes the text contents of a file to the given path.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::write_file_contents",
   "license": "MIT",
   "category": "Utilities",

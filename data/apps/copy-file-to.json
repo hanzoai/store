@@ -3,7 +3,7 @@
   "name": "Copy File To",
   "description": "Tool to copy a file from a source path to a target directory, preserving the filename and extension.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::copy_file_to",
   "license": "MIT",
   "category": "Utilities",

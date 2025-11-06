@@ -3,7 +3,7 @@
   "name": "Linear Fetch Issues By Team",
   "description": "Fetches open issues from a Linear team. It implements pagination",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::linear_fetch_issues_by_team",
   "license": "MIT",
   "category": "Developer Tools",

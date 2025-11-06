@@ -1,9 +1,9 @@
 {
   "id": "confirmation-dialog-human-in-the-loop",
   "name": "Confirmation Dialog - Human In The Loop",
-  "description": "Opens a configurable confirmation dialog, and outputs the choice made by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the 'yes' and 'no' buttons.\n\nWhen included inside another tool using Shinkai's AI tool building assistant, the LLM should be able to automatically adapt the title, text, and buttons of the dialog, as well as use the choice returned from the user to create appropriate conditional logic in your tool.",
+  "description": "Opens a configurable confirmation dialog, and outputs the choice made by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the 'yes' and 'no' buttons.\n\nWhen included inside another tool using Hanzo's AI tool building assistant, the LLM should be able to automatically adapt the title, text, and buttons of the dialog, as well as use the choice returned from the user to create appropriate conditional logic in your tool.",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::confirmation_dialog___human_in_the_loop",
   "license": "MIT",
   "category": "Utilities",

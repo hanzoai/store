@@ -3,7 +3,7 @@
   "name": "Perplexity API",
   "description": "Searches the web using Perplexity API (limited)",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::perplexity_api",
   "license": "MIT",
   "category": "Reference",

@@ -3,7 +3,7 @@
   "name": "macos-notifications",
   "description": "Manage macOS notifications and Do Not Disturb via AppleScript",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::macos_notifications",
   "license": "MIT",
   "category": "Utilities",

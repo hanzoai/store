@@ -3,7 +3,7 @@
   "name": "Wallet Balance",
   "description": "Tool for checking the ETH and ERC20 tokens balances of a specified wallet address.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::wallet_balance",
   "license": "MIT",
   "category": "Crypto",

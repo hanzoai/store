@@ -3,7 +3,7 @@
   "name": "SmartScrape",
   "description": "SmartScrape extracts specific data from web pages using a large language model. Users provide a URL and instructions for what content to extract, along with optional formatting guidelines. The tool processes the page and returns the requested data in the specified format. To use, input a URL and clear extraction instructions (e.g., \"Extract product prices\") with optional format rules (e.g., \"Return as: Price: $X\").",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::smartscrape",
   "license": "MIT",
   "category": "Utilities",

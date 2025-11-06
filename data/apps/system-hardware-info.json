@@ -3,7 +3,7 @@
   "name": "System Hardware Info",
   "description": "Get detailed system hardware information including CPU, RAM, and disk details",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::system_hardware_info",
   "license": "MIT",
   "category": "Utilities",

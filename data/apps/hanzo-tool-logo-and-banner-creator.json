@@ -1,9 +1,9 @@
 {
   "id": "shinkai-tool-logo-and-banner-creator",
-  "name": "Shinkai tool logo and banner creator",
-  "description": "Creates squared logos and rectangular banners for Shinkai tools to list on Shinkai AI store. Just provide your tool name and description, the number of logos and/or banners to generate, and optionaly add minimal instruction. Might need multiple runs to get a result you like.",
+  "name": "Hanzo tool logo and banner creator",
+  "description": "Creates squared logos and rectangular banners for Hanzo tools to list on Hanzo AI store. Just provide your tool name and description, the number of logos and/or banners to generate, and optionaly add minimal instruction. Might need multiple runs to get a result you like.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::shinkai_tool_logo_and_banner_creator",
   "license": "MIT",
   "category": "Graphics & Design",

@@ -3,7 +3,7 @@
   "name": "solana_token_swap",
   "description": "Executes token swaps on the Solana blockchain using Jupiter Aggregator API",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::solana_token_swap",
   "license": "MIT",
   "category": "Crypto",

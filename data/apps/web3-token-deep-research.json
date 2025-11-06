@@ -3,7 +3,7 @@
   "name": "Web3 token deep research",
   "description": "Generates a comprehensive markdown research report about a given cryptocurrency token by gathering web data, summarizing with LLM, and exporting the report.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::web3_token_deep_research",
   "license": "MIT",
   "category": "Crypto",

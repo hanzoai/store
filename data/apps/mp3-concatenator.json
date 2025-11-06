@@ -3,7 +3,7 @@
   "name": "MP3 Concatenator",
   "description": "Concatenates multiple MP3 files into a single MP3 using ffmpeg. It adds them one after another in the defined order.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::mp3_concatenator",
   "license": "MIT",
   "category": "Music",

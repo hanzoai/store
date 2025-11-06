@@ -3,7 +3,7 @@
   "name": "List Memory Management",
   "description": "Handles list memory storage and retrieval using a database. It stores memories with associated IDs and can retrieve them by ID or get all memories.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::list_memory_management",
   "license": "MIT",
   "category": "Developer Tools",

@@ -3,7 +3,7 @@
   "name": "coingecko-get-coins",
   "description": "Fetch a paginated list of all coins from CoinGecko. Works by retrieving the entire list and slicing manually.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::coingecko_get_coins",
   "license": "MIT",
   "category": "Crypto",

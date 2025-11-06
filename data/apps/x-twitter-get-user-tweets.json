@@ -3,7 +3,7 @@
   "name": "X/Twitter Get User Tweets",
   "description": "Function to fetch tweets from a specific Twitter user by username.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_get_user_tweets",
   "license": "MIT",
   "category": "Social Networking",

@@ -3,7 +3,7 @@
   "name": "Wikimedia Featured Content",
   "description": "Get featured content including article, image, and news from Wikimedia",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::wikimedia_featured_content",
   "license": "MIT",
   "category": "Reference",

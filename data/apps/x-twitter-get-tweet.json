@@ -3,7 +3,7 @@
   "name": "X/Twitter Get Tweet",
   "description": "Function to fetch a tweet from Twitter by its ID.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_get_tweet",
   "license": "MIT",
   "category": "Social Networking",

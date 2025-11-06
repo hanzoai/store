@@ -3,7 +3,7 @@
   "name": "solana_tokens_in_wallet",
   "description": "Fetches and returns the tokens from a Solana wallet using the Helius API",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::solana_tokens_in_wallet",
   "license": "MIT",
   "category": "Crypto",

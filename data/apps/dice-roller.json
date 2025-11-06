@@ -3,7 +3,7 @@
   "name": "Dice Roller",
   "description": "Simulates rolling a die with a configurable number of sides, generating a cryptographically secure random integer from 1 to the specified maximum using Python’s secrets module. Fully on-device.\n\n",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::dice_roller",
   "license": "MIT",
   "category": "Games",

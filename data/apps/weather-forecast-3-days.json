@@ -3,7 +3,7 @@
   "name": "Weather Forecast - 3 days",
   "description": "Fetches a 3-day weather forecast for a location, processes the data into 3-hour intervals with day/night averages, and saves a dark-themed plot (temperature, precipitation, wind).\nGet you API key at weatherapi.com",
   "version": "1.0.0",
-  "author": "@gilles_test2.sep-shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__gilles_test2_sep_shinkai:::weather_forecast___3_days",
   "license": "MIT",
   "category": "Utilities",

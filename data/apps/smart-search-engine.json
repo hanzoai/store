@@ -3,7 +3,7 @@
   "name": "Smart Search Engine",
   "description": "This function takes a question as input and returns a comprehensive answer, along with the sources and statements used to generate the answer.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::smart_search_engine",
   "license": "MIT",
   "category": "Reference",

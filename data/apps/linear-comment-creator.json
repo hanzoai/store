@@ -3,7 +3,7 @@
   "name": "Linear Comment Creator",
   "description": "Creates comments on Linear issues and returns the comment and issue details.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::linear_comment_creator",
   "license": "MIT",
   "category": "Developer Tools",

@@ -3,7 +3,7 @@
   "name": "Wikimedia Search",
   "description": "Search across Wikimedia page content with full-text search capabilities",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::wikimedia_search",
   "license": "MIT",
   "category": "Reference",

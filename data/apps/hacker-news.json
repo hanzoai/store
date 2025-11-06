@@ -3,7 +3,7 @@
   "name": "hacker-news",
   "description": "Fetches top tech stories from Hacker News",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::hacker_news",
   "license": "MIT",
   "category": "News",

@@ -3,7 +3,7 @@
   "name": "iterm-write",
   "description": "Writes a command (or text) to the active iTerm terminal.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::iterm_write",
   "license": "MIT",
   "category": "Developer Tools",

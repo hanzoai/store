@@ -3,7 +3,7 @@
   "name": "X/Twitter Search",
   "description": "Fetch from X/Twitter API to perform various search and retrieval operations.",
   "version": "1.0.0",
-  "author": "@official.shinkai",
+  "author": "hanzo.ai",
   "homepage": "local:::__official_shinkai:::x_twitter_search",
   "license": "MIT",
   "category": "Social Networking",
