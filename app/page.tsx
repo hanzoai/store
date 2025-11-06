@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { HanzoLogo } from '@hanzo/logo';
+import { HanzoLogo } from '@hanzo/logo/react';
 import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';

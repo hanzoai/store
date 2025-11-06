@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
-import { HanzoLogo } from '@hanzo/logo'
+import { HanzoLogo } from '@hanzo/logo/react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { Card, CardContent, CardHeader } from '@hanzo/ui'
 
