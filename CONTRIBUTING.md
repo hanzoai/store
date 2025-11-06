@@ -5,7 +5,9 @@ Thank you for your interest in contributing to Hanzo Store! This document provid
 ## Quick Start
 
 1. Fork the repository
-2. Create your app JSON file in `data/apps/your-app.json`
+2. Create your app JSON file in:
+   - `data/agents/your-agent.json` for AI agents
+   - `data/tools/your-tool.json` for automation tools
 3. Test locally with `npm run generate-store && npm run dev`
 4. Submit a Pull Request
 
