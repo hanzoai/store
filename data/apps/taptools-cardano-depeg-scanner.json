@@ -1,0 +1,48 @@
+{
+  "id": "taptools-cardano-depeg-scanner",
+  "name": "Taptools Cardano depeg scanner",
+  "description": "Uses the Taptools API to aggregate data for Cardano stablecoins, synthetics, and bridged assets. Performs a depeg scan. Outputs a .csv file with the aggregated data. A Taptools API key and a CoinMarketCap API key are required. Define your own alert threshold in the configuration for each asset. You can easily add or remove tokens to track from the code. You can chose a timeframe for trading stats in your prompt, options are : 15m, 1h, 4h, 12h, 24h, 7d, 30d, 90d, 180d, 1y, all, default is 24h. This tool can answer question related to the data it formats in the generated csv file.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::taptools_cardano_depeg_scanner",
+  "license": "MIT",
+  "category": "Finance",
+  "tags": [
+    "Cardano",
+    "stablecoin",
+    "synthetic",
+    "taptools",
+    "bridged",
+    "peg",
+    "depeg",
+    "scan"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_depeg_scanner/taptools_depeg_5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=06e4464909e0aa95c932c523bd2f8de73fa04c94796d72c66fc7b48eedb01c5c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_depeg_scanner/taptools_depeg_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=3e049c380cc79576979e7f6dbd26ea0bbbee260de0e8773320628570b6777fcc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_depeg_scanner/taptools_depeg_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=4b6b964634f35b9995d7e0ed1cfd76ed6accd84ceccab924d0759d22d27f4406&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_depeg_scanner/taptools_depeg_4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=40b1668e76d3254c772ba38ce0d408cd6e069c16f547927675e78cfa0a6d11f5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_depeg_scanner/taptools_depeg_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=b47f01dd9ffc0eac50584ebaac01197654126d8d871379a3ec18e874f2bd801a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::taptools_cardano_depeg_scanner"
+    ],
+    "env": {}
+  },
+  "downloads": 6,
+  "createdAt": "2025-03-03T19:42:33.897Z",
+  "updatedAt": "2025-03-03T19:42:33.897Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

@@ -1,0 +1,43 @@
+{
+  "id": "article-scraper",
+  "name": "Article Scraper",
+  "description": "Extracts article text, authors, images, and metadata from a given URL or raw HTML using newspaper3k",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::article_scraper",
+  "license": "MIT",
+  "category": "Reference",
+  "tags": [
+    "article",
+    "news",
+    "newspaper3k",
+    "scraper",
+    "metadata",
+    "text extraction"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aarticle_scraper/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044207Z&X-Amz-Expires=86400&X-Amz-Signature=9e39c88bf6ab797bdad24f9cfc25917aa95de252172b96d463a9f85648ab736a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aarticle_scraper/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044207Z&X-Amz-Expires=86400&X-Amz-Signature=adaf9c7b48478fb5effea266975008e87c7b35b7e84058309b03fef2526da745&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::article_scraper"
+    ],
+    "env": {}
+  },
+  "downloads": 12,
+  "createdAt": "2025-02-04T15:12:37.863Z",
+  "updatedAt": "2025-02-04T15:12:37.863Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

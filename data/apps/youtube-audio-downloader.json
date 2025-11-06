@@ -1,0 +1,42 @@
+{
+  "id": "youtube-audio-downloader",
+  "name": "youtube_audio_downloader",
+  "description": "Downloads audio from a YouTube video URL and converts it to MP3 format using yt-dlp.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::youtube_audio_downloader",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "youtube",
+    "audio",
+    "download",
+    "mp3",
+    "yt-dlp"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_audio_downloader/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044209Z&X-Amz-Expires=86400&X-Amz-Signature=48ba6a860463fa0ad1b4534b39d40897fde6f70782e1918d8d0c137021d8dc43&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_audio_downloader/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044209Z&X-Amz-Expires=86400&X-Amz-Signature=d85e047664597e17d37f6f0912852ccb9eb6e73b3be6e3ac4bdbde5a7a29cbc7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::youtube_audio_downloader"
+    ],
+    "env": {}
+  },
+  "downloads": 2,
+  "createdAt": "2025-05-10T15:05:43.183Z",
+  "updatedAt": "2025-05-10T15:05:43.183Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

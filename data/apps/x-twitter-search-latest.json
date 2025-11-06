@@ -1,0 +1,42 @@
+{
+  "id": "x-twitter-search-latest",
+  "name": "X/Twitter Search Latest",
+  "description": "Function to search for the most recent tweets on Twitter based on a query string.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::x_twitter_search_latest",
+  "license": "MIT",
+  "category": "Social Networking",
+  "tags": [
+    "twitter",
+    "search",
+    "tweets",
+    "latest",
+    "X"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_search_latest/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223013Z&X-Amz-Expires=86400&X-Amz-Signature=7203ace287f753ea53fc8a56ecbe5258e00c43432f1e3acfd652732b47955550&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_search_latest/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223013Z&X-Amz-Expires=86400&X-Amz-Signature=6cc5f2e7183c55e06699fba4a342c583ebe76189a6478d29919ca615aace2ead&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::x_twitter_search_latest"
+    ],
+    "env": {}
+  },
+  "downloads": 936,
+  "createdAt": "2025-04-09T22:13:19.932Z",
+  "updatedAt": "2025-04-09T22:13:19.932Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

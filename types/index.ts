@@ -23,6 +23,13 @@ export interface StoreApp {
   downloads?: number;
   createdAt: string;
   updatedAt: string;
+  // Hanzo-specific fields
+  type?: string; // Agent, Tool, etc.
+  toolLanguage?: string | null;
+  operatingSystem?: string[];
+  runner?: string;
+  featured?: boolean;
+  price?: number;
 }
 
 export interface StoreData {

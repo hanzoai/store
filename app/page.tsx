@@ -7,6 +7,7 @@ export default function StorePage() {
   const [storeData, setStoreData] = useState<StoreData | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedType, setSelectedType] = useState<string>('all');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,6 +29,11 @@ export default function StorePage() {
 
     let apps = storeData.apps;
 
+    // Filter by type
+    if (selectedType !== 'all') {
+      apps = apps.filter(app => app.type === selectedType);
+    }
+
     // Filter by category
     if (selectedCategory !== 'all') {
       apps = apps.filter(app => app.category === selectedCategory);
@@ -43,8 +49,15 @@ export default function StorePage() {
       );
     }
 
+    // Sort by downloads (descending) and featured first
+    apps.sort((a, b) => {
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return (b.downloads || 0) - (a.downloads || 0);
+    });
+
     return apps;
-  }, [storeData, searchQuery, selectedCategory]);
+  }, [storeData, searchQuery, selectedCategory, selectedType]);
 
   if (loading) {
     return (
@@ -65,12 +78,26 @@ export default function StorePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">Hanzo Store</h1>
+          <div className="flex items-center gap-4 mb-2">
+            <img src="/hanzo-logo.svg" alt="Hanzo" className="h-8" />
+            <h1 className="text-3xl font-bold text-gray-900">Store</h1>
+          </div>
           <p className="mt-2 text-gray-600">
-            Discover and install MCP servers for Hanzo Desktop
+            Boost your AI agents with ready-to-go, tailor-made automations for seamless tech integration
           </p>
+          <div className="mt-4 flex gap-4 text-sm text-gray-500">
+            <span className="flex items-center gap-1">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+              </svg>
+              {storeData.apps.length} Apps
+            </span>
+            <span>•</span>
+            <span>{storeData.categories.length} Categories</span>
+          </div>
         </div>
       </header>
 
@@ -100,6 +127,28 @@ export default function StorePage() {
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
+          </div>
+
+          {/* Type Filter */}
+          <div className="flex gap-2">
+            {['all', 'Agent', 'Tool'].map(type => {
+              const count = type === 'all'
+                ? storeData.apps.length
+                : storeData.apps.filter(app => app.type === type).length;
+              return (
+                <button
+                  key={type}
+                  onClick={() => setSelectedType(type)}
+                  className={`px-4 py-2 rounded-lg transition-colors font-medium ${
+                    selectedType === type
+                      ? 'bg-indigo-600 text-white'
+                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                  }`}
+                >
+                  {type === 'all' ? 'All Types' : type} ({count})
+                </button>
+              );
+            })}
           </div>
 
           {/* Category Filter */}
@@ -180,20 +229,42 @@ function AppCard({ app }: { app: StoreApp }) {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+    <div className={`bg-white border rounded-lg p-6 hover:shadow-lg transition-all ${
+      app.featured ? 'border-indigo-500 border-2' : 'border-gray-200'
+    }`}>
+      {app.featured && (
+        <div className="mb-2">
+          <span className="inline-flex items-center px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 rounded">
+            ⭐ Featured
+          </span>
+        </div>
+      )}
+
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-gray-900 mb-1">{app.name}</h3>
-          <p className="text-sm text-gray-600">{app.version}</p>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            {app.type && (
+              <span className="px-2 py-0.5 bg-gray-100 rounded">{app.type}</span>
+            )}
+            {app.downloads !== undefined && app.downloads > 0 && (
+              <span className="flex items-center gap-1">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
+                </svg>
+                {app.downloads.toLocaleString()}
+              </span>
+            )}
+          </div>
         </div>
         {app.icon && (
-          <div className="w-12 h-12 flex-shrink-0 ml-4">
-            <img src={app.icon} alt={app.name} className="w-full h-full rounded" />
+          <div className="w-16 h-16 flex-shrink-0 ml-4">
+            <img src={app.icon} alt={app.name} className="w-full h-full rounded object-cover" />
           </div>
         )}
       </div>
 
-      <p className="text-gray-700 mb-4 line-clamp-3">{app.description}</p>
+      <p className="text-gray-700 mb-4 line-clamp-2">{app.description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {app.tags.map(tag => (

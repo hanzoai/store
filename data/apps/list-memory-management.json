@@ -1,0 +1,43 @@
+{
+  "id": "list-memory-management",
+  "name": "List Memory Management",
+  "description": "Handles list memory storage and retrieval using a database. It stores memories with associated IDs and can retrieve them by ID or get all memories.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::list_memory_management",
+  "license": "MIT",
+  "category": "Developer Tools",
+  "tags": [
+    "memory",
+    "remember",
+    "management",
+    "recall",
+    "smart",
+    "agent"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alist_memory_management/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T171204Z&X-Amz-Expires=86400&X-Amz-Signature=afbf21be2ca301f0d2811fdf9110e74a2f2c8a3afa6e3c26952c094df72f409c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alist_memory_management/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T171204Z&X-Amz-Expires=86400&X-Amz-Signature=101e57f8d52cca60ed76d5bdee6ad50469939d055381a60d018ae54fb249bfc6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::list_memory_management"
+    ],
+    "env": {}
+  },
+  "downloads": 1518,
+  "createdAt": "2025-04-29T20:53:18.017Z",
+  "updatedAt": "2025-04-29T20:53:18.017Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

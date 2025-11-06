@@ -1,0 +1,42 @@
+{
+  "id": "x-twitter-get-user-tweets",
+  "name": "X/Twitter Get User Tweets",
+  "description": "Function to fetch tweets from a specific Twitter user by username.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::x_twitter_get_user_tweets",
+  "license": "MIT",
+  "category": "Social Networking",
+  "tags": [
+    "twitter",
+    "tweets",
+    "api",
+    "user",
+    "X"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_get_user_tweets/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223013Z&X-Amz-Expires=86400&X-Amz-Signature=9135c1c58a2860adcbcbd8f44fad2eac00357a79baa3592e8583f04d2ebb3f50&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_get_user_tweets/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223013Z&X-Amz-Expires=86400&X-Amz-Signature=b583e1adf707e6725767a202ddb91310b1408ebafc2b22139e4554d484360cf2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::x_twitter_get_user_tweets"
+    ],
+    "env": {}
+  },
+  "downloads": 892,
+  "createdAt": "2025-04-09T22:13:57.598Z",
+  "updatedAt": "2025-04-09T22:13:57.598Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

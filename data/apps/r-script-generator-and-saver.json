@@ -1,0 +1,44 @@
+{
+  "id": "r-script-generator-and-saver",
+  "name": "R Script Generator and Saver",
+  "description": "Generates an R script based on a user prompt using LLM and saves it via a file dialog. Outputs the file path, status message, and code.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::r_script_generator_and_saver",
+  "license": "MIT",
+  "category": "Developer Tools",
+  "tags": [
+    "R script",
+    "LLM",
+    "code generation",
+    "natural language to code",
+    "scripting"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ar_script_generator_and_saver/R_generator_logo_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=9e235f6da36563d338b7de59be8485914da4f37a001fd6de77fbc4e5ace944af&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ar_script_generator_and_saver/R_generator_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=7ad820adf1ecc43f135fad5d3de7ecca98225ca0804c933838d932e37a7cbe11&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ar_script_generator_and_saver/R_generator_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=8b4bcf4fdc82a4916b168a9ce6ce4120f17c423677e72fa3c22a9503c2950f05&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ar_script_generator_and_saver/R_generator_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=2c12dba5cbf899c8663b065f685baa0d088f3c7676dd399e313e1de2c474f1ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::r_script_generator_and_saver"
+    ],
+    "env": {}
+  },
+  "downloads": 2,
+  "createdAt": "2025-05-09T12:33:30.754Z",
+  "updatedAt": "2025-05-09T12:33:30.754Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

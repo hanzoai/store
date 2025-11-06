@@ -1,0 +1,42 @@
+{
+  "id": "youtube-transcript-summarizer",
+  "name": "Youtube Transcript Summarizer",
+  "description": "Fetches the transcript of a YouTube video and generates a formatted summary using an LLM.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::youtube_transcript_summarizer",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "youtube",
+    "transcript",
+    "summary",
+    "video",
+    "LLM"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_transcript_summarizer/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142244Z&X-Amz-Expires=86400&X-Amz-Signature=92c860eded66731e120e8bb76383c16a96714bf0b12de6c293a72e2e491c303b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_transcript_summarizer/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142244Z&X-Amz-Expires=86400&X-Amz-Signature=06318dd647de25aee459331ae6963eef8519b56519b6a177acf12fa743595f54&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::youtube_transcript_summarizer"
+    ],
+    "env": {}
+  },
+  "downloads": 887,
+  "createdAt": "2025-01-27T13:43:38.175Z",
+  "updatedAt": "2025-01-27T13:43:38.175Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

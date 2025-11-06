@@ -1,0 +1,36 @@
+{
+  "id": "youtube-expert",
+  "name": "Youtube Expert",
+  "description": "This expert has access to youtube search (using serpapi) and to download video transcripts. If a video doesn't have a transcript, it can download the audio and then process it to extract its transcript.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::youtube_expert",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_expert/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=7b6233cdefdb325ce6f2bd7e73b0c6d84d81c83fa94432d3a9856ee1b007f357&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_expert/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=a7c0e41196702667e34e934efd745745f7b8271cf751027aba5bd6eb19967f1f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::youtube_expert"
+    ],
+    "env": {}
+  },
+  "downloads": 3038,
+  "createdAt": "2025-05-10T17:50:35.140Z",
+  "updatedAt": "2025-05-10T17:50:35.140Z",
+  "type": "Agent",
+  "toolLanguage": null,
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

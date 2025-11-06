@@ -1,0 +1,36 @@
+{
+  "id": "play-crypto-2048",
+  "name": "Play Crypto 2048",
+  "description": "Automatically play Crypto 2048",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::play_crypto_2048",
+  "license": "MIT",
+  "category": "Games",
+  "tags": [],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aplay_crypto_2048/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044121Z&X-Amz-Expires=86400&X-Amz-Signature=a47d240082be08a572067a67420874ede156915e06599939c79edf83bcc75423&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aplay_crypto_2048/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044121Z&X-Amz-Expires=86400&X-Amz-Signature=30bd0e002161ec1a4748072a9fd381637b0d28c027b1d87b967993d80ae0b533&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::play_crypto_2048"
+    ],
+    "env": {}
+  },
+  "downloads": 8,
+  "createdAt": "2025-02-03T19:43:52.032Z",
+  "updatedAt": "2025-02-03T19:43:52.032Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

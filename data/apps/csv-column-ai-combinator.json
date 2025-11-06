@@ -1,0 +1,43 @@
+{
+  "id": "csv-column-ai-combinator",
+  "name": "CSV column AI combinator",
+  "description": "This tool reads an input CSV file, processes specified columns and combine them according to a user-defined prompt using an LLM, and adds the results to a new column in the output CSV. It supports error handling, retries, skips rows with empty cells, and provides detailed processing statistics. The output can either override the input file, or be saved to a new CSV file with a timestamp (e.g., \"input_processed_20250421_143022.csv\") and placed in the same folder as the input CSV.\n\nHow to Use :\n\n1. Configure Defaults : Set default CSV parameters : delimiter (e.g., ';'), encoding (e.g., 'utf-8'), quotechar (e.g., '\"'), max LLM retries (e.g., 2), and default output behavior ('new_file' or 'override').\n\n2. Prepare Input CSV file : Use an existing CSV file with the data to process.\n\n3. Provide a prompt with {} placeholders matching CSV column names (e.g., \"Summarize this product description in one sentence : {Description}.\", \"Population of {City} in {Date}, just write the number\").\n\n4. Specify New Column Name : Set the name for the new column to store LLM results (e.g., \"Summary\", \"Population_Size\").\n\n5. Provide Optional Data Description : Include a brief context about the data to guide the LLM (e.g., \"Product descriptions from a retail dataset.\").\n\n6. Set Custom CSV Parameters (Optional) : Customize delimiter, encoding, or quotechar to match the input CSV ; defaults from configuration apply if not specified.\n\n7. Choose Output Behavior (Optional) : Select 'new_file' for a new output file or 'override' to replace the input file; defaults to configuration if not set.\n\n8. Run the Tool : Execute with the provided inputs.\n\n9. Review Summary : Check the output message for stats (e.g., total rows, processed rows, empty cell errors, LLM errors) and the output CSV path.\n\n10. Verify Output CSV file : Inspect the resulting CSV with the new column containing LLM-processed data.\n\nHigh LLM Usage Warning : This tool makes an LLM call for each processed row, which may result in significant usage.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::csv_column_ai_combinator",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "CSV",
+    "processing",
+    "data",
+    "column",
+    "combine"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acsv_column_ai_combinator/csv_column_ai_combinator_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=6482796c86d7682ccfe881e97a217ed32f747d0f99f4945e81ead80041f1b6e9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acsv_column_ai_combinator/CSV_column_ai_combinator_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=599c1a2665abe42297522d97105b81c16d16eadb958e37aec6c6cf3243dacbcd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Acsv_column_ai_combinator/csv_column_ai_combinator_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=e8e0b653bdb5f5c8dd805280511e20aeec431b66e448dfa6a9dd544b6ce857b5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::csv_column_ai_combinator"
+    ],
+    "env": {}
+  },
+  "downloads": 6,
+  "createdAt": "2025-04-30T15:50:54.259Z",
+  "updatedAt": "2025-04-30T15:50:54.259Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

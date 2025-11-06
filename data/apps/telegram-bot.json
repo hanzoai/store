@@ -1,0 +1,41 @@
+{
+  "id": "telegram-bot",
+  "name": "Telegram Bot",
+  "description": "Manages a Telegram bot to fetch messages and respond to users based on chat history.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::telegram_bot",
+  "license": "MIT",
+  "category": "Social Networking",
+  "tags": [
+    "telegram",
+    "bot",
+    "chat",
+    "sqlite"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Atelegram_bot/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=441c94b0d4fec277f4695c2577139bd54515ed99be48eef3e97ca28fb49dec0e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Atelegram_bot/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=8131eff9d77c8e51cee73c236b0c4a2b1b229f37b17712b5d25b21c3c19f67e5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::telegram_bot"
+    ],
+    "env": {}
+  },
+  "downloads": 24,
+  "createdAt": "2025-02-11T19:55:59.434Z",
+  "updatedAt": "2025-02-11T19:55:59.434Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

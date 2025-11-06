@@ -1,0 +1,42 @@
+{
+  "id": "x-twitter-developer-api",
+  "name": "X/Twitter Developer API",
+  "description": "Tool to make requests to the X/Twitter Developer API using OAuth for authentication.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::x_twitter_developer_api",
+  "license": "MIT",
+  "category": "Developer Tools",
+  "tags": [
+    "x",
+    "twitter",
+    "api",
+    "request",
+    "oauth"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_developer_api/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044121Z&X-Amz-Expires=86400&X-Amz-Signature=5241817af44e91e8ec11c8d3852821b964accd67930bbef49e68ba13769b8ea5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ax_twitter_developer_api/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044121Z&X-Amz-Expires=86400&X-Amz-Signature=10da3e5f30516cf7113ee6db5ec0a491162fd50aae378faff3a0a8c5daa5944f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::x_twitter_developer_api"
+    ],
+    "env": {}
+  },
+  "downloads": 6,
+  "createdAt": "2025-02-04T16:57:41.881Z",
+  "updatedAt": "2025-02-04T16:57:41.881Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

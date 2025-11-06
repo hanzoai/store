@@ -1,0 +1,41 @@
+{
+  "id": "pptx-file-processor",
+  "name": "PPTX File Processor",
+  "description": "Processes and analyzes PowerPoint files, allowing for reading, retrieving content, analyzing data, and updating slides.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::pptx_file_processor",
+  "license": "MIT",
+  "category": "Developer Tools",
+  "tags": [
+    "pptx",
+    "presentation",
+    "analyze",
+    "file processing"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Apptx_file_processor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224511Z&X-Amz-Expires=86400&X-Amz-Signature=b19f77c3f1dc974ced270b072c893462b7eaa577029926b7cf53b545e4b3a0c9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Apptx_file_processor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224511Z&X-Amz-Expires=86400&X-Amz-Signature=5d9d24017b6fa3020dc0a5cc4d5073c3af84cc14a48497e11768d8dcf69b8d56&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::pptx_file_processor"
+    ],
+    "env": {}
+  },
+  "downloads": 20,
+  "createdAt": "2025-02-11T21:46:07.170Z",
+  "updatedAt": "2025-02-11T21:46:07.170Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

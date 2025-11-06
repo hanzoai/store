@@ -1,0 +1,45 @@
+{
+  "id": "gemini-enhanced-text-to-speech-single-speaker",
+  "name": "Gemini Enhanced Text to Speech - Single Speaker",
+  "description": "This tool leverages a two-step AI process to create natural-sounding, single-speaker audio from your text. First, it uses a language model to analyze and refine your prompt, adding stylistic instructions for tone, pace, and emotion to achieve a more expressive result. Then, in its \"auto\" mode, it intelligently selects the most appropriate voice from a diverse list of over 30 options, matching the voice's characteristics to the content. The final output is a high-quality .wav audio file, perfect for a wide range of applications.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::gemini_enhanced_text_to_speech___single_speaker",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "text-to-speech",
+    "google",
+    "gemini",
+    "tts",
+    "voice selection",
+    "speech synthesis",
+    "speech",
+    "enhanced"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agemini_enhanced_text_to_speech___single_speaker/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=2b7e926ca9daf63f67fb0d36affc4aac7ec0a0ebe1413869c2fdd70615214ad6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agemini_enhanced_text_to_speech___single_speaker/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044125Z&X-Amz-Expires=86400&X-Amz-Signature=81c8cf3f1e63bdf20ba5143e3b2f2986bfd53141e2dfafc7c9d2f591e66b99d5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::gemini_enhanced_text_to_speech___single_speaker"
+    ],
+    "env": {}
+  },
+  "downloads": 1,
+  "createdAt": "2025-08-12T02:20:25.980Z",
+  "updatedAt": "2025-08-12T02:20:25.980Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

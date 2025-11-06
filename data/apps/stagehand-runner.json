@@ -1,0 +1,40 @@
+{
+  "id": "stagehand-runner",
+  "name": "Stagehand Runner",
+  "description": "Automates web interactions and extracts data using Stagehand.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::stagehand_runner",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "stagehand",
+    "web automation",
+    "data extraction"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astagehand_runner/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=5925d176b68530ddf1025113456b80a0e1801bdfc0ee6ee96caa75cbed3d1a46&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astagehand_runner/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=b29bd17038a3c113f25e6a2b642b39120755a23a64f93fadf856ed76c5bb97d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::stagehand_runner"
+    ],
+    "env": {}
+  },
+  "downloads": 10,
+  "createdAt": "2025-02-03T19:44:27.536Z",
+  "updatedAt": "2025-02-03T19:44:27.536Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

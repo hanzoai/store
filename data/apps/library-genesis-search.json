@@ -1,0 +1,45 @@
+{
+  "id": "library-genesis-search",
+  "name": "Library Genesis Search",
+  "description": "Searches Library Genesis for books and returns download links and other information.\n\nSearch by author, format, title and year.\n\nYou might need to connect to a VPN to use this tool.\n\nNote : The reliability of this tool might fluctuate because mirrors are frequently shut down, and ebooks databases are sometimes separated by library, repository, or genre, each with different link formats.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::library_genesis_search",
+  "license": "MIT",
+  "category": "Books",
+  "tags": [
+    "libgen",
+    "ebook",
+    "search",
+    "download",
+    "library",
+    "api",
+    "books"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Alibrary_genesis_search/libgen_logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T022021Z&X-Amz-Expires=86400&X-Amz-Signature=001d8d25cc78cf2ce0f7a94611624ec9caa634957d5530b68dc11f1e20faea2f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Alibrary_genesis_search/libgen_banner.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T022021Z&X-Amz-Expires=86400&X-Amz-Signature=af5328c4688c1bca1974af3dbe841c15265747da326d410c671badb092e19e65&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Alibrary_genesis_search/libgen_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T022021Z&X-Amz-Expires=86400&X-Amz-Signature=8931804e008b6785a3cf86a8e43d3e0a1508c44cb240737988119e20a8a762b7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::library_genesis_search"
+    ],
+    "env": {}
+  },
+  "downloads": 5,
+  "createdAt": "2025-06-04T14:36:08.242Z",
+  "updatedAt": "2025-06-04T14:36:08.242Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

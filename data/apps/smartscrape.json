@@ -1,0 +1,44 @@
+{
+  "id": "smartscrape",
+  "name": "SmartScrape",
+  "description": "SmartScrape extracts specific data from web pages using a large language model. Users provide a URL and instructions for what content to extract, along with optional formatting guidelines. The tool processes the page and returns the requested data in the specified format. To use, input a URL and clear extraction instructions (e.g., \"Extract product prices\") with optional format rules (e.g., \"Return as: Price: $X\").",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::smartscrape",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "extract",
+    "web",
+    "webpage",
+    "text extraction",
+    "web scraping",
+    "LLM scraping",
+    "formatted"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Asmartscrape/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=66203c73a69fae2b1f17bf8dc732afe3ca09a7dc39b4e5f3c3f8a71334675e34&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Asmartscrape/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=e0673b0eb7c5f87ff8b740b341eeaf1cc7e3d406246e02f5ade7675f9748325d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::smartscrape"
+    ],
+    "env": {}
+  },
+  "downloads": 2,
+  "createdAt": "2025-10-12T17:06:16.712Z",
+  "updatedAt": "2025-10-12T17:06:16.712Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

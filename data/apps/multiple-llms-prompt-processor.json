@@ -1,0 +1,45 @@
+{
+  "id": "multiple-llms-prompt-processor",
+  "name": "Multiple LLMs prompt processor",
+  "description": "Processes a prompt using multiple LLMs at once and returns their responses with html rendering.",
+  "version": "1.0.0",
+  "author": "@gilles_test2.sep-shinkai",
+  "homepage": "local:::__gilles_test2_sep_shinkai:::multiple_llms_prompt_processor",
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "LLM",
+    "prompt",
+    "processor",
+    "multiple"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Amultiple_llms_prompt_processor/multiple_LLM_prompt_processor_logo.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=3be702888d598bace4fe7c6b2674a18ebac681bd0c8df6517cc7932ca8cf507f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Amultiple_llms_prompt_processor/multiple_llm_prompt_processor_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=43c0cc44fc9dbbaf7f1650a11ce0f93fa1ad33fe92593809c2810184353a36b2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Amultiple_llms_prompt_processor/multiple_llm_prompt_processor_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=c93920a88d5e01f34eff07d74a8e35d3b8b58826ffba063104649c3e07c3af69&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Amultiple_llms_prompt_processor/multiple_llm_prompt_processor_1b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=c7a6470ddc3039a57ca2d1c91fa7aae0ecd955b44012ad611bdd7de1fb95e91d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Amultiple_llms_prompt_processor/multiple_llm_prompt_processor_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=967c2524028f5b91d9df78753b0ce4939726d290cf5372075e662755cd1d18dd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Amultiple_llms_prompt_processor/multiple_llm_prompt_processor_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=b1e5a8c65801dfc500b6cdc7333797709392757f034a7834b2e101f505dc6f7c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__gilles_test2_sep_shinkai:::multiple_llms_prompt_processor"
+    ],
+    "env": {}
+  },
+  "downloads": 8,
+  "createdAt": "2025-04-30T15:51:24.093Z",
+  "updatedAt": "2025-04-30T15:51:24.093Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

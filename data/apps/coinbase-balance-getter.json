@@ -1,0 +1,40 @@
+{
+  "id": "coinbase-balance-getter",
+  "name": "Coinbase Balance Getter",
+  "description": "Tool for getting the balance of a Coinbase wallet after restoring it",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::coinbase_balance_getter",
+  "license": "MIT",
+  "category": "Crypto",
+  "tags": [
+    "coinbase",
+    "balance",
+    "shinkai"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoinbase_balance_getter/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224727Z&X-Amz-Expires=86400&X-Amz-Signature=035c819e591b7f87b30f9bf1c4ee1de1d47947b512d1e578b2507cd914236cdf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoinbase_balance_getter/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224727Z&X-Amz-Expires=86400&X-Amz-Signature=e774bea1b2cf42c840a9e09f17881642f70564cbad48c3f51ea597b09089c1fb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::coinbase_balance_getter"
+    ],
+    "env": {}
+  },
+  "downloads": 0,
+  "createdAt": "2025-01-23T12:38:38.391Z",
+  "updatedAt": "2025-01-23T12:38:38.391Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

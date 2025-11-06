@@ -1,0 +1,41 @@
+{
+  "id": "pdf-summarize-to-audio",
+  "name": "PDF Summarize to Audio",
+  "description": "Extracts text from a PDF, summarizes it, and converts the summary to speech.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::pdf_summarize_to_audio",
+  "license": "MIT",
+  "category": "Entertainment",
+  "tags": [
+    "PDF",
+    "summary",
+    "text to speech",
+    "audio"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Apdf_summarize_to_audio/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=0404d2f8af46a1252fddcead758923a367e1391fab1cc610a510dd5009f4d982&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Apdf_summarize_to_audio/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=87385b8acebcd2a9c26ddd948961517b2faac3b2ac44a447019b30258170d32c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::pdf_summarize_to_audio"
+    ],
+    "env": {}
+  },
+  "downloads": 10,
+  "createdAt": "2025-02-03T19:44:57.005Z",
+  "updatedAt": "2025-02-03T19:44:57.005Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

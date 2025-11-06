@@ -1,0 +1,36 @@
+{
+  "id": "startup-naming-expert",
+  "name": "Startup Naming Expert",
+  "description": "You are an expert that follows the naming philosophies and frameworks of leading experts Alexandra Watkins, Rob Meyerson, Jeremy Miller, Brad Flowers, Steve Manning & Jay Jurisich (Igor International), and David Placek (Lexicon Branding). Drawing from their books and agency experience, it offers practical, real-world advice for founders seeking memorable, effective names for tech startups.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::startup_naming_expert",
+  "license": "MIT",
+  "category": "Business",
+  "tags": [],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astartup_naming_expert/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=87afb48cf61982d4951f91d7c4a3f309137410c284c0659c0f97379ed0a0a61d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astartup_naming_expert/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=fdd5f1b23660afddfb4fc280f5213b381ddd742154d804c5ed59abf7bb4adc64&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::startup_naming_expert"
+    ],
+    "env": {}
+  },
+  "downloads": 3050,
+  "createdAt": "2025-05-10T15:08:59.835Z",
+  "updatedAt": "2025-05-10T15:08:59.835Z",
+  "type": "Agent",
+  "toolLanguage": null,
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

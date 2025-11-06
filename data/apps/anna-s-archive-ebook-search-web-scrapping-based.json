@@ -1,0 +1,44 @@
+{
+  "id": "anna-s-archive-ebook-search-web-scrapping-based",
+  "name": "Anna's Archive Ebook Search - Web Scrapping based",
+  "description": "Searches for eBooks from Anna's Archive, and returns information including title, author, year, Anna's archive page url, MD5.\n\nSupports searching by title, author and keywords. Includes optional category filter.\n\nIf a complex query fails, try searching just with a title, or just with an author.\n\nNote : the reliability of this tool might fluctuate.\n- It is based on web scrapping, so changes in Anna's Archive website might break the search feature. Feel free to fork and update the tool's code.\n- Anna's Archive search servers might be slow. You sometimes have to retry your search.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::anna_s_archive_ebook_search___web_scrapping_based",
+  "license": "MIT",
+  "category": "Books",
+  "tags": [
+    "book",
+    "search",
+    "library",
+    "archive",
+    "anna",
+    "ebook",
+    "epub"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aanna_s_archive_ebook_search___web_scrapping_based/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=7f1272c0867b290d659d82cd58208d77a96c25880f52b2c6e7c24f916855aebd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aanna_s_archive_ebook_search___web_scrapping_based/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=664d9b169e45ce965138eb1e5c84a45756e5bb5765b50d03a337cfdafacb1bff&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::anna_s_archive_ebook_search___web_scrapping_based"
+    ],
+    "env": {}
+  },
+  "downloads": 889,
+  "createdAt": "2025-06-30T19:00:41.425Z",
+  "updatedAt": "2025-06-30T19:00:41.425Z",
+  "type": "Tool",
+  "toolLanguage": "Python",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}

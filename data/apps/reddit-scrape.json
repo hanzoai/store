@@ -1,0 +1,39 @@
+{
+  "id": "reddit-scrape",
+  "name": "Reddit Scrape",
+  "description": "A tool to scrape Reddit content using Puppeteer. Pass action as 'subreddit' to scrape a subreddit or 'post' to scrape a post. Pass the \"subreddit\" name or \"post_url\" as a string. Pass \"get_by\" as 'hot', 'new', 'top', or 'rising'. Pass \"top_time\" as 'day', 'week', 'month', 'year', or 'all'.",
+  "version": "1.0.0",
+  "author": "@official.shinkai",
+  "homepage": "local:::__official_shinkai:::reddit_scrape",
+  "license": "MIT",
+  "category": "Social Networking",
+  "tags": [
+    "Reddit",
+    "Scraping"
+  ],
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Areddit_scrape/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=3558052292066ceab6c373ffcce755e2a1597b0a55efa233fd729f43838e257c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "screenshots": [
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Areddit_scrape/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=d1701312f952ea05727d7775278e7a0b40f00220eeb211220451a24fa47cd4d7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "installCommand": "",
+  "mcpConfig": {
+    "command": "any",
+    "args": [
+      "local:::__official_shinkai:::reddit_scrape"
+    ],
+    "env": {}
+  },
+  "downloads": 11,
+  "createdAt": "2025-02-10T19:29:22.853Z",
+  "updatedAt": "2025-02-10T19:29:22.853Z",
+  "type": "Tool",
+  "toolLanguage": "Deno",
+  "operatingSystem": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "runner": "any",
+  "featured": true,
+  "price": 0
+}
