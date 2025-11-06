@@ -123,14 +123,14 @@ export const zooTestnet = defineChain({
   testnet: true,
 })
 
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '';
+
 export const config = createConfig({
   chains: [hanzo, hanzoTestnet, zoo, zooTestnet, lux, luxTestnet, mainnet, sepolia],
   connectors: [
     injected(),
     coinbaseWallet({ appName: 'Hanzo Store' }),
-    walletConnect({
-      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'demo',
-    }),
+    ...(projectId ? [walletConnect({ projectId })] : []),
   ],
   transports: {
     [hanzo.id]: http(),

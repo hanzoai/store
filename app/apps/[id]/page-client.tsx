@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ChevronLeft, Download, Star, Tag, ExternalLink, Github } from 'lucide-react'
+import { ChevronLeft, Download, Star, Tag, ExternalLink } from 'lucide-react'
 import { HanzoLogo } from '@hanzo/logo'
 import { Button, Card, CardContent, CardHeader } from '@hanzo/ui'
 import { Badge } from '@hanzo/ui/badge'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
+import { sanitizeUrl } from '@/lib/url-utils'
 import type { StoreApp } from '@/types'
 
 export function AppDetailPageClient({ id }: { id: string }) {
@@ -24,8 +25,7 @@ export function AppDetailPageClient({ id }: { id: string }) {
         setApp(foundApp || null)
         setLoading(false)
       })
-      .catch(err => {
-        console.error('Failed to load app data:', err)
+      .catch(() => {
         setLoading(false)
       })
   }, [id])
@@ -189,7 +189,7 @@ export function AppDetailPageClient({ id }: { id: string }) {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-foreground/90">
-                  After installation, you can use this {app.type.toLowerCase()} with Hanzo AI agents or compatible AI assistants.
+                  After installation, you can use this {app.type?.toLowerCase() || 'tool'} with Hanzo AI agents or compatible AI assistants.
                 </p>
                 {app.mcpConfig && (
                   <div>
@@ -265,9 +265,9 @@ export function AppDetailPageClient({ id }: { id: string }) {
                 <h3 className="font-semibold">Links</h3>
               </CardHeader>
               <CardContent className="space-y-2">
-                {app.homepage && (
+                {app.homepage && sanitizeUrl(app.homepage) && (
                   <a
-                    href={app.homepage.startsWith('http') ? app.homepage : `https://${app.homepage}`}
+                    href={sanitizeUrl(app.homepage)!}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-primary hover:underline"

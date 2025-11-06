@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Hanzo Store', () => {
   // Helper to wait for page to be fully loaded
-  async function waitForPageLoad(page) {
+  async function waitForPageLoad(page: any) {
     // Wait for the main heading to appear (this means React has hydrated)
     await page.waitForSelector('h1:has-text("Hanzo Store")', { timeout: 30000 });
     // Wait for store data to finish loading (either apps appear or "Loading..." disappears)

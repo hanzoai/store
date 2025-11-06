@@ -14,8 +14,7 @@ export async function generateStaticParams() {
     return storeData.apps.map((app: StoreApp) => ({
       id: app.id,
     }))
-  } catch (error) {
-    console.error('Error generating static params:', error)
+  } catch {
     return []
   }
 }
