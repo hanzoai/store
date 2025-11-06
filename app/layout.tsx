@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
+import "@rainbow-me/rainbowkit/styles.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hanzo Store - MCP Server Marketplace",
+  title: "Hanzo AI Store",
   description: "Boost your AI agents with ready-to-go, tailor-made automations for seamless tech integration",
 };
 
