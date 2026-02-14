@@ -4,7 +4,7 @@
   "description": "This tool fetches the content of an entire website starting from a given URL. It then saves all the text from the site into a single, organized text file on your computer. You can limit the max number of pages it downloads, and the concurrency.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::fetch_full_site_to_text",
+  "homepage": "local:::__hanzo:::fetch_full_site_to_text",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -17,15 +17,15 @@
     "download website",
     "text export"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Afetch_full_site_to_text/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=8f431f232a8e229fe276e0bf855d5e29ee212cd5a199b8cc924db63b0051f37b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Afetch_full_site_to_text/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=8f431f232a8e229fe276e0bf855d5e29ee212cd5a199b8cc924db63b0051f37b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Afetch_full_site_to_text/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=8b15143cba2f77d3204eb292381b76f43096485cbf7729c24647c6b9d19bd3ce&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Afetch_full_site_to_text/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=8b15143cba2f77d3204eb292381b76f43096485cbf7729c24647c6b9d19bd3ce&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::fetch_full_site_to_text"
+      "local:::__hanzo:::fetch_full_site_to_text"
     ],
     "env": {}
   },

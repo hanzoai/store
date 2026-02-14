@@ -4,7 +4,7 @@
   "description": "This tool automates in-depth online research, and generates a comprehensive, multi-section report in a structured Markdown format, with sources.\n\nSimply provide a research topic.\nYou can be specific to narrow the focus or vague to encourage broader exploration.\n\nThe research depth is configurable, allowing you to control key parameters such as the number of sources to analyze per query, and the depth of its self-correction and reflection cycles.\n\nThe process includes:\n- creating a detailed research plan.\n- performing targeted web searches.\n- analyzing and synthesizing information from the best sources.\n- reflecting on the initial draft to identify and fill knowledge gaps.\n\nThe final output is a polished document complete with a title, abstract, table of contents, conclusion, and a full list of cited references, saved as a Markdown file.\n\nThe tool leverages parallel processing to efficiently gather and analaze information.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::deep_research",
+  "homepage": "local:::__hanzo:::deep_research",
   "license": "MIT",
   "category": "Reference",
   "tags": [
@@ -14,15 +14,15 @@
     "search",
     "biblio"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Adeep_research/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=d2aa572168846a400ac1fadad6820b6cbfc4d46b5c9e0822872fe04c2068aec7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Adeep_research/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=d2aa572168846a400ac1fadad6820b6cbfc4d46b5c9e0822872fe04c2068aec7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Adeep_research/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=2810c74314110d715a12c7dd12087628febca7dcfdb2325db326078225a3b63a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Adeep_research/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=2810c74314110d715a12c7dd12087628febca7dcfdb2325db326078225a3b63a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::deep_research"
+      "local:::__hanzo:::deep_research"
     ],
     "env": {}
   },

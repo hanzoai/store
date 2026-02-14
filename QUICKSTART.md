@@ -80,7 +80,7 @@ To use `store.hanzo.ai`:
 ## 🧪 Test Your Store Locally
 
 ```bash
-cd /Users/z/work/shinkai/hanzo-store
+cd /Users/z/work/hanzo/store
 
 # Development mode
 npm run dev

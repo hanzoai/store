@@ -4,24 +4,24 @@
   "description": "Retrieves historical price, market-cap, and volume data for a coin over a date range (from_date to to_date).",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::coingecko_get_historical_data",
+  "homepage": "local:::__hanzo:::coingecko_get_historical_data",
   "license": "MIT",
   "category": "Crypto",
   "tags": [
     "coingecko",
     "cryptocurrency",
     "historical",
-    "shinkai"
+    "hanzo"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoingecko_get_historical_data/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=1f9d61b5b9d7d396f7b0bc62063b7321923ba405d0bf2c4ddc3a08812e0f3041&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoingecko_get_historical_data/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=1f9d61b5b9d7d396f7b0bc62063b7321923ba405d0bf2c4ddc3a08812e0f3041&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoingecko_get_historical_data/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=fae671fdee16890325e5293f97595bb4022b500d7c21d7c624b5a73a9d168ae1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoingecko_get_historical_data/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=fae671fdee16890325e5293f97595bb4022b500d7c21d7c624b5a73a9d168ae1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::coingecko_get_historical_data"
+      "local:::__hanzo:::coingecko_get_historical_data"
     ],
     "env": {}
   },

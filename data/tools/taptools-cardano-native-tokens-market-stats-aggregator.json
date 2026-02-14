@@ -4,7 +4,7 @@
   "description": "This tool retrieves and aggregates market data for native tokens on the Cardano blockchain using the TapTools API. It fetches data on the top tokens by liquidity, market capitalization (either market cap or fully diluted value), and volume. The tool can display prices, liquidity, market cap, and volume in ADA, as well as a configurable quote currency (USD or EUR). It also retrieves token descriptions and links (website, Twitter, etc). For volume, it offers a configurable timeframe (1h, 4h, 12h, 24h, 7d, 30d, 180d, 1y, or all-time). Additionally, it retrieves and displays 24-hour market statistics, like DEX trading volume (in ADA and the selected quote currency) and active addresses. The tools requires a TapTools API key and allows configurable input for the number of tokens to retrieve for each category, timeframe and the quote currency. ",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__gilles_test2_sep_shinkai:::taptools_cardano_native_tokens_market_stats_aggregator",
+  "homepage": "local:::__gilles_test2_sep_hanzo:::taptools_cardano_native_tokens_market_stats_aggregator",
   "license": "MIT",
   "category": "Finance",
   "tags": [
@@ -14,17 +14,17 @@
     "tokens market stats",
     "CNT"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=19731bd3c0c5d78cdfd88f4b99e3f64fd7965d82a8382290d4dc094344732912&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=19731bd3c0c5d78cdfd88f4b99e3f64fd7965d82a8382290d4dc094344732912&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=4899db838df134708336d6e89c53325bbb78c731fe00c71fd4b02b9b4507d2a3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=de535abeaa2f00724e0456ff69a5a256e2d18a9917ec644a7605d91df72b0855&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=d611e69ddd68ece72bd6b01ef33092d5e46c6f06b84715ba1a23a2de2208f400&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=4899db838df134708336d6e89c53325bbb78c731fe00c71fd4b02b9b4507d2a3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=de535abeaa2f00724e0456ff69a5a256e2d18a9917ec644a7605d91df72b0855&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_tokens_market_stats_aggregator/taptools_tokens_market_stats_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=d611e69ddd68ece72bd6b01ef33092d5e46c6f06b84715ba1a23a2de2208f400&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__gilles_test2_sep_shinkai:::taptools_cardano_native_tokens_market_stats_aggregator"
+      "local:::__gilles_test2_sep_hanzo:::taptools_cardano_native_tokens_market_stats_aggregator"
     ],
     "env": {}
   },
