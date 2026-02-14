@@ -4,19 +4,19 @@
   "description": "This Agent transforms a simple story idea into a complete, richly illustrated narrative.\n\nAfter expanding the story, it identifies the most compelling scenes and generates high-quality, stylistically consistent images for them using detailed prompts.The final output is a single, ready-to-read story where the generated images are seamlessly embedded within the text, bringing the tale to life.\n\nFeel free to edit the Agent to pick a different image generation tool.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::illustrated_story_creator",
+  "homepage": "local:::__hanzo:::illustrated_story_creator",
   "license": "MIT",
   "category": "Entertainment",
   "tags": [],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aillustrated_story_creator/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T123128Z&X-Amz-Expires=86400&X-Amz-Signature=af8d70c20fb7094be1bc5906251d3ed589fdb13413c388dad88feee772e1f704&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aillustrated_story_creator/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T123128Z&X-Amz-Expires=86400&X-Amz-Signature=af8d70c20fb7094be1bc5906251d3ed589fdb13413c388dad88feee772e1f704&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aillustrated_story_creator/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T123128Z&X-Amz-Expires=86400&X-Amz-Signature=4499a2957d1655f04f13a44254517124840b15aad19ea5834153f19f3edb7f04&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aillustrated_story_creator/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T123128Z&X-Amz-Expires=86400&X-Amz-Signature=4499a2957d1655f04f13a44254517124840b15aad19ea5834153f19f3edb7f04&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::illustrated_story_creator"
+      "local:::__hanzo:::illustrated_story_creator"
     ],
     "env": {}
   },

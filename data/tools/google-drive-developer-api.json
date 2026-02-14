@@ -4,7 +4,7 @@
   "description": "Tool to make requests to the Google Drive Developer API using OAuth for authentication.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::google_drive_developer_api",
+  "homepage": "local:::__hanzo:::google_drive_developer_api",
   "license": "MIT",
   "category": "Developer Tools",
   "tags": [
@@ -15,15 +15,15 @@
     "request",
     "oauth"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agoogle_drive_developer_api/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=f6aaa32221433a6d45a8778861eb12475bfbff061fa18f2b209f569e0eea9f1e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Agoogle_drive_developer_api/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=f6aaa32221433a6d45a8778861eb12475bfbff061fa18f2b209f569e0eea9f1e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agoogle_drive_developer_api/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=a8d1eb18a1b2d876d76b750ac38e1201ce9fb82234575ef446953ac5cba0af66&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Agoogle_drive_developer_api/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=a8d1eb18a1b2d876d76b750ac38e1201ce9fb82234575ef446953ac5cba0af66&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::google_drive_developer_api"
+      "local:::__hanzo:::google_drive_developer_api"
     ],
     "env": {}
   },

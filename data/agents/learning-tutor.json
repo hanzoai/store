@@ -4,19 +4,19 @@
   "description": "Creates a learning plan with videos to watch, webpages to read, and articles to study.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::learning_tutor",
+  "homepage": "local:::__hanzo:::learning_tutor",
   "license": "MIT",
   "category": "Education",
   "tags": [],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alearning_tutor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=5d435baf276eb12852cc33c7cf3e50f318217eca7648e14047e15f9f99c9c26b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Alearning_tutor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=5d435baf276eb12852cc33c7cf3e50f318217eca7648e14047e15f9f99c9c26b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Alearning_tutor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=36aa22f2c58b1954d3fbf40faf9900529309a9e5752735b09e5f90cbe3425b1b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Alearning_tutor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=36aa22f2c58b1954d3fbf40faf9900529309a9e5752735b09e5f90cbe3425b1b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::learning_tutor"
+      "local:::__hanzo:::learning_tutor"
     ],
     "env": {}
   },

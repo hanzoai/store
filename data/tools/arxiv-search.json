@@ -4,7 +4,7 @@
   "description": "Search for papers on arXiv with optional date range and category filters",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::arxiv_search",
+  "homepage": "local:::__hanzo:::arxiv_search",
   "license": "MIT",
   "category": "Reference",
   "tags": [
@@ -15,15 +15,15 @@
     "academic",
     "scientific"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aarxiv_search/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044120Z&X-Amz-Expires=86400&X-Amz-Signature=d68cfb1c8fc255226411e3a1a026df811435cc4b4e1edcb6162ebdd9ab79ff3a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aarxiv_search/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044120Z&X-Amz-Expires=86400&X-Amz-Signature=d68cfb1c8fc255226411e3a1a026df811435cc4b4e1edcb6162ebdd9ab79ff3a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aarxiv_search/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044120Z&X-Amz-Expires=86400&X-Amz-Signature=11abd6581945150c690e5bd56e2d38e03c53f4493e7a8c0fdb71b088f2d90a96&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aarxiv_search/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044120Z&X-Amz-Expires=86400&X-Amz-Signature=11abd6581945150c690e5bd56e2d38e03c53f4493e7a8c0fdb71b088f2d90a96&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::arxiv_search"
+      "local:::__hanzo:::arxiv_search"
     ],
     "env": {}
   },

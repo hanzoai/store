@@ -4,7 +4,7 @@
   "description": "Deletes a section (and its sub-sections) from a markdown file based on a natural language prompt, using LLM to identify the relevant section.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::markdown_editing___section_deleter",
+  "homepage": "local:::__hanzo:::markdown_editing___section_deleter",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -16,15 +16,15 @@
     "remove",
     "section"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amarkdown_editing___section_deleter/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=e1f586c33971f8d491de6decedfae746f904370706b0f9dce3c260baae1a9237&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amarkdown_editing___section_deleter/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=e1f586c33971f8d491de6decedfae746f904370706b0f9dce3c260baae1a9237&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amarkdown_editing___section_deleter/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=c852ea0809ff3fe38a116c15da55d574eaa42cb7fedc4a29b6f8a2e03e0971d4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amarkdown_editing___section_deleter/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=c852ea0809ff3fe38a116c15da55d574eaa42cb7fedc4a29b6f8a2e03e0971d4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::markdown_editing___section_deleter"
+      "local:::__hanzo:::markdown_editing___section_deleter"
     ],
     "env": {}
   },

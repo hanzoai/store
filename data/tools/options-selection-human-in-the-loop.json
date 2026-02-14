@@ -4,7 +4,7 @@
   "description": "Opens a configurable dialog with options to select from, and outputs the choice made by the user.\n\nUse it inside tools and workflows as a human-in-the-loop component.\n\nYou can configure the :\n- title of the dialog\n- text of the dialog\n- labels of the options buttons.\n\nWhen included inside another tool using Hanzo's AI tool building assistant, the LLM should be able to automatically adapt the title, the text, the number of options and the buttons of the dialog, as well as use the choice made by the user to trigger the appropriate next step in your tool flow.\n\nIf the options are generated together by a prompt processing, make sure to force the LLM to format things well (options titles and separator) so that options splitting and then processing are done correctly.\n\nIf you want to add a Custom option button for which the user can then add information, on top of proposed options, create a Custom button option that triggers the tool Clarification Dialog - Human In The Loop.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__gilles_test2_sep_shinkai:::options_selection___human_in_the_loop",
+  "homepage": "local:::__gilles_test2_sep_hanzo:::options_selection___human_in_the_loop",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -14,17 +14,17 @@
     "human",
     "select"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=9e52982f6816dddde72114b44317ae1ae37e5e6fe699309c9c7e6eaa7ed4f880&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=9e52982f6816dddde72114b44317ae1ae37e5e6fe699309c9c7e6eaa7ed4f880&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=7993a90471faff81cd99127da41d46ef3fad705b39e10ca29f741ffa263e50e6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=93d29e7f396dcb95a9c596b8b63e066c2a1a415dac0ecd50d489333f4156e74f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_shinkai%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=4732e269cb608fb78aabc3b492be00fb3fac65d91f934c425dd81605e2c0cc7f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=7993a90471faff81cd99127da41d46ef3fad705b39e10ca29f741ffa263e50e6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=93d29e7f396dcb95a9c596b8b63e066c2a1a415dac0ecd50d489333f4156e74f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Aoptions_selection___human_in_the_loop/options_selection_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142251Z&X-Amz-Expires=86400&X-Amz-Signature=4732e269cb608fb78aabc3b492be00fb3fac65d91f934c425dd81605e2c0cc7f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__gilles_test2_sep_shinkai:::options_selection___human_in_the_loop"
+      "local:::__gilles_test2_sep_hanzo:::options_selection___human_in_the_loop"
     ],
     "env": {}
   },

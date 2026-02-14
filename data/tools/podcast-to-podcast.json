@@ -4,7 +4,7 @@
   "description": "Converts a YouTube video transcript into a podcast using LLM processing.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::podcast_to_podcast",
+  "homepage": "local:::__hanzo:::podcast_to_podcast",
   "license": "MIT",
   "category": "Entertainment",
   "tags": [
@@ -12,17 +12,17 @@
     "transcript",
     "podcast",
     "converter",
-    "shinkai"
+    "hanzo"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Apodcast_to_podcast/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=1d27b0a56283d78aefa75a5d3b2e8cbfdb3cf967414cde99bc3aff78f7f2a64b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Apodcast_to_podcast/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=1d27b0a56283d78aefa75a5d3b2e8cbfdb3cf967414cde99bc3aff78f7f2a64b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Apodcast_to_podcast/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=2b24dd3f19d890e50f62ca754294590288070bd0915703e92f0a3b58a5a59c6a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Apodcast_to_podcast/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=2b24dd3f19d890e50f62ca754294590288070bd0915703e92f0a3b58a5a59c6a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::podcast_to_podcast"
+      "local:::__hanzo:::podcast_to_podcast"
     ],
     "env": {}
   },

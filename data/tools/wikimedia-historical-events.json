@@ -4,7 +4,7 @@
   "description": "Get historical events, births, deaths, and holidays for a specific date from Wikimedia",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::wikimedia_historical_events",
+  "homepage": "local:::__hanzo:::wikimedia_historical_events",
   "license": "MIT",
   "category": "Reference",
   "tags": [
@@ -17,15 +17,15 @@
     "deaths",
     "holidays"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Awikimedia_historical_events/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=f50ba90f6943f42887eb48c24a802ecb23d4ce866db2033f54297a0254913358&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Awikimedia_historical_events/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=f50ba90f6943f42887eb48c24a802ecb23d4ce866db2033f54297a0254913358&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Awikimedia_historical_events/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=1f1f4736e2e085af606c40cc9acbdbbae09618a60f580318ae73666b52181041&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Awikimedia_historical_events/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=1f1f4736e2e085af606c40cc9acbdbbae09618a60f580318ae73666b52181041&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::wikimedia_historical_events"
+      "local:::__hanzo:::wikimedia_historical_events"
     ],
     "env": {}
   },

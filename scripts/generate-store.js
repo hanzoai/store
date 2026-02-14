@@ -9,7 +9,7 @@ const OUTPUT_FILE = path.join(__dirname, '..', 'public', 'store.json');
 
 /**
  * Convert old DID format to new npm-style format
- * local:::__official_shinkai:::audio_insight → @hanzo/audio-insight
+ * local:::__hanzo:::audio_insight → @hanzo/audio-insight
  */
 function convertToNpmFormat(homepage) {
   if (!homepage || typeof homepage !== 'string') return homepage;
