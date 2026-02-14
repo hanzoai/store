@@ -4,19 +4,19 @@
   "description": "This expert distills practical storytelling frameworks and philosophies from leading experts—Donald Miller, Andy Raskin, Seth Godin, Nancy Duarte, Robert McKee, Park Howell, Bernadette Jiwa, and Jonah Sachs—offering startup founders actionable ways to craft marketing narratives that connect, inspire, and drive results.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::startup_storyteller_expert",
+  "homepage": "local:::__hanzo:::startup_storyteller_expert",
   "license": "MIT",
   "category": "Utilities",
   "tags": [],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astartup_storyteller_expert/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=321e9b40a5839d036d936272bed35a8bfe238468b80ae31711b666a8a02e7a06&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Astartup_storyteller_expert/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=321e9b40a5839d036d936272bed35a8bfe238468b80ae31711b666a8a02e7a06&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astartup_storyteller_expert/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=4ec1a663e795d0ed47002765fad7b315b76ca00ed6e3799e9e3726a1b83b5cbd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Astartup_storyteller_expert/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=4ec1a663e795d0ed47002765fad7b315b76ca00ed6e3799e9e3726a1b83b5cbd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::startup_storyteller_expert"
+      "local:::__hanzo:::startup_storyteller_expert"
     ],
     "env": {}
   },

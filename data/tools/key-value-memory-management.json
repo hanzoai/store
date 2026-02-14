@@ -4,7 +4,7 @@
   "description": "Handles key-value memory storage and retrieval using a database. It stores memories with associated keys and can retrieve them by key.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::key_value_memory_management",
+  "homepage": "local:::__hanzo:::key_value_memory_management",
   "license": "MIT",
   "category": "Developer Tools",
   "tags": [
@@ -15,15 +15,15 @@
     "smart",
     "agent"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Akey_value_memory_management/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=e8e7b0dfbf211ddd248d2897db726fba7bd9069f2b9087621f1fc3ac23d10a70&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Akey_value_memory_management/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=e8e7b0dfbf211ddd248d2897db726fba7bd9069f2b9087621f1fc3ac23d10a70&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Akey_value_memory_management/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=645a5fd77018a71f0a95f70c88307181d5fd464ce9c40713dd67e2994229f466&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Akey_value_memory_management/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141947Z&X-Amz-Expires=86400&X-Amz-Signature=645a5fd77018a71f0a95f70c88307181d5fd464ce9c40713dd67e2994229f466&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::key_value_memory_management"
+      "local:::__hanzo:::key_value_memory_management"
     ],
     "env": {}
   },

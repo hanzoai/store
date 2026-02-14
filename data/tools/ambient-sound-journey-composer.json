@@ -4,7 +4,7 @@
   "description": "This tool crafts custom, long-form evolving ambient soundscapes from a simple text description. It intelligently orchestrates a detailed composition plan, breaking the total duration into smaller, evolving segments. It then generates each segment individually, ensuring smooth, gradual transitions before seamlessly stitching them into a single, continuous MP3 audio file. It relies on local sound assets.\n\nIt's perfect for creating background audio for focus, relaxation, or storytelling that evolves over time.\n\nThis tool relies on the 'ambient sound composer' tool, which you can configure first.\n\n### How to Use It\n\nTo create your soundscape, simply write a descriptive `request` outlining the audio journey you envision. Be as detailed as you would like, or vague for more random outputs. You can define the `total_duration_minutes`, suggest a number of `segments` to guide the pacing, and provide a custom `output_filename` for the final MP3. These core inputs give you direct control over the final audio composition.\n\nFor more insight, you can use several optional toggles. Set `show_available_sounds` to `true` to get a list of all sound building blocks without generating audio. To see the AI's step-by-step \"recipe\" for your track, enable `show_composition_plan`. Finally, if you wish to examine the individual audio clips used, you can choose to `keep_intermediate_files` rather than having them automatically deleted.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::ambient_sound_journey_composer",
+  "homepage": "local:::__hanzo:::ambient_sound_journey_composer",
   "license": "MIT",
   "category": "Entertainment",
   "tags": [
@@ -14,15 +14,15 @@
     "journey",
     "soudscape"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aambient_sound_journey_composer/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=a008b74a14c92c86d46db01343e8cd11ecf531096d33fbf95f501547094ef658&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aambient_sound_journey_composer/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=a008b74a14c92c86d46db01343e8cd11ecf531096d33fbf95f501547094ef658&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aambient_sound_journey_composer/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=e7719bec768a104f7fc56bfca78e017a52fe4f51891a1b26afb669965fbf7e1d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aambient_sound_journey_composer/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=e7719bec768a104f7fc56bfca78e017a52fe4f51891a1b26afb669965fbf7e1d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::ambient_sound_journey_composer"
+      "local:::__hanzo:::ambient_sound_journey_composer"
     ],
     "env": {}
   },

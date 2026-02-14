@@ -4,7 +4,7 @@
   "description": "Fetches the clean, readable text from any webpage using the Jina AI Reader service and saves it to a local file.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::webpage_clean_text_extractor",
+  "homepage": "local:::__hanzo:::webpage_clean_text_extractor",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -20,15 +20,15 @@
     "fetch",
     "extract"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Awebpage_clean_text_extractor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=2bcd410ff6478cb17cb04a669e2e290d1233300a75c5cb247c7db4be784543f1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Awebpage_clean_text_extractor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=2bcd410ff6478cb17cb04a669e2e290d1233300a75c5cb247c7db4be784543f1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Awebpage_clean_text_extractor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=f2f694fe32ed95b71e22f37293e9c3319aeaecee27274081ac530a677764acc9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Awebpage_clean_text_extractor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=f2f694fe32ed95b71e22f37293e9c3319aeaecee27274081ac530a677764acc9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::webpage_clean_text_extractor"
+      "local:::__hanzo:::webpage_clean_text_extractor"
     ],
     "env": {}
   },

@@ -4,7 +4,7 @@
   "description": "Tool to make requests to the Airtable Developer API using OAuth for authentication.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::airtable_developer_api",
+  "homepage": "local:::__hanzo:::airtable_developer_api",
   "license": "MIT",
   "category": "Developer Tools",
   "tags": [
@@ -12,15 +12,15 @@
     "api",
     "oauth"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aairtable_developer_api/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=0b2b3ad629407a53a425fe5479c4d4ec96b7c462011d2f185957980eaff3fd30&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aairtable_developer_api/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=0b2b3ad629407a53a425fe5479c4d4ec96b7c462011d2f185957980eaff3fd30&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aairtable_developer_api/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=ce50a9f749b57238b27d5c5a0b7a31054e33c28131e9932711fbaf9e02673627&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aairtable_developer_api/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=ce50a9f749b57238b27d5c5a0b7a31054e33c28131e9932711fbaf9e02673627&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::airtable_developer_api"
+      "local:::__hanzo:::airtable_developer_api"
     ],
     "env": {}
   },

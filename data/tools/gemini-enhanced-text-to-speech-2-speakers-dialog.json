@@ -4,7 +4,7 @@
   "description": "This advanced TTS tool transforms a simple text script into a dynamic, two-speaker conversational audio file using Google's Gemini TTS models.\nIt automatically analyzes the dialogue to select the most fitting voices for each speaker, or allows for precise manual control. A key feature is its ability to enhance the script with stylistic directions (e.g., \"speak excitedly,\" \"sound tired\"), resulting in a significantly more natural and expressive performance. Ideal for creating engaging podcasts, dialogue for videos, or any application requiring realistic two-person conversations.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::gemini_enhanced_text_to_speech___2_speakers_dialog",
+  "homepage": "local:::__hanzo:::gemini_enhanced_text_to_speech___2_speakers_dialog",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -19,15 +19,15 @@
     "audio generation",
     "enhanced"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agemini_enhanced_text_to_speech___2_speakers_dialog/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=de29247a16e59d046421da2ff81b1198a133c9561399405a9c899d3ca5468e85&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Agemini_enhanced_text_to_speech___2_speakers_dialog/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=de29247a16e59d046421da2ff81b1198a133c9561399405a9c899d3ca5468e85&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agemini_enhanced_text_to_speech___2_speakers_dialog/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=a2719de150dc436ed8e13efa57bc5c33d6f95f1161978ccb589892e6f0ca77b4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Agemini_enhanced_text_to_speech___2_speakers_dialog/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=a2719de150dc436ed8e13efa57bc5c33d6f95f1161978ccb589892e6f0ca77b4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::gemini_enhanced_text_to_speech___2_speakers_dialog"
+      "local:::__hanzo:::gemini_enhanced_text_to_speech___2_speakers_dialog"
     ],
     "env": {}
   },

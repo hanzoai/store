@@ -4,7 +4,7 @@
   "description": "Fetches historical stock data from Tiingo and calculates basic technical indicators (SMA, RSI, MACD, ATR, etc.), then returns a structured analysis of the trend.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::stock_technical_analysis",
+  "homepage": "local:::__hanzo:::stock_technical_analysis",
   "license": "MIT",
   "category": "Finance",
   "tags": [
@@ -13,15 +13,15 @@
     "technical-indicators",
     "tiingo"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astock_technical_analysis/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=79be8ee2c0bc77d73b7fe188005bc76da84df3153fe75408b73c16f54fa7f621&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Astock_technical_analysis/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=79be8ee2c0bc77d73b7fe188005bc76da84df3153fe75408b73c16f54fa7f621&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Astock_technical_analysis/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=23aa1094c6fd7a26e8e37251b89a7defaa944abf2b1e82844c415fb3b9987cc7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Astock_technical_analysis/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=23aa1094c6fd7a26e8e37251b89a7defaa944abf2b1e82844c415fb3b9987cc7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::stock_technical_analysis"
+      "local:::__hanzo:::stock_technical_analysis"
     ],
     "env": {}
   },
