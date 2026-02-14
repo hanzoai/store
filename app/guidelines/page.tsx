@@ -55,7 +55,7 @@ export default function GuidelinesPage() {
                 <li>Confirm your app follows all Hanzo App Store guidelines and any local legal requirements.</li>
                 <li>Prepare the icon and necessary screenshots or presentation screens (minimum one) following the 16:9 ratio.</li>
                 <li>You must have a valid Hanzo Identity and it must match the App Metadata</li>
-                <li>Create an account at store.shinkai.com</li>
+                <li>Create an account at store.hanzo.ai</li>
               </ul>
             </CardContent>
           </Card>

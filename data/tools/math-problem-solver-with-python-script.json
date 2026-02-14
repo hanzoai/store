@@ -4,7 +4,7 @@
   "description": "Evaluates a math problem and creates and executes a Python script to resolve it. Returns the result, presents it with language, and shows the script executed.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::math_problem_solver___with_python_script",
+  "homepage": "local:::__hanzo:::math_problem_solver___with_python_script",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -14,15 +14,15 @@
     "solve",
     "python"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amath_problem_solver___with_python_script/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=32239e493c7c723e8a1bd6939062743e9a39e565afcb8d9a6d276cd75bbd116e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amath_problem_solver___with_python_script/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=32239e493c7c723e8a1bd6939062743e9a39e565afcb8d9a6d276cd75bbd116e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amath_problem_solver___with_python_script/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=637c8f9295a9d49afd88a769ef902a88edbb718a69b34d7764a5ac4b51348daa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amath_problem_solver___with_python_script/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=637c8f9295a9d49afd88a769ef902a88edbb718a69b34d7764a5ac4b51348daa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::math_problem_solver___with_python_script"
+      "local:::__hanzo:::math_problem_solver___with_python_script"
     ],
     "env": {}
   },

@@ -172,7 +172,7 @@ export default function PrivacyPage() {
                 <li><strong>Withdraw Consent:</strong> If we are processing any of your personal data based on your consent, you have the right to withdraw that consent at any time.</li>
               </ul>
               <p className="text-foreground/90 mt-4">
-                <strong>Exercising Your Rights:</strong> You can exercise many of the above rights through self-service or by contacting us at privacy@shinkai.com.
+                <strong>Exercising Your Rights:</strong> You can exercise many of the above rights through self-service or by contacting us at privacy@hanzo.ai.
               </p>
             </div>
 
@@ -257,7 +257,7 @@ export default function PrivacyPage() {
                 Your privacy is important to us. If you have any questions, concerns, or feedback regarding this Privacy Policy or how we handle your data, please contact us:
               </p>
               <ul className="list-none pl-0 space-y-1 text-foreground/90">
-                <li><strong>Email:</strong> privacy@shinkai.com</li>
+                <li><strong>Email:</strong> privacy@hanzo.ai</li>
                 <li><strong>Support:</strong> You can also reach out via our support page on the Hanzo Store website/app.</li>
               </ul>
               <p className="text-foreground/90 mt-4">

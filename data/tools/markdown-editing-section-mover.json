@@ -4,7 +4,7 @@
   "description": "Moves an existing section of a markdown file to another location (after or before another section) based on a user prompt, preserving the eventual section hierarchy.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::markdown_editing___section_mover",
+  "homepage": "local:::__hanzo:::markdown_editing___section_mover",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -19,15 +19,15 @@
     "after",
     "md"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amarkdown_editing___section_mover/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=640cbb3dfc91edff08773e725c2e3b81b710a3d988aac7502679c6d76260ef5b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amarkdown_editing___section_mover/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=640cbb3dfc91edff08773e725c2e3b81b710a3d988aac7502679c6d76260ef5b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amarkdown_editing___section_mover/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=ac9a6dda1507856c7e75fa9a927db59c9f62305460e145955446df2c4504375c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amarkdown_editing___section_mover/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=ac9a6dda1507856c7e75fa9a927db59c9f62305460e145955446df2c4504375c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::markdown_editing___section_mover"
+      "local:::__hanzo:::markdown_editing___section_mover"
     ],
     "env": {}
   },

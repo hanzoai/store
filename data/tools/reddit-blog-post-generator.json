@@ -4,22 +4,22 @@
   "description": "Generates a blog post about Reddit posts based on user input.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::reddit_blog_post_generator",
+  "homepage": "local:::__hanzo:::reddit_blog_post_generator",
   "license": "MIT",
   "category": "Social Networking",
   "tags": [
     "Reddit",
     "Blog Post Generator"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Areddit_blog_post_generator/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=ee0cc3d39d571b6f45fb7677b7b89cbd136d10d05dd2e4eea71ef6e60f4d6037&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Areddit_blog_post_generator/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=ee0cc3d39d571b6f45fb7677b7b89cbd136d10d05dd2e4eea71ef6e60f4d6037&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Areddit_blog_post_generator/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=43590316ef323b642b90f54179d0e7444450590cb083b3bf2887951982223d9b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Areddit_blog_post_generator/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T223049Z&X-Amz-Expires=86400&X-Amz-Signature=43590316ef323b642b90f54179d0e7444450590cb083b3bf2887951982223d9b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::reddit_blog_post_generator"
+      "local:::__hanzo:::reddit_blog_post_generator"
     ],
     "env": {}
   },

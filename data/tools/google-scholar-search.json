@@ -4,7 +4,7 @@
   "description": "Searches for publications on Google Scholar.\nReturns a structured list of academic publications with details like titles, authors, abstracts, and citation counts.\n\nTo use it, simply provide a search query. You can optionally narrow the results by specifying a start and end year for your search.\n\nThe tool performs a robust search by first attempting to use the scholarly library to retrieve rich metadata. If that fails or returns no results, it automatically falls back to a direct web scraping method to ensure maximum reliability.\nThe output also indicates which search method was successfully used.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::google_scholar_search",
+  "homepage": "local:::__hanzo:::google_scholar_search",
   "license": "MIT",
   "category": "Reference",
   "tags": [
@@ -16,15 +16,15 @@
     "google",
     "biblio"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agoogle_scholar_search/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=b77e4600803cc0a51ccf2e872bab0134319f671ebe6796d092c85bb62f89859c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Agoogle_scholar_search/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=b77e4600803cc0a51ccf2e872bab0134319f671ebe6796d092c85bb62f89859c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Agoogle_scholar_search/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=0a0018b79533217805b9d9196e18309e95222b847133977c048a4244ee9d3817&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Agoogle_scholar_search/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142022Z&X-Amz-Expires=86400&X-Amz-Signature=0a0018b79533217805b9d9196e18309e95222b847133977c048a4244ee9d3817&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::google_scholar_search"
+      "local:::__hanzo:::google_scholar_search"
     ],
     "env": {}
   },

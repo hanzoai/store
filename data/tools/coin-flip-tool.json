@@ -4,24 +4,24 @@
   "description": "Flip a coin with n sides using true randomness from random.org. Supports custom side names and various meta-usage patterns.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::coin_flip_tool",
+  "homepage": "local:::__hanzo:::coin_flip_tool",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
     "random",
     "coin-flip",
     "decision-making",
-    "shinkai"
+    "hanzo"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoin_flip_tool/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=e409debcccce3888935651fdc5ea9c6eba18b000943c706267847319d983edf8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoin_flip_tool/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=e409debcccce3888935651fdc5ea9c6eba18b000943c706267847319d983edf8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoin_flip_tool/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=56fc8b6ae05dd1cacf8bcc63deb5d1ab4b42727d7321792e501493238d90bb93&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoin_flip_tool/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044123Z&X-Amz-Expires=86400&X-Amz-Signature=56fc8b6ae05dd1cacf8bcc63deb5d1ab4b42727d7321792e501493238d90bb93&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::coin_flip_tool"
+      "local:::__hanzo:::coin_flip_tool"
     ],
     "env": {}
   },

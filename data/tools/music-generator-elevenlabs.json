@@ -4,7 +4,7 @@
   "description": "Generates music using the ElevenLabs Music API.\nSupports both music creation and music modification.\n\nMusic creation: generates a new music according to the user's query, in a prompt-only mode.\n\nMusic modification: generates a music similar to the input music but with modifications according the user's query, using a composition plan.\n\nRequires a valid ElevenLabs API key with credits.\nQueries should respect ElevenLabs policies and terms of services.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::music_generator___elevenlabs",
+  "homepage": "local:::__hanzo:::music_generator___elevenlabs",
   "license": "MIT",
   "category": "Entertainment",
   "tags": [
@@ -17,15 +17,15 @@
     "modify music",
     "music modification"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amusic_generator___elevenlabs/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=f6c22f61049c20a64da097e74df31b7a9fc2e4b4a8248513dae474975f7f8589&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amusic_generator___elevenlabs/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=f6c22f61049c20a64da097e74df31b7a9fc2e4b4a8248513dae474975f7f8589&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Amusic_generator___elevenlabs/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=4e4f2044ada982272c660a8743467848c830729bc685bf6ba439222329efe148&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Amusic_generator___elevenlabs/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=4e4f2044ada982272c660a8743467848c830729bc685bf6ba439222329efe148&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::music_generator___elevenlabs"
+      "local:::__hanzo:::music_generator___elevenlabs"
     ],
     "env": {}
   },
