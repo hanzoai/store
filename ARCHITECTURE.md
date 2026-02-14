@@ -318,7 +318,7 @@ hanzo registry update \
 ## Related Repositories
 
 - **hanzo-store**: Web UI and data generation
-  - `/Users/z/work/shinkai/hanzo-store`
+  - `/Users/z/work/hanzo/store`
   - https://github.com/hanzoai/store
 
 - **hanzo/identity**: Smart contracts and identity system
@@ -331,7 +331,7 @@ hanzo registry update \
   - Source code for all @hanzo/* tools
 
 - **hanzo-desktop**: Desktop application
-  - `/Users/z/work/shinkai/hanzo-desktop`
+  - `/Users/z/work/hanzo/desktop`
   - Deep linking and verification
 
 ## Next Steps

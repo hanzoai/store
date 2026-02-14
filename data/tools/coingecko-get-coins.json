@@ -4,24 +4,24 @@
   "description": "Fetch a paginated list of all coins from CoinGecko. Works by retrieving the entire list and slicing manually.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::coingecko_get_coins",
+  "homepage": "local:::__hanzo:::coingecko_get_coins",
   "license": "MIT",
   "category": "Crypto",
   "tags": [
     "coingecko",
     "cryptocurrency",
     "coins",
-    "shinkai"
+    "hanzo"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoingecko_get_coins/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=5d3d1beaf87ba2f551b8ad2c3a5734211fb4ead23a46241f6b571a01c215fd0e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoingecko_get_coins/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=5d3d1beaf87ba2f551b8ad2c3a5734211fb4ead23a46241f6b571a01c215fd0e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoingecko_get_coins/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=f2c565f550cbe74876343d3e8ce5e1cb6bc485e7c9b843872b5c370378b0d88a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoingecko_get_coins/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224725Z&X-Amz-Expires=86400&X-Amz-Signature=f2c565f550cbe74876343d3e8ce5e1cb6bc485e7c9b843872b5c370378b0d88a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::coingecko_get_coins"
+      "local:::__hanzo:::coingecko_get_coins"
     ],
     "env": {}
   },

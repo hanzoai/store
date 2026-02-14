@@ -4,7 +4,7 @@
   "description": "Extracts and saves YouTube video transcripts",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::youtube_transcript_extractor_2_0",
+  "homepage": "local:::__hanzo:::youtube_transcript_extractor_2_0",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -13,15 +13,15 @@
     "extractor",
     "video"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_transcript_extractor_2_0/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=bb75987115cf0edc85cf3e2af9112e42900b3817823517876f479cb3a14fcc74&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Ayoutube_transcript_extractor_2_0/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=bb75987115cf0edc85cf3e2af9112e42900b3817823517876f479cb3a14fcc74&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Ayoutube_transcript_extractor_2_0/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=5b642288cfda3dfb3574df7f5ecdd117e6900f016438c4a2b6d7ba84a9a3bef8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Ayoutube_transcript_extractor_2_0/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044124Z&X-Amz-Expires=86400&X-Amz-Signature=5b642288cfda3dfb3574df7f5ecdd117e6900f016438c4a2b6d7ba84a9a3bef8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::youtube_transcript_extractor_2_0"
+      "local:::__hanzo:::youtube_transcript_extractor_2_0"
     ],
     "env": {}
   },

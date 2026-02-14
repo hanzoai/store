@@ -4,23 +4,23 @@
   "description": "Tool for getting the transactions of a Coinbase wallet after restoring it",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::coinbase_transactions_getter",
+  "homepage": "local:::__hanzo:::coinbase_transactions_getter",
   "license": "MIT",
   "category": "Crypto",
   "tags": [
     "coinbase",
     "balance",
-    "shinkai"
+    "hanzo"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoinbase_transactions_getter/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224727Z&X-Amz-Expires=86400&X-Amz-Signature=9217d65e6373f0f558603d22cdc64d6ad83b124ad0f4e9702415ae376c9437e7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoinbase_transactions_getter/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224727Z&X-Amz-Expires=86400&X-Amz-Signature=9217d65e6373f0f558603d22cdc64d6ad83b124ad0f4e9702415ae376c9437e7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Acoinbase_transactions_getter/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224727Z&X-Amz-Expires=86400&X-Amz-Signature=678b4898725ad01980bd19b4ddcc1392dda6cde27dd6b12c1e05ca4e9bab8496&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Acoinbase_transactions_getter/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T224727Z&X-Amz-Expires=86400&X-Amz-Signature=678b4898725ad01980bd19b4ddcc1392dda6cde27dd6b12c1e05ca4e9bab8496&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::coinbase_transactions_getter"
+      "local:::__hanzo:::coinbase_transactions_getter"
     ],
     "env": {}
   },

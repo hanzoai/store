@@ -4,7 +4,7 @@
   "description": "Ask questions about any local audio file. This tool passes your audio and prompt to a multimodal LLM for analysis.\n\nFor long audio files, you might prefer to convert the audio to text first, and the use a LLM on the text.",
   "version": "1.0.0",
   "author": "hanzo.ai",
-  "homepage": "local:::__official_shinkai:::audio_llm_processor",
+  "homepage": "local:::__hanzo:::audio_llm_processor",
   "license": "MIT",
   "category": "Utilities",
   "tags": [
@@ -14,15 +14,15 @@
     "transcription",
     "mp3"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aaudio_llm_processor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=2a7ba78112def819f67595e405959ccdbb0cb69dba179cccbbd5d8bb29cda069&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aaudio_llm_processor/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=2a7ba78112def819f67595e405959ccdbb0cb69dba179cccbbd5d8bb29cda069&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__official_shinkai%3A%3A%3Aaudio_llm_processor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=f2bb40aff8faa61d54c4870ef110bfacf90e72038a1423ec856cf88e155cb11e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aaudio_llm_processor/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T141950Z&X-Amz-Expires=86400&X-Amz-Signature=f2bb40aff8faa61d54c4870ef110bfacf90e72038a1423ec856cf88e155cb11e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
   ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
     "args": [
-      "local:::__official_shinkai:::audio_llm_processor"
+      "local:::__hanzo:::audio_llm_processor"
     ],
     "env": {}
   },
