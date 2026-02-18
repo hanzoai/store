@@ -36,3 +36,5 @@ next-env.d.ts
 
 # Generated store data
 /public/store.json
+
+CLAUDE.md
