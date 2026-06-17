@@ -1,4 +1,4 @@
-# LLM.md - Hanzo Store
+# Hanzo Store
 
 ## Project
 
