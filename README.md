@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="store" width="880"></p>
+
 # Hanzo AI Store
 
 The official AI agent tools and MCP server marketplace for Hanzo Desktop.
