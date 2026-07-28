@@ -164,15 +164,29 @@ The store data is available as a static JSON file at `/store.json`.
 }
 ```
 
-## Integration with Hanzo Desktop
+## Integration with the desktop apps — this repo is the editorial source
 
-Hanzo Desktop can fetch the store data from:
+The Hanzo / Lux / Zoo desktop apps do **not** read this repo or this site. They
+read the **Market**: static JSON on the CDN, with an in-app bundled copy as an
+offline fallback, so the catalog needs no backend to be readable.
 
 ```
-https://store.hanzo.ai/store.json
+https://cdn.hanzo.ai/market/index.json      manifest: schema, version, counts
+https://cdn.hanzo.ai/market/agents.json     agents catalog
+https://cdn.hanzo.ai/market/tools.json      tools catalog
+https://cdn.hanzo.ai/market/tools/{id}.json per-tool detail
 ```
 
-The app can then display the store UI in an embedded webview or implement its own native UI using the JSON data.
+What this repo owns is the **curated catalog** under `data/agents/` and
+`data/tools/` — one reviewable JSON per item, changed by Pull Request. That is
+the editorial source; `hanzoai/cdn` builds the served documents from it:
+
+```bash
+cd ../cdn && scripts/market.py gen --from ../store
+```
+
+So a merged PR here becomes a Market entry there. Do not hand-edit the generated
+files in `hanzoai/cdn`, and do not point clients at `store.hanzo.ai/store.json`.
 
 ## Development
 
