@@ -10,6 +10,8 @@
  */
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import { ChevronLeft } from 'lucide-react'
+import { HanzoLogo } from '@hanzo/logo'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 /** The one place the site's own routes are enumerated. */
@@ -18,6 +20,23 @@ const LINKS = [
   { href: '/terms', label: 'Terms of Service' },
   { href: '/privacy', label: 'Privacy Policy' },
 ]
+
+/**
+ * The brand block every page below the store root wears — the mark, and the way
+ * back. The app page and the three documents are all "somewhere inside the
+ * store", and that is one fact, so it is written once.
+ */
+export function StoreMark() {
+  return (
+    <>
+      <HanzoLogo size={36} />
+      <Link href="/" className="back">
+        <ChevronLeft size={16} />
+        Back to Store
+      </Link>
+    </>
+  )
+}
 
 /**
  * @param brand  the left-hand identity block — a mark, or a mark plus a title
