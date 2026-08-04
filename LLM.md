@@ -1,232 +1,112 @@
-# Code Quality Audit Report - Hanzo Store
+# Working in hanzo/store
 
-## TypeScript Issues Fixed (2025-11-06)
+What an agent needs before touching this repo. Two things are load-bearing and
+neither is obvious from the source.
 
-### Summary
-All TypeScript type errors have been resolved. The project now compiles successfully without type errors.
+## 1. This repo is the Market's editorial source, not its read path
 
-### Issues Found and Fixed
+`data/agents/*.json` and `data/tools/*.json` are the curated catalog — one
+reviewable file per item, changed by Pull Request. `hanzoai/cdn` builds the
+served documents from them (`cd ../cdn && scripts/market.py gen --from
+../store`). Do not hand-edit the generated files there, and do not point clients
+at `store.hanzo.ai/store.json`.
 
-1. **Missing Type Declarations for @hanzo/ui**
-   - **Issue**: Module '@hanzo/ui' had no exported type definitions
-   - **Files Affected**:
-     - `/Users/z/work/shinkai/hanzo-store/app/page.tsx`
-     - `/Users/z/work/shinkai/hanzo-store/app/apps/[id]/page-client.tsx`
-     - `/Users/z/work/shinkai/hanzo-store/app/guidelines/page.tsx`
-     - `/Users/z/work/shinkai/hanzo-store/app/terms/page.tsx`
-   - **Fix**: Created type declaration file at `/Users/z/work/shinkai/hanzo-store/types/hanzo-ui.d.ts`
+`public/store.json` is generated (`npm run generate-store`) and gitignored. The
+site fetches it at runtime; that is why every page waits for data before it has
+anything to render, and why prerendering a page proves nothing about what it
+shows.
 
-2. **Implicit 'any' Type for Event Handler**
-   - **File**: `/Users/z/work/shinkai/hanzo-store/app/page.tsx` (line 126)
-   - **Fix**: Added explicit type `React.ChangeEvent<HTMLInputElement>`
+## 2. The UI stack is @hanzo/ui on @hanzo/gui — and gui fails silently
 
-3. **Possibly Undefined Property Access**
-   - **File**: `/Users/z/work/shinkai/hanzo-store/app/apps/[id]/page-client.tsx` (line 192)
-   - **Fix**: Added optional chaining: `app.type?.toLowerCase() || 'tool'`
+There is no Tailwind, no Radix, no shadcn, no `cn()`, no `postcss.config`. The
+vocabulary is exactly two:
 
-4. **Implicit 'any' Type in Test Helper**
-   - **File**: `/Users/z/work/shinkai/hanzo-store/e2e/store.spec.ts` (line 5)
-   - **Fix**: Added explicit type annotation: `page: any`
+- **Inside a card** — @hanzo/ui components (`Button`, `Card`, `Badge`, `Input`)
+  and @hanzo/gui style props (`items`, `justify`, `gap`, `px`, `rounded`, `bg`).
+- **Positioning the page** — plain CSS in `app/globals.css`, reading the tokens
+  `@hanzo/ui/theme.css` defines. Grid, sticky bars and long-form prose are
+  CSS-only ideas; gui's stacks are flexbox on every platform and deliberately do
+  not cover them.
 
-### Verification Results
-- ✅ TypeScript compilation passes with no errors
-- ✅ All dependencies are properly installed
-- ✅ Next.js build completes successfully
-- ⚠️ Build warnings for optional peer dependencies (not critical)
+Nothing may introduce a third way.
 
-## Previous Audit Summary
-Performed a comprehensive code quality audit of the Hanzo Store codebase, checking for:
-- TODO comments
-- Unused imports/variables
-- Hardcoded values
-- Error handling
-- Security issues
-- React best practices
+### The trap
 
-## Issues Found
+**@hanzo/gui accepts a prop it does not recognise, and lets one prop silently
+undo another.** No error, no type failure, and `next build` stays green while
+the page renders wrong. Six defects reached the built site that way; each is
+described at its call site. The shapes to watch for:
 
-### 1. Console Statements in Production Code (Medium Priority)
+- **A React Native spelling that means something else on the web.** `flex={1}`
+  compiles to `flex: 1 1 0px` — a zero basis. On a card body in an auto-height
+  column it collapsed the box to 0px and the content painted outside it. Use
+  `grow={1}`, which leaves the basis at `auto`. (`grow` is also the config's
+  shorthand for `flexGrow`; the config sets `onlyAllowShorthands`.)
+- **A variant that expands into more than you asked for.** `size="$6"` is not
+  `fontSize`. It expands to the whole typographic row for that step — size,
+  leading, tracking AND weight — and the Hanzo ladder's weight column is 400 at
+  every step, so it replaces any `fontWeight` the component declared. Restate
+  the weight after it.
+- **A token that does not exist.** `fontFamily="$mono"` names nothing (the
+  config declares `body` and `heading` only) and resolves to nothing at all.
+  Mono lives in `theme.css`, which typesets `code`/`pre`.
+- **A frame prop that lands on markup you did not intend.** gui's Button frame
+  declares `role="button"` and stamps it on whatever it renders, so
+  `<Button asChild>` around an anchor produces `<a href role="button">`. That is
+  what `components/link-button.tsx` exists to state once.
+- **The five in hanzo.ai's `page-kit.tsx`** — `animation` vs `transition`,
+  `$gtSm` vs `$sm` (the media keys here are `xs/sm/md/lg/xl` and `max-*`), `tag`
+  vs `render`, `lineHeight={1.1}` rendering as 1.1px, `letterSpacing` as a prop.
 
-**Issue**: Console statements left in production code that should be removed or replaced with proper logging.
+### So verify by looking, not by building
 
-**Files Affected**:
-- `/Users/z/work/shinkai/hanzo-store/app/page.tsx` (line 29)
-- `/Users/z/work/shinkai/hanzo-store/app/apps/[id]/page.tsx` (line 18)
-- `/Users/z/work/shinkai/hanzo-store/app/apps/[id]/page-client.tsx` (line 28)
+A green build proves the imports resolved. The e2e suite (`e2e/store.spec.ts`)
+is the actual check: every assertion reads a **computed style** or a **measured
+box** off the running page, because that is the only evidence that tells
+"styled" apart from "the prop went nowhere". It asserts the six defects
+specifically, and each was confirmed to fail when its defect is put back.
 
-**Recommendation**: Replace console.error with a proper error logging service or remove for production.
+Nothing in it asserts that a count is `>= 0`. The suite this replaced was mostly
+those, over Tailwind selectors that no longer exist.
 
-### 2. Unused Import (Low Priority)
-
-**File**: `/Users/z/work/shinkai/hanzo-store/app/apps/[id]/page-client.tsx` (line 6)
-
-**Issue**: `Github` icon imported from 'lucide-react' but never used in the component.
-
-**Fix**: Remove the unused import:
-```tsx
-// Change from:
-import { ChevronLeft, Download, Star, Tag, ExternalLink, Github } from 'lucide-react'
-// To:
-import { ChevronLeft, Download, Star, Tag, ExternalLink } from 'lucide-react'
+```bash
+npm run typecheck                              # tsc --noEmit
+npm run build                                  # 209 static pages
+npx playwright test --project=chromium         # 21 tests
 ```
 
-### 3. Build Configuration Issues (High Priority)
+## 3. TypeScript stays on 5.x
 
-**File**: `/Users/z/work/shinkai/hanzo-store/next.config.js`
+`typescript@7` is the native Go compiler and its npm package is a launcher for
+that binary and nothing else — `require('typescript')` returns two keys, and
+`readConfigFile`, `parseJsonConfigFileContent` and `sys` are all `undefined`.
+Next reads `tsconfig.json` through exactly those functions to learn
+`compilerOptions.paths`, so on TS 7 it learns nothing, `@/*` is never registered
+as a webpack alias, and every path-aliased import fails to resolve. Same shape
+as tsup, whose `rollup-plugin-dts` breaks on it.
 
-**Issues**:
-- TypeScript errors ignored during build (line 8)
-- ESLint errors ignored during build (line 11)
+This is a property of the consumer, not a defect to fix here. Do not add
+`@typescript/native-preview` either: it is `7.0.0-dev`, behind stable.
 
-**Risk**: This can lead to type errors and code quality issues going unnoticed in production.
+`next.config` is `.mjs` for the same reason — Next loads a TypeScript config
+through the compiler API, which would make config LOADING depend on which
+TypeScript is installed.
 
-**Recommendation**: Remove these settings and fix any underlying issues:
-```js
-typescript: {
-  ignoreBuildErrors: false // Change to false
-},
-eslint: {
-  ignoreDuringBuilds: false // Change to false
-}
-```
+## 4. Two dependency facts the build needs
 
-### 4. Hardcoded Values That Should Be Constants (Low Priority)
+- `@coinbase/cdp-sdk`, reached through wagmi's Base Account connector, imports
+  the `@x402/*` payment SDKs unconditionally while declaring them optional
+  peers. The store never signs an x402 payment and does not install them, and
+  webpack resolves statically — so they are mapped to `fallback: false` in
+  `next.config.mjs`.
+- @hanzo/ui's icons need `react-native-svg`, whose peer floor is react ^19.2.3.
+  That is why react is pinned at 19.2.8.
 
-**File**: `/Users/z/work/shinkai/hanzo-store/lib/wagmi.ts`
+## 5. Known-stale data
 
-**Issue**: WalletConnect project ID falls back to hardcoded 'demo' string (line 132)
-
-**Recommendation**: Define a proper constant or throw an error if environment variable is missing:
-```ts
-const WALLETCONNECT_PROJECT_ID = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
-if (!WALLETCONNECT_PROJECT_ID) {
-  throw new Error('NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID is required');
-}
-```
-
-### 5. Missing Error Boundaries (Medium Priority)
-
-**Issue**: No React Error Boundaries implemented to catch and handle component errors gracefully.
-
-**Affected Components**:
-- Main app page (`/app/page.tsx`)
-- App detail page (`/app/apps/[id]/page-client.tsx`)
-
-**Recommendation**: Implement error boundaries to prevent entire app crashes.
-
-### 6. Potential XSS Vulnerability (Medium Priority)
-
-**File**: `/Users/z/work/shinkai/hanzo-store/app/apps/[id]/page-client.tsx`
-
-**Issue**: Using unvalidated URLs from JSON data (lines 270, 279)
-
-**Risk**: If store.json is compromised, malicious URLs could be injected.
-
-**Recommendation**: Validate URLs before rendering:
-```tsx
-const sanitizeUrl = (url: string) => {
-  try {
-    const parsed = new URL(url.startsWith('http') ? url : `https://${url}`);
-    if (!['http:', 'https:'].includes(parsed.protocol)) {
-      return '#';
-    }
-    return parsed.href;
-  } catch {
-    return '#';
-  }
-};
-```
-
-### 7. Missing Loading States (Low Priority)
-
-**Issue**: QueryClient created without retry or stale time configuration
-
-**File**: `/Users/z/work/shinkai/hanzo-store/app/providers.tsx` (line 10)
-
-**Recommendation**: Configure QueryClient with proper defaults:
-```tsx
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 60 * 1000, // 1 minute
-      retry: 3,
-      retryDelay: attemptIndex => Math.min(1000 * 2 ** attemptIndex, 30000),
-    },
-  },
-})
-```
-
-### 8. Accessibility Issues (Medium Priority)
-
-**File**: `/Users/z/work/shinkai/hanzo-store/app/page.tsx`
-
-**Issues**:
-- Missing aria-labels on interactive elements
-- No keyboard navigation indicators for custom buttons
-- Missing alt text fallbacks for failed image loads
-
-**Recommendation**: Add proper ARIA attributes and keyboard navigation support.
-
-### 9. Performance Optimization Opportunities (Low Priority)
-
-**File**: `/Users/z/work/shinkai/hanzo-store/app/page.tsx`
-
-**Issues**:
-- Filtering and sorting happening on every render (lines 34-67)
-- No memoization of expensive computations
-
-**Recommendation**: Already using useMemo, but could optimize further with React.memo for AppCard component.
-
-### 10. Type Safety Improvements (Low Priority)
-
-**File**: `/Users/z/work/shinkai/hanzo-store/types/hanzo.d.ts`
-
-**Issue**: Using `any` type for Badge component (line 6)
-
-**Recommendation**: Provide proper type definitions:
-```tsx
-export interface BadgeProps {
-  variant?: 'default' | 'secondary' | 'destructive' | 'outline';
-  className?: string;
-  children: React.ReactNode;
-}
-export const Badge: React.FC<BadgeProps>
-```
-
-## Security Audit Results
-
-✅ **No hardcoded secrets found** - Checked for API keys, passwords, tokens
-✅ **No SQL injection vulnerabilities** - No direct database queries
-✅ **HTTPS enforced** - All external URLs use HTTPS
-⚠️ **URL validation needed** - See issue #6 above
-✅ **No eval() or dangerous functions** - Code is safe from code injection
-
-## React Best Practices Compliance
-
-✅ **Proper hook usage** - All hooks follow Rules of Hooks
-✅ **Component composition** - Good separation of concerns
-✅ **State management** - Appropriate use of local state
-⚠️ **Error boundaries missing** - Should add for production resilience
-✅ **Performance optimization** - Using useMemo appropriately
-⚠️ **Accessibility** - Needs improvement (see issue #8)
-
-## Priority Actions
-
-1. **HIGH**: Fix build configuration to enable TypeScript and ESLint checking
-2. **MEDIUM**: Remove console statements from production code
-3. **MEDIUM**: Add error boundaries for better error handling
-4. **MEDIUM**: Validate external URLs to prevent XSS
-5. **LOW**: Remove unused imports
-6. **LOW**: Replace hardcoded values with constants
-
-## Overall Assessment
-
-The codebase is generally well-structured and follows most React best practices. Main concerns are around error handling, build configuration, and some minor security considerations. No critical security vulnerabilities were found, but improvements in URL validation and error handling would enhance robustness.
-
-## Next Steps
-
-1. Address HIGH priority issues first
-2. Implement error boundaries for critical components
-3. Add proper logging service to replace console statements
-4. Improve accessibility with ARIA attributes
-5. Add unit tests for critical business logic
+Every `icon` and `screenshot` url in the catalog is a **presigned R2 link**
+inherited from the upstream Shinkai store, signed 2025-11-05 with
+`X-Amz-Expires=86400`. All 202 have been dead since the following day, so the
+store renders `AppIcon`'s initial for every app and the Screenshots panel never
+appears. That is the fallback working, not a rendering bug — but the artwork
+itself is real missing data and wants re-hosting.

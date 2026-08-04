@@ -10,9 +10,9 @@ Hanzo AI Store is a simple, flatfile-based marketplace that allows users to disc
 
 - 🚀 **Static Site Generation**: Pre-compiled Next.js app for fast performance
 - 🔍 **Client-Side Filtering**: All filtering happens in the browser for instant results
-- 📦 **Flatfile Database**: Each app is a JSON file in `data/apps/`
+- 📦 **Flatfile Database**: Each app is a JSON file in `data/agents/` or `data/tools/`
 - 🔄 **Git-Based Submissions**: Submit new apps via Pull Requests
-- 🎨 **Clean UI**: Modern, responsive interface with Tailwind CSS
+- 🎨 **One UI framework**: @hanzo/ui components on @hanzo/gui — no Tailwind, Radix or shadcn
 - 📱 **Desktop & Web**: Works in Hanzo Desktop and as a standalone web app
 
 ## Getting Started
@@ -29,7 +29,7 @@ npm install
 npm run generate-store
 ```
 
-This reads all JSON files from `data/apps/` and generates `public/store.json`.
+This reads every JSON file under `data/agents/` and `data/tools/` and generates `public/store.json`.
 
 ### Development
 
@@ -37,7 +37,7 @@ This reads all JSON files from `data/apps/` and generates `public/store.json`.
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3200](http://localhost:3200) in your browser.
 
 ### Build for Production
 
@@ -192,10 +192,17 @@ files in `hanzoai/cdn`, and do not point clients at `store.hanzo.ai/store.json`.
 
 ### Tech Stack
 
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **Node.js**: For build scripts
+- **Next.js 15**: React framework with App Router, static export
+- **TypeScript 5.9**: not 7 — Next reads tsconfig through the TypeScript JS API,
+  which the TS 7 package does not ship; see the commit that pinned it
+- **@hanzo/gui + @hanzo/ui**: the one component stack, on web, desktop and
+  native. Everything INSIDE a card is gui style props and @hanzo/ui components;
+  everything that POSITIONS the page is plain CSS in `app/globals.css` reading
+  the tokens from `@hanzo/ui/theme.css`. Two concerns, two vocabularies, no
+  Tailwind and no third way.
+- **Playwright**: the e2e suite reads computed styles, because @hanzo/gui
+  ignores a prop it does not recognise without erroring — a green build does not
+  prove a page renders
 
 ### Scripts
 
@@ -203,6 +210,8 @@ files in `hanzoai/cdn`, and do not point clients at `store.hanzo.ai/store.json`.
 - `npm run build` - Build for production (static export)
 - `npm start` - Serve production build locally
 - `npm run lint` - Run ESLint
+- `npm run typecheck` - `tsc --noEmit`
+- `npm run test:e2e` - Playwright, against `next dev`
 - `npm run generate-store` - Generate store.json from flatfiles
 
 ## Contributing

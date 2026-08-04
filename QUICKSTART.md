@@ -122,7 +122,7 @@ Your store includes:
 - **README.md** - Full project documentation
 - **CONTRIBUTING.md** - How to add apps
 - **DEPLOYMENT.md** - Deployment details
-- **STORE_UI.md** - UI architecture and features
+- **LLM.md** - the UI stack, and the two things that bite anyone changing it
 
 ## 🆘 Troubleshooting
 
