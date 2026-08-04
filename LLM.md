@@ -1,90 +1,112 @@
-# Hanzo Store
+# Working in hanzo/store
 
-## Project
+What an agent needs before touching this repo. Two things are load-bearing and
+neither is obvious from the source.
 
-App store / marketplace for Hanzo ecosystem.
+## 1. This repo is the Market's editorial source, not its read path
 
-- Stack: Next.js + React + TypeScript + Tailwind CSS
-- Web3: wagmi, viem, RainbowKit, WalletConnect
-- Dev: `npm run dev`
-- Build: `npm run build`
+`data/agents/*.json` and `data/tools/*.json` are the curated catalog — one
+reviewable file per item, changed by Pull Request. `hanzoai/cdn` builds the
+served documents from them (`cd ../cdn && scripts/market.py gen --from
+../store`). Do not hand-edit the generated files there, and do not point clients
+at `store.hanzo.ai/store.json`.
 
-## Known Issues
+`public/store.json` is generated (`npm run generate-store`) and gitignored. The
+site fetches it at runtime; that is why every page waits for data before it has
+anything to render, and why prerendering a page proves nothing about what it
+shows.
 
-### Build Config (High)
-`next.config.js` ignores TS and ESLint errors during build. Should eventually set both to `false`:
-```js
-typescript: { ignoreBuildErrors: false },
-eslint: { ignoreDuringBuilds: false },
+## 2. The UI stack is @hanzo/ui on @hanzo/gui — and gui fails silently
+
+There is no Tailwind, no Radix, no shadcn, no `cn()`, no `postcss.config`. The
+vocabulary is exactly two:
+
+- **Inside a card** — @hanzo/ui components (`Button`, `Card`, `Badge`, `Input`)
+  and @hanzo/gui style props (`items`, `justify`, `gap`, `px`, `rounded`, `bg`).
+- **Positioning the page** — plain CSS in `app/globals.css`, reading the tokens
+  `@hanzo/ui/theme.css` defines. Grid, sticky bars and long-form prose are
+  CSS-only ideas; gui's stacks are flexbox on every platform and deliberately do
+  not cover them.
+
+Nothing may introduce a third way.
+
+### The trap
+
+**@hanzo/gui accepts a prop it does not recognise, and lets one prop silently
+undo another.** No error, no type failure, and `next build` stays green while
+the page renders wrong. Six defects reached the built site that way; each is
+described at its call site. The shapes to watch for:
+
+- **A React Native spelling that means something else on the web.** `flex={1}`
+  compiles to `flex: 1 1 0px` — a zero basis. On a card body in an auto-height
+  column it collapsed the box to 0px and the content painted outside it. Use
+  `grow={1}`, which leaves the basis at `auto`. (`grow` is also the config's
+  shorthand for `flexGrow`; the config sets `onlyAllowShorthands`.)
+- **A variant that expands into more than you asked for.** `size="$6"` is not
+  `fontSize`. It expands to the whole typographic row for that step — size,
+  leading, tracking AND weight — and the Hanzo ladder's weight column is 400 at
+  every step, so it replaces any `fontWeight` the component declared. Restate
+  the weight after it.
+- **A token that does not exist.** `fontFamily="$mono"` names nothing (the
+  config declares `body` and `heading` only) and resolves to nothing at all.
+  Mono lives in `theme.css`, which typesets `code`/`pre`.
+- **A frame prop that lands on markup you did not intend.** gui's Button frame
+  declares `role="button"` and stamps it on whatever it renders, so
+  `<Button asChild>` around an anchor produces `<a href role="button">`. That is
+  what `components/link-button.tsx` exists to state once.
+- **The five in hanzo.ai's `page-kit.tsx`** — `animation` vs `transition`,
+  `$gtSm` vs `$sm` (the media keys here are `xs/sm/md/lg/xl` and `max-*`), `tag`
+  vs `render`, `lineHeight={1.1}` rendering as 1.1px, `letterSpacing` as a prop.
+
+### So verify by looking, not by building
+
+A green build proves the imports resolved. The e2e suite (`e2e/store.spec.ts`)
+is the actual check: every assertion reads a **computed style** or a **measured
+box** off the running page, because that is the only evidence that tells
+"styled" apart from "the prop went nowhere". It asserts the six defects
+specifically, and each was confirmed to fail when its defect is put back.
+
+Nothing in it asserts that a count is `>= 0`. The suite this replaced was mostly
+those, over Tailwind selectors that no longer exist.
+
+```bash
+npm run typecheck                              # tsc --noEmit
+npm run build                                  # 209 static pages
+npx playwright test --project=chromium         # 21 tests
 ```
 
-### Console Statements (Medium)
-Production console.error in:
-- `app/page.tsx` (line 29)
-- `app/apps/[id]/page.tsx` (line 18)
-- `app/apps/[id]/page-client.tsx` (line 28)
+## 3. TypeScript stays on 5.x
 
-### URL Validation (Medium)
-`app/apps/[id]/page-client.tsx` renders unvalidated URLs from store.json. Sanitize before use.
+`typescript@7` is the native Go compiler and its npm package is a launcher for
+that binary and nothing else — `require('typescript')` returns two keys, and
+`readConfigFile`, `parseJsonConfigFileContent` and `sys` are all `undefined`.
+Next reads `tsconfig.json` through exactly those functions to learn
+`compilerOptions.paths`, so on TS 7 it learns nothing, `@/*` is never registered
+as a webpack alias, and every path-aliased import fails to resolve. Same shape
+as tsup, whose `rollup-plugin-dts` breaks on it.
 
-### Missing Error Boundaries (Medium)
-No React Error Boundaries on main pages.
+This is a property of the consumer, not a defect to fix here. Do not add
+`@typescript/native-preview` either: it is `7.0.0-dev`, behind stable.
 
-### WalletConnect Fallback (Low)
-`lib/wagmi.ts` line 132: project ID falls back to hardcoded 'demo'. Should throw if env var missing.
+`next.config` is `.mjs` for the same reason — Next loads a TypeScript config
+through the compiler API, which would make config LOADING depend on which
+TypeScript is installed.
 
-### Unused Import (Low)
-`app/apps/[id]/page-client.tsx`: `Github` from lucide-react is imported but unused.
+## 4. Two dependency facts the build needs
 
-## Type Declarations
+- `@coinbase/cdp-sdk`, reached through wagmi's Base Account connector, imports
+  the `@x402/*` payment SDKs unconditionally while declaring them optional
+  peers. The store never signs an x402 payment and does not install them, and
+  webpack resolves statically — so they are mapped to `fallback: false` in
+  `next.config.mjs`.
+- @hanzo/ui's icons need `react-native-svg`, whose peer floor is react ^19.2.3.
+  That is why react is pinned at 19.2.8.
 
-Created `types/hanzo-ui.d.ts` for @hanzo/ui module (no exported types).
-`types/hanzo.d.ts` has `Badge` typed as `any` -- should get proper `BadgeProps` interface.
+## 5. Known-stale data
 
-## Key Files
-
-```
-app/
-  page.tsx                    # Main store page
-  apps/[id]/
-    page.tsx                  # Server component (fetches app data)
-    page-client.tsx           # Client component (app detail)
-  providers.tsx               # QueryClient setup
-lib/
-  wagmi.ts                    # Web3 config
-types/
-  hanzo-ui.d.ts               # @hanzo/ui type shim
-  hanzo.d.ts                  # Shared types
-e2e/
-  store.spec.ts               # Playwright tests
-next.config.js                # Build config
-```
-
-## Security
-
-- No hardcoded secrets found
-- No SQL injection (no direct DB queries)
-- HTTPS enforced for external URLs
-- No eval() or dangerous functions
-
-## Design tokens
-
-The palette is `@hanzo/design` — `app/globals.css` imports `tokens/colors.css`
-and `tokens/radius.css`, so `:root` is Hanzo's dark palette and `.light` retunes
-it (next-themes writes both classes; `defaultTheme="dark"`). Do not declare
-`--background`/`--border`/etc. locally; retune upstream in `~/work/hanzo/design`.
-
-`tailwind.config.ts` reads tokens as `var(--x)`, NOT `hsl(var(--x))`. The design
-package publishes finished colours (hex, and `rgb(255 255 255 / .10)` alpha
-hairlines); wrapping one in `hsl()` is invalid at computed-value time and the
-browser drops the whole declaration — which silently disables every colour
-utility in the app.
-
-`@hanzo/ui` 5's components are not in the Tailwind `content` globs, so any class
-they emit themselves is never generated. Style @hanzo/ui components with the
-app's own utility classes, or use a native element — do not rely on their
-built-in appearance.
-
-Build order: `npm run generate-store` before `npm run build` — `public/store.json`
-is gitignored and generated from `data/`, and `output: 'export'` cannot
-prerender `/apps/[id]` without it.
+Every `icon` and `screenshot` url in the catalog is a **presigned R2 link**
+inherited from the upstream Shinkai store, signed 2025-11-05 with
+`X-Amz-Expires=86400`. All 202 have been dead since the following day, so the
+store renders `AppIcon`'s initial for every app and the Screenshots panel never
+appears. That is the fallback working, not a rendering bug — but the artwork
+itself is real missing data and wants re-hosting.
