@@ -1,120 +1,269 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* The design tokens are NOT authored here. `@hanzo/ui/theme.css` is the one
+   place the Hanzo colour ladder, radii, type face and elevation are defined, and
+   every Hanzo surface reads that same file — a local copy of the semantic block
+   is exactly how two surfaces drift a shade apart without anyone editing
+   anything. The values `@hanzo/gui` resolves at runtime come from the same
+   source, so CSS and components cannot disagree. */
+@import '@hanzo/ui/theme.css';
 
-@layer base {
-  :root {
-    --radius: 0.625rem;
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  /* A store is one column on a phone: nothing may scroll the body sideways. */
+  overflow-x: hidden;
+}
 
-  .dark {
-    --background: oklch(0 0 0);
-    --foreground: oklch(1 0 0);
-    --card: oklch(0.1 0 0);
-    --card-foreground: oklch(1 0 0);
-    --popover: oklch(0.1 0 0);
-    --popover-foreground: oklch(1 0 0);
-    --primary: oklch(1 0 0);
-    --primary-foreground: oklch(0 0 0);
-    --secondary: oklch(0.2 0 0);
-    --secondary-foreground: oklch(1 0 0);
-    --muted: oklch(0.2 0 0);
-    --muted-foreground: oklch(0.7 0 0);
-    --accent: oklch(1 0 0);
-    --accent-foreground: oklch(0 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.5 0 0);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.1 0 0);
-    --sidebar-foreground: oklch(1 0 0);
-    --sidebar-primary: oklch(1 0 0);
-    --sidebar-primary-foreground: oklch(0 0 0);
-    --sidebar-accent: oklch(0.2 0 0);
-    --sidebar-accent-foreground: oklch(1 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.5 0 0);
+/* ── Page chrome ──────────────────────────────────────────────────────────────
+   Document-level layout — the gutter, the sticky bar, the card grid. This is
+   the layer @hanzo/gui deliberately does not cover: its stacks are flexbox on
+   every platform, and a responsive column grid is a CSS-only idea. Everything
+   INSIDE a card is composed from @hanzo/ui components and gui style props;
+   everything that positions the page is here. Two concerns, two vocabularies,
+   no overlap. */
+.page {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--foreground);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--foreground);
+}
+
+.main {
+  padding-block: 3rem;
+}
+
+/* One column on a phone, two from tablet, three on a desktop. */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Override RainbowKit variables to use Hanzo black theme */
-.dark [data-rk] {
-  /* Colors - pure black with white accents */
-  --rk-colors-accentColor: white !important;
-  --rk-colors-accentColorForeground: black !important;
-  --rk-colors-modalBackground: oklch(0.1 0 0) !important;
-  --rk-colors-modalBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-modalText: white !important;
-  --rk-colors-modalTextSecondary: oklch(0.7 0 0) !important;
-  --rk-colors-modalTextDim: rgba(255, 255, 255, 0.5) !important;
-  --rk-colors-generalBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-generalBorderDim: rgba(255, 255, 255, 0.05) !important;
-  --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-actionButtonSecondaryBackground: oklch(0.2 0 0) !important;
-  --rk-colors-connectButtonBackground: oklch(0.1 0 0) !important;
-  --rk-colors-connectButtonText: white !important;
-  --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)) !important;
-  --rk-colors-menuItemBackground: oklch(0.2 0 0) !important;
-  --rk-colors-closeButton: rgba(255, 255, 255, 0.6) !important;
-  --rk-colors-closeButtonBackground: oklch(0.2 0 0) !important;
-  --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.9) !important;
-  /* Border radius - match Hanzo */
-  --rk-radii-modal: 10px !important;
-  --rk-radii-connectButton: 10px !important;
-  --rk-radii-actionButton: 10px !important;
-  --rk-radii-menuButton: 10px !important;
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.app-icon {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.site-footer {
+  margin-top: 5rem;
+  padding-block: 3rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.links a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--foreground);
+}
+
+.copyright {
+  margin: 1.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+/* ── Documents ────────────────────────────────────────────────────────────────
+   Guidelines / Terms / Privacy are prose, not product chrome: long-form legal
+   copy whose structure IS its markup. So they are written as semantic HTML and
+   typeset once, here, instead of carrying a utility class on every heading and
+   list item. One scope, one place to retune the reading experience, and the
+   pages stay diffable against the legal text they mirror. */
+.doc {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.doc h1 {
+  margin: 0 0 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.doc h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.doc h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.doc p {
+  margin: 0 0 1rem;
+}
+
+.doc ul {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.doc ul.plain {
+  padding-left: 0;
+  list-style: none;
+}
+
+.doc li {
+  margin-bottom: 0.5rem;
+}
+
+.doc a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.doc .muted {
+  color: var(--muted-foreground);
+}
+
+/* A callout is prose too — a boxed digest of the section it opens, typeset by
+   the document rather than by importing a component vocabulary mid-text. */
+.doc .callout {
+  display: block;
+  margin: 0 0 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.doc .callout h2 {
+  margin-top: 0;
+}
+
+.doc .callout ul:last-child,
+.doc .callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* The closing affirmation on every document — smaller, quieter, ruled off. */
+.doc .coda {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* ── RainbowKit ───────────────────────────────────────────────────────────────
+   The wallet modal is a third-party surface with its own variable namespace.
+   Rather than restating a palette, each of its variables is bound to the Hanzo
+   token that already means the same thing, so the modal moves when the theme
+   moves. This is the only place in the app that names --rk-*. */
+[data-rk] {
+  --rk-colors-accentColor: var(--primary) !important;
+  --rk-colors-accentColorForeground: var(--primary-foreground) !important;
+  --rk-colors-modalBackground: var(--popover) !important;
+  --rk-colors-modalBorder: var(--border) !important;
+  --rk-colors-modalText: var(--popover-foreground) !important;
+  --rk-colors-modalTextSecondary: var(--muted-foreground) !important;
+  --rk-colors-modalTextDim: var(--muted-foreground) !important;
+  --rk-colors-generalBorder: var(--border) !important;
+  --rk-colors-generalBorderDim: var(--border) !important;
+  --rk-colors-actionButtonBorder: var(--border) !important;
+  --rk-colors-actionButtonSecondaryBackground: var(--secondary) !important;
+  --rk-colors-connectButtonBackground: var(--card) !important;
+  --rk-colors-connectButtonText: var(--card-foreground) !important;
+  --rk-colors-connectButtonInnerBackground: var(--secondary) !important;
+  --rk-colors-menuItemBackground: var(--secondary) !important;
+  --rk-colors-closeButton: var(--muted-foreground) !important;
+  --rk-colors-closeButtonBackground: var(--secondary) !important;
+  --rk-radii-modal: var(--radius) !important;
+  --rk-radii-connectButton: var(--radius) !important;
+  --rk-radii-actionButton: var(--radius) !important;
+  --rk-radii-menuButton: var(--radius) !important;
 }
