@@ -1,77 +1,22 @@
+/* TOKENS COME FROM @hanzo/design — the same ladder every Hanzo surface reads.
+   Dark is the default (`:root` IS the dark palette) and `.light` retunes it,
+   which is exactly what next-themes emits here: `attribute="class"` with
+   `defaultTheme="dark"` puts `light` or `dark` on <html>, so `.dark` needs no
+   block of its own and `.light` is already written upstream.
+
+   Only the shadcn vars the store's components actually read are named below,
+   and every one of them now resolves in @hanzo/design — the local `:root`
+   /`.dark` blocks that used to declare them were stock shadcn boilerplate
+   (a white oklch(1 0 0) ground) and are gone.
+
+   The store carries no charts and no sidebar, so --chart-* / --sidebar-* were
+   declared and never read; they are deleted rather than retuned. */
+@import '@hanzo/design/tokens/colors.css';
+@import '@hanzo/design/tokens/radius.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  :root {
-    --radius: 0.625rem;
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
-  }
-
-  .dark {
-    --background: oklch(0 0 0);
-    --foreground: oklch(1 0 0);
-    --card: oklch(0.1 0 0);
-    --card-foreground: oklch(1 0 0);
-    --popover: oklch(0.1 0 0);
-    --popover-foreground: oklch(1 0 0);
-    --primary: oklch(1 0 0);
-    --primary-foreground: oklch(0 0 0);
-    --secondary: oklch(0.2 0 0);
-    --secondary-foreground: oklch(1 0 0);
-    --muted: oklch(0.2 0 0);
-    --muted-foreground: oklch(0.7 0 0);
-    --accent: oklch(1 0 0);
-    --accent-foreground: oklch(0 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.5 0 0);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.1 0 0);
-    --sidebar-foreground: oklch(1 0 0);
-    --sidebar-primary: oklch(1 0 0);
-    --sidebar-primary-foreground: oklch(0 0 0);
-    --sidebar-accent: oklch(0.2 0 0);
-    --sidebar-accent-foreground: oklch(1 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.5 0 0);
-  }
-}
 
 @layer base {
   * {
@@ -83,6 +28,9 @@
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
   }
+  ::selection {
+    background-color: var(--selection);
+  }
 }
 
 @layer utilities {
@@ -91,30 +39,32 @@
   }
 }
 
-/* Override RainbowKit variables to use Hanzo black theme */
-.dark [data-rk] {
-  /* Colors - pure black with white accents */
-  --rk-colors-accentColor: white !important;
-  --rk-colors-accentColorForeground: black !important;
-  --rk-colors-modalBackground: oklch(0.1 0 0) !important;
-  --rk-colors-modalBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-modalText: white !important;
-  --rk-colors-modalTextSecondary: oklch(0.7 0 0) !important;
-  --rk-colors-modalTextDim: rgba(255, 255, 255, 0.5) !important;
-  --rk-colors-generalBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-generalBorderDim: rgba(255, 255, 255, 0.05) !important;
-  --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.1) !important;
-  --rk-colors-actionButtonSecondaryBackground: oklch(0.2 0 0) !important;
-  --rk-colors-connectButtonBackground: oklch(0.1 0 0) !important;
-  --rk-colors-connectButtonText: white !important;
-  --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1)) !important;
-  --rk-colors-menuItemBackground: oklch(0.2 0 0) !important;
-  --rk-colors-closeButton: rgba(255, 255, 255, 0.6) !important;
-  --rk-colors-closeButtonBackground: oklch(0.2 0 0) !important;
-  --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.9) !important;
-  /* Border radius - match Hanzo */
-  --rk-radii-modal: 10px !important;
-  --rk-radii-connectButton: 10px !important;
-  --rk-radii-actionButton: 10px !important;
-  --rk-radii-menuButton: 10px !important;
+/* RainbowKit ships its own token namespace, so the connect-wallet surface is
+   the one place Hanzo's ladder has to be handed over by name. Every value is a
+   design token — the modal is the same near-black ground, the same alpha
+   hairlines and the same graded ink as the page it opens over. Unscoped from
+   `.dark` on purpose: the tokens themselves flip under `.light`. */
+[data-rk] {
+  --rk-colors-accentColor: var(--primary) !important;
+  --rk-colors-accentColorForeground: var(--primary-foreground) !important;
+  --rk-colors-modalBackground: var(--popover) !important;
+  --rk-colors-modalBorder: var(--border) !important;
+  --rk-colors-modalText: var(--text-primary) !important;
+  --rk-colors-modalTextSecondary: var(--text-tertiary) !important;
+  --rk-colors-modalTextDim: var(--text-disabled) !important;
+  --rk-colors-generalBorder: var(--border) !important;
+  --rk-colors-generalBorderDim: var(--glass) !important;
+  --rk-colors-actionButtonBorder: var(--border) !important;
+  --rk-colors-actionButtonSecondaryBackground: var(--secondary) !important;
+  --rk-colors-connectButtonBackground: var(--card) !important;
+  --rk-colors-connectButtonText: var(--foreground) !important;
+  --rk-colors-connectButtonInnerBackground: var(--glass-strong) !important;
+  --rk-colors-menuItemBackground: var(--accent) !important;
+  --rk-colors-closeButton: var(--text-secondary) !important;
+  --rk-colors-closeButtonBackground: var(--secondary) !important;
+  --rk-colors-modalBackdrop: var(--surface-scrim) !important;
+  --rk-radii-modal: var(--radius-lg) !important;
+  --rk-radii-connectButton: var(--radius-md) !important;
+  --rk-radii-actionButton: var(--radius-md) !important;
+  --rk-radii-menuButton: var(--radius-md) !important;
 }

@@ -6,7 +6,7 @@ import { HanzoLogo } from '@hanzo/logo';
 import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
-import { Button, Input, Card, CardContent, CardFooter, CardHeader } from '@hanzo/ui';
+import { Button, Card, CardContent, CardFooter, CardHeader } from '@hanzo/ui';
 import { Badge } from '@hanzo/ui/badge';
 import { sanitizeUrl } from '@/lib/url-utils';
 import type { StoreData, StoreApp } from '@/types';
@@ -118,14 +118,20 @@ export default function StorePage() {
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
           {/* Search */}
+          {/* A plain input, not @hanzo/ui's <Input>. That one is a FLOATING-LABEL
+              field: it reserves 2rem of top padding for a `peer` <Label> and
+              paints itself from the @hanzo/ui token namespace, neither of which
+              exists here — so it rendered as a 3px white UA outline around text
+              pushed out of its own box. This is one native input wearing the
+              design tokens the rest of the page already wears. */}
           <div className="relative">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-            <Input
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
               type="text"
               placeholder="Search apps..."
               value={searchQuery}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-              className="pl-10 h-11 border-border/40 focus:border-border/60"
+              className="h-11 w-full rounded-lg border border-border bg-card pl-10 pr-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring"
             />
           </div>
 
