@@ -7,6 +7,10 @@
 
 # testing
 /coverage
+# Playwright's own output. Committed once already — eighteen error-context.md
+# files and a report — which is how a failing run ends up in the history.
+/test-results/
+/playwright-report/
 
 # next.js
 /.next/

@@ -71,6 +71,14 @@ body {
   color: var(--foreground);
 }
 
+/* The mark is a fixed size, not a flexible one. As a plain flex child it took
+   its share of the squeeze when the bar ran out of room: 48px on a desktop,
+   17px at 390px, and 0 — gone entirely — at 320px. The title beside it is the
+   part that gives. */
+.brand > :first-child {
+  flex: none;
+}
+
 .back {
   display: inline-flex;
   align-items: center;
@@ -169,6 +177,16 @@ body {
   overflow-x: auto;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+
+/* A button that navigates is still a button. `asChild` renders the control as
+   the anchor it wraps, which is correct markup and correct semantics — and
+   picks up the user-agent underline on every label. `hanzo-button` is the class
+   @hanzo/ui publishes for exactly this, hosts hooking the control from CSS, so
+   the underline is refused once for every button in the store rather than at
+   each of the five call sites. */
+.hanzo-button {
+  text-decoration: none;
 }
 
 .site-footer {

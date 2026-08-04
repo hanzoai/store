@@ -13,7 +13,9 @@ import { notFound } from 'next/navigation'
 import { Download, ExternalLink, Star, Tag } from 'lucide-react'
 import { useAccount } from 'wagmi'
 import { Text, XStack, YStack } from '@hanzo/gui'
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from '@hanzo/ui'
+import { Badge, Card, CardContent, CardHeader, CardTitle } from '@hanzo/ui'
+import { AppIcon } from '@/components/app-icon'
+import { LinkButton } from '@/components/link-button'
 import { SiteFooter, StoreMark, TopBar } from '@/components/site-chrome'
 import { installUrl } from '@/lib/install-url'
 import { sanitizeUrl } from '@/lib/url-utils'
@@ -55,11 +57,7 @@ export function AppDetailPageClient({ id }: { id: string }) {
         <div className="detail">
           <YStack gap="$5">
             <XStack gap="$5" items="flex-start" flexWrap="wrap">
-              {app.icon ? (
-                <img className="app-icon lg" src={app.icon} alt={app.name} />
-              ) : (
-                <div className="app-icon lg fallback">{app.name[0]}</div>
-              )}
+              <AppIcon app={app} lg />
 
               <YStack flex={1} minW={0} gap="$3">
                 <Text render="h1" fontSize="$10" fontWeight="700">
@@ -102,20 +100,7 @@ export function AppDetailPageClient({ id }: { id: string }) {
               </YStack>
             </XStack>
 
-            {app.screenshots?.length ? (
-              <Panel title="Screenshots">
-                <YStack gap="$4">
-                  {app.screenshots.map((src, i) => (
-                    <img
-                      key={src}
-                      className="shot"
-                      src={src}
-                      alt={`${app.name} screenshot ${i + 1}`}
-                    />
-                  ))}
-                </YStack>
-              </Panel>
-            ) : null}
+            <Screenshots app={app} />
 
             <Panel title="Installation">
               <YStack gap="$4">
@@ -164,12 +149,10 @@ export function AppDetailPageClient({ id }: { id: string }) {
           <YStack gap="$4">
             <Card>
               <CardContent gap="$3">
-                <Button size="lg" asChild>
-                  <a href={installUrl(app, isConnected ? address : undefined)}>
-                    <Download size={16} />
-                    Open in Hanzo Desktop
-                  </a>
-                </Button>
+                <LinkButton size="lg" href={installUrl(app, isConnected ? address : undefined)}>
+                  <Download size={16} />
+                  Open in Hanzo Desktop
+                </LinkButton>
                 <Text fontSize="$1" color="$color11" text="center">
                   Requires the Hanzo Desktop app
                 </Text>
@@ -209,12 +192,53 @@ export function AppDetailPageClient({ id }: { id: string }) {
   )
 }
 
+/**
+ * The gallery, when there is one.
+ *
+ * Same rule as `AppIcon`: artwork that does not load does not render. The
+ * screenshot urls are the same expired presigned R2 links as the icons, so the
+ * panel used to show the browser's broken-image glyph with the alt text beside
+ * it. A shot that fails drops out, and when none survive the panel goes with
+ * them — a heading over nothing is not better than no heading.
+ */
+function Screenshots({ app }: { app: StoreApp }) {
+  const [failed, setFailed] = useState<string[]>([])
+  const shots = (app.screenshots ?? []).filter((src) => !failed.includes(src))
+  if (!shots.length) return null
+
+  return (
+    <Panel title="Screenshots">
+      <YStack gap="$4">
+        {shots.map((src, i) => (
+          <img
+            key={src}
+            className="shot"
+            src={src}
+            alt={`${app.name} screenshot ${i + 1}`}
+            onError={() => setFailed((f) => [...f, src])}
+          />
+        ))}
+      </YStack>
+    </Panel>
+  )
+}
+
 /** A titled card — every block on this page is one. */
 function Panel({ title, children }: { title: string; children: ReactNode }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle render="h2" size="$6">
+        {/* `size` and `fontWeight` both, because `size` is a VARIANT, not a
+            style prop: it expands to the whole typographic row for that step —
+            size, leading, tracking AND weight — and the weight column of the
+            Hanzo ladder is 400 at every step. So `size="$6"` compiled to
+            `font-weight: var(--f-weight-6)` and quietly replaced the 600
+            CardTitle declares for itself; every panel heading on this page
+            rendered at body weight, indistinguishable from the prose beneath
+            it, with no error and no type failure. `size` is still what states
+            the heading's step — it is the only prop that pairs 17px with its
+            24px leading — so the weight is restated after it. */}
+        <CardTitle render="h2" size="$6" fontWeight="600">
           {title}
         </CardTitle>
       </CardHeader>
@@ -240,11 +264,9 @@ function Row({ label, value }: { label: string; value?: string | number }) {
 
 function LinkOut({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <Button variant="ghost" size="sm" asChild>
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        <ExternalLink size={12} />
-        {children}
-      </a>
-    </Button>
+    <LinkButton variant="ghost" size="sm" href={href} newTab>
+      <ExternalLink size={12} />
+      {children}
+    </LinkButton>
   )
 }
