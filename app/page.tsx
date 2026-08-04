@@ -1,372 +1,307 @@
-'use client';
+'use client'
 
-import { useState, useMemo, useEffect } from 'react';
-import Link from 'next/link';
-import { HanzoLogo } from '@hanzo/logo';
-import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useAccount } from 'wagmi';
-import { Button, Card, CardContent, CardFooter, CardHeader } from '@hanzo/ui';
-import { Badge } from '@hanzo/ui/badge';
-import { sanitizeUrl } from '@/lib/url-utils';
-import type { StoreData, StoreApp } from '@/types';
+import { useState, useMemo, useEffect } from 'react'
+import Link from 'next/link'
+import { HanzoLogo } from '@hanzo/logo'
+import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react'
+import { useAccount } from 'wagmi'
+import { XStack, YStack, Text } from '@hanzo/gui'
+import { Badge, Button, Card, CardContent, CardFooter, CardHeader, Input } from '@hanzo/ui'
+import { TopBar, SiteFooter } from '@/components/site-chrome'
+import { sanitizeUrl } from '@/lib/url-utils'
+import type { StoreData, StoreApp } from '@/types'
+
+const TYPES = ['all', 'Agent', 'Tool'] as const
 
 export default function StorePage() {
-  const { address, isConnected } = useAccount();
-  const [storeData, setStoreData] = useState<StoreData | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedType, setSelectedType] = useState<string>('all');
-  const [loading, setLoading] = useState(true);
+  const { address, isConnected } = useAccount()
+  const [storeData, setStoreData] = useState<StoreData | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedType, setSelectedType] = useState<string>('all')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Load store data
     fetch('/store.json')
-      .then(res => res.json())
-      .then(data => {
-        setStoreData(data);
-        setLoading(false);
+      .then((res) => res.json())
+      .then((data) => {
+        setStoreData(data)
+        setLoading(false)
       })
-      .catch(() => {
-        setLoading(false);
-      });
-  }, []);
+      .catch(() => setLoading(false))
+  }, [])
 
   const filteredApps = useMemo(() => {
-    if (!storeData) return [];
+    if (!storeData) return []
 
-    let apps = storeData.apps;
+    const query = searchQuery.trim().toLowerCase()
+    const apps = storeData.apps.filter(
+      (app) =>
+        (selectedType === 'all' || app.type === selectedType) &&
+        (selectedCategory === 'all' || app.category === selectedCategory) &&
+        (!query ||
+          app.name.toLowerCase().includes(query) ||
+          app.description.toLowerCase().includes(query) ||
+          app.tags.some((tag) => tag.toLowerCase().includes(query))),
+    )
 
-    // Filter by type
-    if (selectedType !== 'all') {
-      apps = apps.filter(app => app.type === selectedType);
-    }
+    // Featured first, then by reach. `filter` already returned a fresh array, so
+    // this sorts a copy rather than the store's own list.
+    return apps.sort(
+      (a, b) => Number(!!b.featured) - Number(!!a.featured) || (b.downloads || 0) - (a.downloads || 0),
+    )
+  }, [storeData, searchQuery, selectedCategory, selectedType])
 
-    // Filter by category
-    if (selectedCategory !== 'all') {
-      apps = apps.filter(app => app.category === selectedCategory);
-    }
-
-    // Filter by search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      apps = apps.filter(app =>
-        app.name.toLowerCase().includes(query) ||
-        app.description.toLowerCase().includes(query) ||
-        app.tags.some(tag => tag.toLowerCase().includes(query))
-      );
-    }
-
-    // Sort by downloads (descending) and featured first
-    apps.sort((a, b) => {
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
-      return (b.downloads || 0) - (a.downloads || 0);
-    });
-
-    return apps;
-  }, [storeData, searchQuery, selectedCategory, selectedType]);
-
-  if (loading) {
+  if (loading || !storeData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-xl text-muted-foreground">Loading store...</div>
-      </div>
-    );
-  }
-
-  if (!storeData) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-xl text-destructive">Failed to load store data</div>
-      </div>
-    );
+      <YStack minH="100vh" items="center" justify="center">
+        <Text fontSize="$6" color={storeData || loading ? '$color11' : '$red10'}>
+          {loading ? 'Loading store…' : 'Failed to load store data'}
+        </Text>
+      </YStack>
+    )
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/40 bg-card/50 backdrop-blur-md sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex items-center justify-between gap-4 mb-4">
-            <div className="flex items-center gap-4">
-              <HanzoLogo size={48} className="text-foreground" />
-              <div>
-                <h1 className="text-3xl font-semibold tracking-tight">Hanzo AI Store</h1>
-                <p className="text-sm text-muted-foreground">AI Agent Tools & MCP Servers</p>
-              </div>
-            </div>
-            <ConnectButton />
-          </div>
-          <p className="text-muted-foreground max-w-2xl text-sm leading-relaxed">
-            Boost your AI agents with ready-to-go, tailor-made automations for seamless tech integration
-          </p>
-          <div className="mt-4 flex gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <span className="font-semibold text-foreground">{storeData.apps.length}</span> Apps
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-2">
-              <span className="font-semibold text-foreground">{storeData.categories.length}</span> Categories
-            </span>
-          </div>
-        </div>
-      </header>
+    <div className="page">
+      <TopBar
+        brand={
+          <>
+            <HanzoLogo size={48} />
+            <YStack>
+              <Text fontSize="$8" fontWeight="600">
+                Hanzo AI Store
+              </Text>
+              <Text fontSize="$2" color="$color11">
+                AI Agent Tools &amp; MCP Servers
+              </Text>
+            </YStack>
+          </>
+        }
+      >
+        <YStack gap="$3" pb="$6">
+          <Text fontSize="$3" color="$color11" maxW={640}>
+            Boost your AI agents with ready-to-go, tailor-made automations for seamless tech
+            integration
+          </Text>
+          <XStack gap="$3" items="center">
+            <Text fontSize="$3" color="$color11">
+              <Text fontWeight="600" color="$color12">
+                {storeData.apps.length}
+              </Text>{' '}
+              Apps
+            </Text>
+            <Text color="$color11">•</Text>
+            <Text fontSize="$3" color="$color11">
+              <Text fontWeight="600" color="$color12">
+                {storeData.categories.length}
+              </Text>{' '}
+              Categories
+            </Text>
+          </XStack>
+        </YStack>
+      </TopBar>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Search and Filter */}
-        <div className="mb-8 space-y-4">
-          {/* Search */}
-          {/* A plain input, not @hanzo/ui's <Input>. That one is a FLOATING-LABEL
-              field: it reserves 2rem of top padding for a `peer` <Label> and
-              paints itself from the @hanzo/ui token namespace, neither of which
-              exists here — so it rendered as a 3px white UA outline around text
-              pushed out of its own box. This is one native input wearing the
-              design tokens the rest of the page already wears. */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Search apps..."
-              value={searchQuery}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-              className="h-11 w-full rounded-lg border border-border bg-card pl-10 pr-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring"
-            />
-          </div>
+      <main className="container main">
+        <YStack gap="$4" pb="$6">
+          <Input
+            placeholder="Search apps…"
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            startAdornment={<Search size={16} />}
+          />
 
-          {/* Type Filter */}
-          <div className="flex gap-2 flex-wrap">
-            {['all', 'Agent', 'Tool'].map(type => {
-              const count = type === 'all'
-                ? storeData.apps.length
-                : storeData.apps.filter(app => app.type === type).length;
-              return (
-                <Button
-                  key={type}
-                  variant={selectedType === type ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedType(type)}
-                >
-                  {type === 'all' ? 'All Types' : type} ({count})
-                </Button>
-              );
-            })}
-          </div>
+          <XStack gap="$2" flexWrap="wrap">
+            {TYPES.map((type) => (
+              <Button
+                key={type}
+                variant={selectedType === type ? 'default' : 'outline'}
+                size="sm"
+                onPress={() => setSelectedType(type)}
+              >
+                {type === 'all' ? 'All Types' : type} (
+                {type === 'all'
+                  ? storeData.apps.length
+                  : storeData.apps.filter((app) => app.type === type).length}
+                )
+              </Button>
+            ))}
+          </XStack>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant={selectedCategory === 'all' ? "default" : "outline"}
-              size="sm"
-              onClick={() => setSelectedCategory('all')}
-            >
-              All ({storeData.apps.length})
-            </Button>
-            {storeData.categories.map(category => {
-              const count = storeData.apps.filter(app => app.category === category).length;
-              return (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  {category} ({count})
-                </Button>
-              );
-            })}
-          </div>
-        </div>
+          <XStack gap="$2" flexWrap="wrap">
+            {['all', ...storeData.categories].map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? 'default' : 'outline'}
+                size="sm"
+                onPress={() => setSelectedCategory(category)}
+              >
+                {category === 'all' ? 'All' : category} (
+                {category === 'all'
+                  ? storeData.apps.length
+                  : storeData.apps.filter((app) => app.category === category).length}
+                )
+              </Button>
+            ))}
+          </XStack>
+        </YStack>
 
-        {/* Results Count */}
-        <div className="mb-6 text-muted-foreground">
+        <Text fontSize="$3" color="$color11">
           {filteredApps.length} {filteredApps.length === 1 ? 'app' : 'apps'} found
-        </div>
+        </Text>
 
-        {/* App Grid */}
         {filteredApps.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">No apps found matching your criteria</p>
-          </div>
+          <YStack items="center" py="$10">
+            <Text fontSize="$5" color="$color11">
+              No apps found matching your criteria
+            </Text>
+          </YStack>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredApps.map(app => (
-              <AppCard key={app.id} app={app} walletAddress={address} isWalletConnected={isConnected} />
+          <div className="cards">
+            {filteredApps.map((app) => (
+              <AppCard
+                key={app.id}
+                app={app}
+                walletAddress={address}
+                isWalletConnected={isConnected}
+              />
             ))}
           </div>
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="mt-20 border-t border-border/40 bg-card/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="space-y-6">
-            <div className="text-center text-muted-foreground">
-              <p className="font-medium text-foreground mb-2">Want to add your MCP server?</p>
-              <p className="text-sm">
-                Fork the repository and submit a PR with your app's JSON file in{' '}
-                <code className="bg-muted px-2 py-0.5 rounded text-foreground">data/agents/</code> or{' '}
-                <code className="bg-muted px-2 py-0.5 rounded text-foreground">data/tools/</code>
-              </p>
-            </div>
-            <div className="flex justify-center gap-6 text-sm">
-              <Link href="/guidelines" className="text-muted-foreground hover:text-foreground transition-colors">
-                Guidelines
-              </Link>
-              <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter>
+        <YStack items="center" gap="$1" pb="$5">
+          <Text fontWeight="500" color="$color12">
+            Want to add your MCP server?
+          </Text>
+          <Text fontSize="$2" color="$color11">
+            Fork the repository and submit a PR with your app&apos;s JSON file in{' '}
+            <Text fontFamily="$mono">data/agents/</Text> or{' '}
+            <Text fontFamily="$mono">data/tools/</Text>
+          </Text>
+        </YStack>
+      </SiteFooter>
     </div>
-  );
+  )
 }
 
-function AppCard({ app, walletAddress, isWalletConnected }: {
-  app: StoreApp;
-  walletAddress?: `0x${string}`;
-  isWalletConnected: boolean;
+function AppCard({
+  app,
+  walletAddress,
+  isWalletConnected,
+}: {
+  app: StoreApp
+  walletAddress?: `0x${string}`
+  isWalletConnected: boolean
 }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   const copyInstallCommand = () => {
-    if (app.installCommand) {
-      navigator.clipboard.writeText(app.installCommand);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
+    if (!app.installCommand) return
+    navigator.clipboard.writeText(app.installCommand)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
+  // The desktop app handles `hanzo://` and performs the install. A connected
+  // wallet rides along so it knows who is installing.
   const installInHanzo = () => {
-    // Open hanzo:// protocol to install the app
-    // The desktop app will handle this URL and install the MCP server
-    let hanzoUrl = `hanzo://install/${encodeURIComponent(app.id)}?name=${encodeURIComponent(app.name)}&type=${encodeURIComponent(app.type || 'Tool')}`;
+    const params = new URLSearchParams({ name: app.name, type: app.type || 'Tool' })
+    if (isWalletConnected && walletAddress) params.set('wallet', walletAddress)
+    window.location.href = `hanzo://install/${encodeURIComponent(app.id)}?${params}`
+  }
 
-    // Add wallet address if connected
-    if (isWalletConnected && walletAddress) {
-      hanzoUrl += `&wallet=${encodeURIComponent(walletAddress)}`;
-    }
-
-    window.location.href = hanzoUrl;
-  };
+  const repository = app.repository ? sanitizeUrl(app.repository) : null
 
   return (
-    <Card className={app.featured ? 'border-primary/50' : 'border-border/40 hover:border-border/60 transition-colors'}>
-      <CardHeader>
-        {app.featured && (
-          <Badge variant="default" className="w-fit mb-3">
-            ⭐ Featured
-          </Badge>
-        )}
+    <Card height="100%" borderColor={app.featured ? '$color8' : '$borderColor'}>
+      <CardHeader gap="$3">
+        {app.featured ? <Badge variant="default">⭐ Featured</Badge> : null}
 
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1 min-w-0">
-            <h3 className="text-xl font-semibold mb-2 truncate">{app.name}</h3>
-            <div className="flex items-center gap-2 flex-wrap">
-              {app.type && (
-                <Badge variant="secondary">{app.type}</Badge>
-              )}
-              {app.downloads !== undefined && app.downloads > 0 && (
-                <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <Download className="h-3 w-3" />
-                  {app.downloads.toLocaleString()}
-                </span>
-              )}
-            </div>
-          </div>
-          {app.icon && (
-            <div className="w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden">
-              <img src={app.icon} alt={app.name} className="w-full h-full object-cover" />
-            </div>
-          )}
-        </div>
+        <XStack width="100%" items="flex-start" justify="space-between" gap="$4">
+          <YStack flex={1} minW={0} gap="$2">
+            <Text fontSize="$6" fontWeight="600" numberOfLines={1}>
+              {app.name}
+            </Text>
+            <XStack items="center" gap="$2" flexWrap="wrap">
+              {app.type ? <Badge variant="secondary">{app.type}</Badge> : null}
+              {app.downloads ? (
+                <XStack items="center" gap="$1">
+                  <Download size={12} />
+                  <Text fontSize="$2" color="$color11">
+                    {app.downloads.toLocaleString()}
+                  </Text>
+                </XStack>
+              ) : null}
+            </XStack>
+          </YStack>
+          {app.icon ? <img className="app-icon" src={app.icon} alt={app.name} /> : null}
+        </XStack>
       </CardHeader>
 
-      <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground line-clamp-3">{app.description}</p>
+      <CardContent gap="$4" flex={1}>
+        <Text fontSize="$3" color="$color11" numberOfLines={3}>
+          {app.description}
+        </Text>
 
-        <div className="flex flex-wrap gap-1.5">
-          {app.tags.slice(0, 4).map(tag => (
-            <Badge key={tag} variant="outline" className="text-xs">
+        <XStack gap="$1.5" flexWrap="wrap">
+          {app.tags.slice(0, 4).map((tag) => (
+            <Badge key={tag} variant="outline">
               {tag}
             </Badge>
           ))}
-          {app.tags.length > 4 && (
-            <Badge variant="outline" className="text-xs">
-              +{app.tags.length - 4}
-            </Badge>
-          )}
-        </div>
+          {app.tags.length > 4 ? <Badge variant="outline">+{app.tags.length - 4}</Badge> : null}
+        </XStack>
 
-        <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t">
-          <span>{app.author}</span>
-          {app.license && <span>{app.license}</span>}
-        </div>
+        <XStack
+          justify="space-between"
+          pt="$3"
+          borderTopWidth={1}
+          borderColor="$borderColor"
+          gap="$2"
+        >
+          <Text fontSize="$1" color="$color11">
+            {app.author}
+          </Text>
+          {app.license ? (
+            <Text fontSize="$1" color="$color11">
+              {app.license}
+            </Text>
+          ) : null}
+        </XStack>
       </CardContent>
 
-      <CardFooter className="flex-col gap-2">
-        <Link href={`/apps/${app.id}`} className="w-full">
-          <Button
-            variant="default"
-            size="default"
-            className="w-full"
-          >
-            View Details
-          </Button>
-        </Link>
+      <CardFooter flexDirection="column" gap="$2">
+        <Button width="100%" asChild>
+          <Link href={`/apps/${app.id}`}>View Details</Link>
+        </Button>
 
-        <Button
-          variant="outline"
-          size="default"
-          className="w-full"
-          onClick={installInHanzo}
-        >
-          <Download className="h-4 w-4" />
+        <Button width="100%" variant="outline" onPress={installInHanzo}>
+          <Download size={16} />
           Install in Hanzo
         </Button>
 
-        {app.installCommand && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full font-mono text-xs"
-            onClick={copyInstallCommand}
-          >
-            {copied ? (
-              <>
-                <Check className="h-3 w-3" />
-                Copied!
-              </>
-            ) : (
-              <>
-                <Copy className="h-3 w-3" />
-                {app.installCommand.length > 30
-                  ? `${app.installCommand.substring(0, 30)}...`
-                  : app.installCommand
-                }
-              </>
-            )}
+        {app.installCommand ? (
+          <Button width="100%" variant="outline" size="sm" onPress={copyInstallCommand}>
+            {copied ? <Check size={12} /> : <Copy size={12} />}
+            {copied
+              ? 'Copied!'
+              : app.installCommand.length > 30
+                ? `${app.installCommand.slice(0, 30)}…`
+                : app.installCommand}
           </Button>
-        )}
+        ) : null}
 
-        {app.repository && sanitizeUrl(app.repository) && (
-          <a
-            href={sanitizeUrl(app.repository)!}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-full"
-          >
-            <ExternalLink className="h-3 w-3" />
-            View on GitHub
-          </a>
-        )}
+        {repository ? (
+          <Button width="100%" variant="ghost" size="sm" asChild>
+            <a href={repository} target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={12} />
+              View on GitHub
+            </a>
+          </Button>
+        ) : null}
       </CardFooter>
     </Card>
-  );
+  )
 }

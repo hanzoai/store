@@ -1,70 +1,269 @@
-/* TOKENS COME FROM @hanzo/design — the same ladder every Hanzo surface reads.
-   Dark is the default (`:root` IS the dark palette) and `.light` retunes it,
-   which is exactly what next-themes emits here: `attribute="class"` with
-   `defaultTheme="dark"` puts `light` or `dark` on <html>, so `.dark` needs no
-   block of its own and `.light` is already written upstream.
+/* The design tokens are NOT authored here. `@hanzo/ui/theme.css` is the one
+   place the Hanzo colour ladder, radii, type face and elevation are defined, and
+   every Hanzo surface reads that same file — a local copy of the semantic block
+   is exactly how two surfaces drift a shade apart without anyone editing
+   anything. The values `@hanzo/gui` resolves at runtime come from the same
+   source, so CSS and components cannot disagree. */
+@import '@hanzo/ui/theme.css';
 
-   Only the shadcn vars the store's components actually read are named below,
-   and every one of them now resolves in @hanzo/design — the local `:root`
-   /`.dark` blocks that used to declare them were stock shadcn boilerplate
-   (a white oklch(1 0 0) ground) and are gone.
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  /* A store is one column on a phone: nothing may scroll the body sideways. */
+  overflow-x: hidden;
+}
 
-   The store carries no charts and no sidebar, so --chart-* / --sidebar-* were
-   declared and never read; they are deleted rather than retuned. */
-@import '@hanzo/design/tokens/colors.css';
-@import '@hanzo/design/tokens/radius.css';
+/* ── Page chrome ──────────────────────────────────────────────────────────────
+   Document-level layout — the gutter, the sticky bar, the card grid. This is
+   the layer @hanzo/gui deliberately does not cover: its stacks are flexbox on
+   every platform, and a responsive column grid is a CSS-only idea. Everything
+   INSIDE a card is composed from @hanzo/ui components and gui style props;
+   everything that positions the page is here. Two concerns, two vocabularies,
+   no overlap. */
+.page {
+  min-height: 100vh;
+  background: var(--background);
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-  }
-  ::selection {
-    background-color: var(--selection);
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem;
   }
 }
 
-/* RainbowKit ships its own token namespace, so the connect-wallet surface is
-   the one place Hanzo's ladder has to be handed over by name. Every value is a
-   design token — the modal is the same near-black ground, the same alpha
-   hairlines and the same graded ink as the page it opens over. Unscoped from
-   `.dark` on purpose: the tokens themselves flip under `.light`. */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--foreground);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--foreground);
+}
+
+.main {
+  padding-block: 3rem;
+}
+
+/* One column on a phone, two from tablet, three on a desktop. */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.app-icon {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.site-footer {
+  margin-top: 5rem;
+  padding-block: 3rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.links a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--foreground);
+}
+
+.copyright {
+  margin: 1.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+/* ── Documents ────────────────────────────────────────────────────────────────
+   Guidelines / Terms / Privacy are prose, not product chrome: long-form legal
+   copy whose structure IS its markup. So they are written as semantic HTML and
+   typeset once, here, instead of carrying a utility class on every heading and
+   list item. One scope, one place to retune the reading experience, and the
+   pages stay diffable against the legal text they mirror. */
+.doc {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.doc h1 {
+  margin: 0 0 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.doc h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.doc h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.doc p {
+  margin: 0 0 1rem;
+}
+
+.doc ul {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.doc ul.plain {
+  padding-left: 0;
+  list-style: none;
+}
+
+.doc li {
+  margin-bottom: 0.5rem;
+}
+
+.doc a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.doc .muted {
+  color: var(--muted-foreground);
+}
+
+/* A callout is prose too — a boxed digest of the section it opens, typeset by
+   the document rather than by importing a component vocabulary mid-text. */
+.doc .callout {
+  display: block;
+  margin: 0 0 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.doc .callout h2 {
+  margin-top: 0;
+}
+
+.doc .callout ul:last-child,
+.doc .callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* The closing affirmation on every document — smaller, quieter, ruled off. */
+.doc .coda {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* ── RainbowKit ───────────────────────────────────────────────────────────────
+   The wallet modal is a third-party surface with its own variable namespace.
+   Rather than restating a palette, each of its variables is bound to the Hanzo
+   token that already means the same thing, so the modal moves when the theme
+   moves. This is the only place in the app that names --rk-*. */
 [data-rk] {
   --rk-colors-accentColor: var(--primary) !important;
   --rk-colors-accentColorForeground: var(--primary-foreground) !important;
   --rk-colors-modalBackground: var(--popover) !important;
   --rk-colors-modalBorder: var(--border) !important;
-  --rk-colors-modalText: var(--text-primary) !important;
-  --rk-colors-modalTextSecondary: var(--text-tertiary) !important;
-  --rk-colors-modalTextDim: var(--text-disabled) !important;
+  --rk-colors-modalText: var(--popover-foreground) !important;
+  --rk-colors-modalTextSecondary: var(--muted-foreground) !important;
+  --rk-colors-modalTextDim: var(--muted-foreground) !important;
   --rk-colors-generalBorder: var(--border) !important;
-  --rk-colors-generalBorderDim: var(--glass) !important;
+  --rk-colors-generalBorderDim: var(--border) !important;
   --rk-colors-actionButtonBorder: var(--border) !important;
   --rk-colors-actionButtonSecondaryBackground: var(--secondary) !important;
   --rk-colors-connectButtonBackground: var(--card) !important;
-  --rk-colors-connectButtonText: var(--foreground) !important;
-  --rk-colors-connectButtonInnerBackground: var(--glass-strong) !important;
-  --rk-colors-menuItemBackground: var(--accent) !important;
-  --rk-colors-closeButton: var(--text-secondary) !important;
+  --rk-colors-connectButtonText: var(--card-foreground) !important;
+  --rk-colors-connectButtonInnerBackground: var(--secondary) !important;
+  --rk-colors-menuItemBackground: var(--secondary) !important;
+  --rk-colors-closeButton: var(--muted-foreground) !important;
   --rk-colors-closeButtonBackground: var(--secondary) !important;
-  --rk-colors-modalBackdrop: var(--surface-scrim) !important;
-  --rk-radii-modal: var(--radius-lg) !important;
-  --rk-radii-connectButton: var(--radius-md) !important;
-  --rk-radii-actionButton: var(--radius-md) !important;
-  --rk-radii-menuButton: var(--radius-md) !important;
+  --rk-radii-modal: var(--radius) !important;
+  --rk-radii-connectButton: var(--radius) !important;
+  --rk-radii-actionButton: var(--radius) !important;
+  --rk-radii-menuButton: var(--radius) !important;
 }
