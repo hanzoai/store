@@ -66,3 +66,25 @@ next.config.js                # Build config
 - No SQL injection (no direct DB queries)
 - HTTPS enforced for external URLs
 - No eval() or dangerous functions
+
+## Design tokens
+
+The palette is `@hanzo/design` — `app/globals.css` imports `tokens/colors.css`
+and `tokens/radius.css`, so `:root` is Hanzo's dark palette and `.light` retunes
+it (next-themes writes both classes; `defaultTheme="dark"`). Do not declare
+`--background`/`--border`/etc. locally; retune upstream in `~/work/hanzo/design`.
+
+`tailwind.config.ts` reads tokens as `var(--x)`, NOT `hsl(var(--x))`. The design
+package publishes finished colours (hex, and `rgb(255 255 255 / .10)` alpha
+hairlines); wrapping one in `hsl()` is invalid at computed-value time and the
+browser drops the whole declaration — which silently disables every colour
+utility in the app.
+
+`@hanzo/ui` 5's components are not in the Tailwind `content` globs, so any class
+they emit themselves is never generated. Style @hanzo/ui components with the
+app's own utility classes, or use a native element — do not rely on their
+built-in appearance.
+
+Build order: `npm run generate-store` before `npm run build` — `public/store.json`
+is gitignored and generated from `data/`, and `output: 'export'` cannot
+prerender `/apps/[id]` without it.
