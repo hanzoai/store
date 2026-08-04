@@ -1,291 +1,291 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test'
 
-test.describe('Hanzo Store', () => {
-  // Helper to wait for page to be fully loaded
-  async function waitForPageLoad(page: any) {
-    // Wait for the main heading to appear (this means React has hydrated)
-    await page.waitForSelector('h1:has-text("Hanzo Store")', { timeout: 30000 });
-    // Wait for store data to finish loading (either apps appear or "Loading..." disappears)
-    await page.waitForSelector('[class*="grid"]', { timeout: 30000 }).catch(() => {
-      // Grid might not appear if there are no apps
-    });
-  }
+/**
+ * What the store has to keep being true.
+ *
+ * These assert the things that ACTUALLY broke in the move to @hanzo/gui, because
+ * gui silently ignores a prop it does not recognise and silently lets one prop
+ * undo another: no error, no type failure, and the build stays green while the
+ * page renders wrong. So every check here reads a COMPUTED style or a measured
+ * box off the running page — the only evidence that tells "styled" apart from
+ * "the prop went nowhere".
+ *
+ * Nothing here asserts that a count is `>= 0`. A test that cannot fail is not a
+ * test, and the suite this replaced was mostly those.
+ */
 
-  test('should load the store page successfully', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+/** The data arrives over fetch, so every check waits for a card, not for load. */
+async function store(page: Page) {
+  await page.goto('/')
+  await page.waitForSelector('[data-slot="card"]')
+}
 
-    // Check page title
-    await expect(page).toHaveTitle(/Hanzo Store/);
+const box = (page: Page, selector: string) =>
+  page
+    .locator(selector)
+    .first()
+    .evaluate((el) => {
+      const r = el.getBoundingClientRect()
+      return { width: Math.round(r.width), height: Math.round(r.height) }
+    })
 
-    // Check if main header is visible
-    await expect(page.getByRole('heading', { name: 'Hanzo Store' })).toBeVisible();
-  });
+const columns = (page: Page, selector: string) =>
+  page
+    .locator(selector)
+    .evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length)
 
-  test('should display Hanzo logo', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+test.describe('store', () => {
+  test('every card shows its description, tags and byline', async ({ page }) => {
+    await store(page)
 
-    // Check if HanzoLogo component is rendered (it renders as SVG)
-    const logo = page.locator('svg').first();
-    await expect(logo).toBeVisible();
-  });
+    // `flex={1}` on the card body compiled to `flex: 1 1 0px` and collapsed it to
+    // zero: the description vanished, and the tag row and byline painted OUTSIDE
+    // the box, over the buttons. The body has to be as tall as its own contents.
+    const body = await box(page, '[data-slot="card-content"]')
+    expect(body.height).toBeGreaterThan(60)
 
-  test('should display Connect Wallet button', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+    const description = page.locator('[data-slot="card-content"] > *').first()
+    await expect(description).toBeVisible()
+    expect((await description.textContent())?.trim().length).toBeGreaterThan(0)
+  })
 
-    // Check if Connect button from RainbowKit is visible
-    const connectButton = page.getByText('Connect Wallet').or(page.locator('[data-testid="rk-connect-button"]'));
-    await expect(connectButton.first()).toBeVisible();
-  });
+  test('a long description is held to three lines', async ({ page }) => {
+    await store(page)
 
-  test('should display app count and category count', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+    const lines = await page.evaluate(() => {
+      const bodies = [...document.querySelectorAll('[data-slot="card-content"]')]
+      const longest = bodies
+        .map((el) => el.firstElementChild!)
+        .sort((a, b) => b.textContent!.length - a.textContent!.length)[0]
+      return (
+        longest.getBoundingClientRect().height / parseFloat(getComputedStyle(longest).lineHeight)
+      )
+    })
+    expect(Math.round(lines)).toBe(3)
+  })
 
-    // Check if stats are displayed
-    await expect(page.locator('text=/\\d+ Apps/')).toBeVisible();
-    await expect(page.locator('text=/\\d+ Categories/')).toBeVisible();
-  });
+  test('every footer in a row sits on the same line', async ({ page }) => {
+    await store(page)
 
-  test('should display search input', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+    const offsets = await page.evaluate(() =>
+      [...document.querySelectorAll('[data-slot="card"]')].slice(0, 3).map((card) =>
+        Math.round(
+          card.querySelector('[data-slot="card-footer"]')!.getBoundingClientRect().top -
+            card.getBoundingClientRect().top,
+        ),
+      ),
+    )
+    expect(new Set(offsets).size).toBe(1)
+  })
 
-    // Check if search input is visible
-    const searchInput = page.getByPlaceholder('Search apps...');
-    await expect(searchInput).toBeVisible();
-  });
+  test('a button that navigates is not underlined', async ({ page }) => {
+    await store(page)
 
-  test('should filter apps by search query', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+    // `asChild` renders the control as the anchor it wraps — correct markup, and
+    // the user-agent underline on every label.
+    const decorations = await page.evaluate(() => [
+      ...new Set(
+        [...document.querySelectorAll('[data-slot="button"]')].map(
+          (el) => getComputedStyle(el).textDecorationLine,
+        ),
+      ),
+    ])
+    expect(decorations).toEqual(['none'])
+  })
 
-    // Get initial app count
-    const initialCount = await page.locator('text=/\\d+ apps? found/').textContent();
+  test('a filter reads as one phrase, and filters to the count it declares', async ({ page }) => {
+    await store(page)
 
-    // Type in search box
-    await page.getByPlaceholder('Search apps...').fill('test');
+    // Written as JSX children the source's own newlines folded into the label and
+    // every button read "Agent ( 23 )".
+    const agent = page.getByRole('button', { name: /^Agent \(\d+\)$/ })
+    await expect(agent).toBeVisible()
 
-    // Wait a bit for filtering
-    await page.waitForTimeout(300);
+    const declared = Number((await agent.textContent())!.match(/\((\d+)\)/)![1])
+    await agent.click()
+    await expect(page.getByText(`${declared} apps found`)).toBeVisible()
+    expect(await page.locator('[data-slot="card"]').count()).toBe(declared)
+  })
 
-    // Check that results changed
-    const filteredCount = await page.locator('text=/\\d+ apps? found/').textContent();
+  test('search narrows the grid, and says so when nothing matches', async ({ page }) => {
+    await store(page)
 
-    // Results should be different (unless there are no test apps)
-    // We just verify the filter UI is working
-    expect(filteredCount).toBeTruthy();
-  });
+    const all = await page.locator('[data-slot="card"]').count()
+    const search = page.getByPlaceholder('Search apps…')
 
-  test('should display type filters (All Types, Agent, Tool)', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+    await search.fill('audio')
+    await expect(page.locator('[data-slot="card"]').first()).toBeVisible()
+    const narrowed = await page.locator('[data-slot="card"]').count()
+    expect(narrowed).toBeGreaterThan(0)
+    expect(narrowed).toBeLessThan(all)
 
-    await page.waitForLoadState('networkidle');
+    await search.fill('nothing-matches-this-query')
+    await expect(page.getByText('No apps found matching your criteria')).toBeVisible()
+  })
 
-    // Check if type filter buttons exist
-    await expect(page.getByRole('button', { name: /All Types/ })).toBeVisible();
-    await expect(page.getByRole('button', { name: /Agent/ })).toBeVisible();
-    await expect(page.getByRole('button', { name: /Tool/ })).toBeVisible();
-  });
+  test('artwork that does not load falls back to the initial', async ({ page }) => {
+    await store(page)
 
-  test('should filter apps by type', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+    // Every icon in the data is a presigned url that expired in 2025; with no
+    // fallback the grid rendered 202 broken-image glyphs, alt text spilling out
+    // of the box.
+    await expect(page.locator('.app-icon').first()).toBeVisible()
+    expect(await box(page, '.app-icon')).toEqual({ width: 64, height: 64 })
+  })
 
-    await page.waitForLoadState('networkidle');
+  test('the store hands off to the desktop app over one protocol', async ({ page }) => {
+    await store(page)
 
-    // Click on Tool type filter
-    await page.getByRole('button', { name: /Tool/ }).first().click();
+    const install = page.getByRole('link', { name: /Install in Hanzo/ }).first()
+    expect(await install.getAttribute('href')).toMatch(/^hanzo:\/\/install\/[^?]+\?name=/)
+  })
 
-    // Wait for filtering
-    await page.waitForTimeout(300);
+  test('the mark keeps its size on a phone', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 640 })
+    await store(page)
 
-    // Verify the button is now selected (has different styling)
-    const toolButton = page.getByRole('button', { name: /Tool/ }).first();
-    await expect(toolButton).toBeVisible();
-  });
+    // As a plain flex child the mark took its share of the squeeze and rendered
+    // 0px wide at this width.
+    expect((await box(page, '.brand > :first-child')).width).toBe(48)
+  })
 
-  test('should display category filters', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    await page.waitForLoadState('networkidle');
-
-    // Check if "All" category button exists
-    await expect(page.getByRole('button', { name: /^All/ })).toBeVisible();
-  });
-
-  test('should filter apps by category', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    await page.waitForLoadState('networkidle');
-
-    // Get all category buttons
-    const categoryButtons = page.getByRole('button').filter({ hasText: /^\w+\s+\(\d+\)$/ });
-    const count = await categoryButtons.count();
-
-    // If there are category buttons beyond "All", click one
-    if (count > 1) {
-      await categoryButtons.nth(1).click();
-      await page.waitForTimeout(300);
-
-      // Verify results updated
-      await expect(page.locator('text=/\\d+ apps? found/')).toBeVisible();
+  test('nothing scrolls the page sideways', async ({ page }) => {
+    for (const width of [1280, 768, 390, 320]) {
+      await page.setViewportSize({ width, height: 800 })
+      await store(page)
+      const [scrollWidth, clientWidth] = await page.evaluate(() => [
+        document.body.scrollWidth,
+        document.body.clientWidth,
+      ])
+      expect(scrollWidth, `body overflows at ${width}px`).toBe(clientWidth)
     }
-  });
+  })
 
-  test('should display app cards', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+  test('the grid is one column on a phone and three on a desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 800 })
+    await store(page)
+    expect(await columns(page, '.cards')).toBe(1)
 
-    await page.waitForLoadState('networkidle');
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await store(page)
+    expect(await columns(page, '.cards')).toBe(3)
+  })
 
-    // Wait for apps to load
-    await page.waitForSelector('[class*="grid"]', { timeout: 10000 });
+  test('no Tailwind utility or Radix attribute reaches the page', async ({ page }) => {
+    await store(page)
 
-    // Check if at least one app card is visible
-    const appCards = page.locator('[class*="rounded-xl"][class*="border"]').filter({ hasText: /Install in Hanzo/ });
-    await expect(appCards.first()).toBeVisible();
-  });
+    const residue = await page.evaluate(() => {
+      const found = new Set<string>()
+      const utility =
+        /^(flex$|grid$|hidden$|block$|text-|bg-|border-|p-\d|px-|py-|m-\d|mx-|my-|gap-|w-\d|h-\d|min-|max-|rounded-|items-|justify-|space-|leading-|tracking-|shadow-|absolute$|relative$|sticky$|overflow-|z-\d)/
+      for (const el of document.querySelectorAll('*')) {
+        for (const name of el.classList) if (utility.test(name)) found.add(name)
+        for (const attr of el.attributes) if (attr.name.startsWith('data-radix')) found.add(attr.name)
+      }
+      return [...found]
+    })
+    expect(residue).toEqual([])
+  })
 
-  test('should display app details in card', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+  test('the wallet modal reads the store’s tokens rather than a palette of its own', async ({
+    page,
+  }) => {
+    await store(page)
 
-    await page.waitForLoadState('networkidle');
+    const bound = await page.evaluate(() => {
+      const root = getComputedStyle(document.documentElement)
+      const rk = getComputedStyle(document.querySelector('[data-rk]')!)
+      return {
+        primary: root.getPropertyValue('--primary').trim(),
+        accent: rk.getPropertyValue('--rk-colors-accentColor').trim(),
+        border: root.getPropertyValue('--border').trim(),
+        modalBorder: rk.getPropertyValue('--rk-colors-modalBorder').trim(),
+      }
+    })
+    expect(bound.primary).not.toBe('')
+    expect(bound.accent).toBe(bound.primary)
+    expect(bound.modalBorder).toBe(bound.border)
+  })
+})
 
-    // Wait for first app card
-    const firstCard = page.locator('[class*="rounded-xl"][class*="border"]').first();
-    await firstCard.waitFor({ state: 'visible', timeout: 10000 });
+test.describe('app page', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/apps/audio-insight')
+  })
 
-    // Check if app card contains essential elements
-    // Name should be visible
-    await expect(firstCard.locator('h3, [class*="text-xl"]').first()).toBeVisible();
+  test('a panel heading is a heading, not body text', async ({ page }) => {
+    await page.waitForSelector('h2')
 
-    // Install button should be visible
-    await expect(firstCard.getByText(/Install in Hanzo/)).toBeVisible();
-  });
+    // `size="$6"` is a VARIANT: it expands to the whole typographic row for that
+    // step, and the weight column of the Hanzo ladder is 400 at every step, so it
+    // quietly replaced the 600 CardTitle declares for itself.
+    const weights = await page.evaluate(() =>
+      [...document.querySelectorAll('h2')].map((el) => getComputedStyle(el).fontWeight),
+    )
+    expect(weights.length).toBeGreaterThan(0)
+    expect([...new Set(weights)]).toEqual(['600'])
+  })
 
-  test('should show copy install command button', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+  test('the title is a real h1 at display size', async ({ page }) => {
+    const h1 = page.locator('h1')
+    await expect(h1).toHaveText('Audio Insight')
+    expect(
+      await h1.evaluate((el) => {
+        const c = getComputedStyle(el)
+        return { size: c.fontSize, weight: c.fontWeight }
+      }),
+    ).toEqual({ size: '32px', weight: '700' })
+  })
 
-    await page.waitForLoadState('networkidle');
+  test('commands are typeset in mono', async ({ page }) => {
+    await page.waitForSelector('pre.code')
+    expect(
+      await page
+        .locator('pre.code')
+        .first()
+        .evaluate((el) => getComputedStyle(el).fontFamily),
+    ).toContain('Geist Mono')
+  })
 
-    // Wait for first app card
-    const firstCard = page.locator('[class*="rounded-xl"][class*="border"]').first();
-    await firstCard.waitFor({ state: 'visible', timeout: 10000 });
+  test('the record and the rail are two columns on a desktop, one on a phone', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.waitForSelector('.detail')
+    expect(await columns(page, '.detail')).toBe(2)
 
-    // Check if copy button exists (might not be visible for all apps)
-    const copyButtons = page.locator('button').filter({ hasText: /npm|npx|yarn/ });
-    const count = await copyButtons.count();
+    await page.setViewportSize({ width: 390, height: 800 })
+    expect(await columns(page, '.detail')).toBe(1)
+  })
 
-    // We just verify the UI can render copy buttons if they exist
-    expect(count).toBeGreaterThanOrEqual(0);
-  });
+  test('the install button carries the same deep link the grid does', async ({ page }) => {
+    const install = page.getByRole('link', { name: /Open in Hanzo Desktop/ })
+    expect(await install.getAttribute('href')).toBe(
+      'hanzo://install/audio-insight?name=Audio+Insight&type=Agent',
+    )
+  })
+})
 
-  test('should show GitHub repository link', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
+test.describe('documents', () => {
+  for (const [path, title] of [
+    ['/guidelines', 'App Store Guidelines'],
+    ['/terms', 'Terms of Service'],
+    ['/privacy', 'Privacy Policy'],
+  ]) {
+    test(`${path} is typeset prose wearing the store's chrome`, async ({ page }) => {
+      await page.goto(path)
 
-    await page.waitForLoadState('networkidle');
+      await expect(page.locator('.doc h1')).toHaveText(title)
+      await expect(page.getByRole('link', { name: 'Back to Store' })).toBeVisible()
+      // The footer enumerates the site's routes in one place, so all three
+      // documents are reachable from all three.
+      await expect(page.locator('.site-footer a')).toHaveCount(3)
 
-    // Check if any "View on GitHub" links exist
-    const githubLinks = page.getByText('View on GitHub');
-    const count = await githubLinks.count();
-
-    // At least some apps should have GitHub links
-    expect(count).toBeGreaterThanOrEqual(0);
-  });
-
-  test('should display featured badge on featured apps', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    await page.waitForLoadState('networkidle');
-
-    // Check if any featured badges exist
-    const featuredBadges = page.getByText(/⭐\s*Featured/);
-    const count = await featuredBadges.count();
-
-    // Featured badges might not always be present
-    expect(count).toBeGreaterThanOrEqual(0);
-  });
-
-  test('should display footer with contribution instructions', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    // Scroll to footer
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-
-    // Check if footer text is visible
-    await expect(page.getByText(/Want to add your MCP server/)).toBeVisible();
-    await expect(page.getByText(/data\/agents\//).or(page.getByText(/data\/tools\//))).toBeVisible();
-  });
-
-  test('should handle empty search results gracefully', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    await page.waitForLoadState('networkidle');
-
-    // Search for something that definitely doesn't exist
-    await page.getByPlaceholder('Search apps...').fill('xyzabc123nonexistent');
-    await page.waitForTimeout(300);
-
-    // Should show "0 apps found" or "No apps found"
-    const noResultsText = page.locator('text=/0 apps? found|No apps found/');
-    await expect(noResultsText.first()).toBeVisible();
-  });
-
-  test('should use proper Hanzo brand colors', async ({ page }) => {
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    await page.waitForLoadState('networkidle');
-
-    // Check if the page has dark mode applied
-    const html = page.locator('html');
-    const classes = await html.getAttribute('class');
-
-    // Should have dark class or proper theming
-    expect(classes).toBeTruthy();
-
-    // Check if RainbowKit has the custom Hanzo purple accent color (#7c3aed)
-    const rkStyles = page.locator('[data-rk] style');
-    const styleContent = await rkStyles.first().textContent();
-
-    // Should contain our custom Hanzo purple
-    expect(styleContent).toContain('#7c3aed');
-  });
-
-  test('should be responsive on mobile viewport', async ({ page }) => {
-    // Set mobile viewport
-    await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    await page.waitForLoadState('networkidle');
-
-    // Check if content is still visible and accessible
-    await expect(page.getByRole('heading', { name: 'Hanzo Store' })).toBeVisible();
-    await expect(page.getByPlaceholder('Search apps...')).toBeVisible();
-  });
-
-  test('should load store.json data successfully', async ({ page }) => {
-    // Navigate and wait for the store data to be fetched
-    await page.goto('/');
-    await waitForPageLoad(page);
-
-    // Wait for the loading state to disappear
-    await page.waitForSelector('text=Loading store...', { state: 'hidden', timeout: 10000 });
-
-    // Verify that apps are displayed (meaning data loaded successfully)
-    await expect(page.locator('text=/\\d+ apps? found/')).toBeVisible();
-  });
-});
+      // Prose leading, not UI leading — the whole reason these are CSS and not
+      // component vocabulary.
+      const leading = await page.locator('.doc').evaluate((el) => {
+        const c = getComputedStyle(el)
+        return parseFloat(c.lineHeight) / parseFloat(c.fontSize)
+      })
+      expect(leading).toBeGreaterThan(1.5)
+    })
+  }
+})

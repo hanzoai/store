@@ -1,18 +1,19 @@
 'use client'
 
 import { useState, useMemo, useEffect } from 'react'
-import Link from 'next/link'
 import { HanzoLogo } from '@hanzo/logo'
 import { Search, Download, ExternalLink, Copy, Check } from 'lucide-react'
 import { useAccount } from 'wagmi'
 import { XStack, YStack, Text } from '@hanzo/gui'
 import { Badge, Button, Card, CardContent, CardFooter, CardHeader, Input } from '@hanzo/ui'
+import { AppIcon } from '@/components/app-icon'
+import { LinkButton } from '@/components/link-button'
 import { TopBar, SiteFooter } from '@/components/site-chrome'
 import { installUrl } from '@/lib/install-url'
 import { sanitizeUrl } from '@/lib/url-utils'
 import type { StoreData, StoreApp } from '@/types'
 
-const TYPES = ['all', 'Agent', 'Tool'] as const
+const TYPES = ['Agent', 'Tool']
 
 export default function StorePage() {
   const { address, isConnected } = useAccount()
@@ -112,39 +113,23 @@ export default function StorePage() {
             startAdornment={<Search size={16} />}
           />
 
-          <XStack gap="$2" flexWrap="wrap">
-            {TYPES.map((type) => (
-              <Button
-                key={type}
-                variant={selectedType === type ? 'default' : 'outline'}
-                size="sm"
-                onPress={() => setSelectedType(type)}
-              >
-                {type === 'all' ? 'All Types' : type} (
-                {type === 'all'
-                  ? storeData.apps.length
-                  : storeData.apps.filter((app) => app.type === type).length}
-                )
-              </Button>
-            ))}
-          </XStack>
+          <Facet
+            field="type"
+            values={TYPES}
+            allLabel="All Types"
+            selected={selectedType}
+            onSelect={setSelectedType}
+            apps={storeData.apps}
+          />
 
-          <XStack gap="$2" flexWrap="wrap">
-            {['all', ...storeData.categories].map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? 'default' : 'outline'}
-                size="sm"
-                onPress={() => setSelectedCategory(category)}
-              >
-                {category === 'all' ? 'All' : category} (
-                {category === 'all'
-                  ? storeData.apps.length
-                  : storeData.apps.filter((app) => app.category === category).length}
-                )
-              </Button>
-            ))}
-          </XStack>
+          <Facet
+            field="category"
+            values={storeData.categories}
+            allLabel="All"
+            selected={selectedCategory}
+            onSelect={setSelectedCategory}
+            apps={storeData.apps}
+          />
         </YStack>
 
         <Text fontSize="$3" color="$color11">
@@ -190,6 +175,52 @@ export default function StorePage() {
   )
 }
 
+/**
+ * One row of filter buttons.
+ *
+ * The type row and the category row were the same twenty lines twice over — a
+ * wrapping row of buttons, each labelled with a value and how many apps carry
+ * it, one of them selected. They differ only in which field they read, so they
+ * are one component reading a field.
+ *
+ * The label is built as ONE string rather than as JSX children. Written as
+ * children, the newline and indent around the parentheses fold into text, and
+ * every button read "All Types ( 202 )" — the spacing bug you cannot see in the
+ * source because it is the source's own whitespace.
+ */
+function Facet({
+  field,
+  values,
+  allLabel,
+  selected,
+  onSelect,
+  apps,
+}: {
+  field: 'type' | 'category'
+  values: readonly string[]
+  allLabel: string
+  selected: string
+  onSelect: (value: string) => void
+  apps: StoreApp[]
+}) {
+  return (
+    <XStack gap="$2" flexWrap="wrap">
+      {['all', ...values].map((value) => (
+        <Button
+          key={value}
+          variant={selected === value ? 'default' : 'outline'}
+          size="sm"
+          onPress={() => onSelect(value)}
+        >
+          {`${value === 'all' ? allLabel : value} (${
+            value === 'all' ? apps.length : apps.filter((app) => app[field] === value).length
+          })`}
+        </Button>
+      ))}
+    </XStack>
+  )
+}
+
 function AppCard({
   app,
   walletAddress,
@@ -211,7 +242,10 @@ function AppCard({
   const repository = app.repository ? sanitizeUrl(app.repository) : null
 
   return (
-    <Card height="100%" borderColor={app.featured ? '$color8' : '$borderColor'}>
+    // No `height="100%"`: `.cards` is a grid, and a grid stretches its items to
+    // the row by default, so the height is already stated — by the one rule that
+    // owns the layout. Saying it twice is how the two can disagree.
+    <Card borderColor={app.featured ? '$color8' : '$borderColor'}>
       <CardHeader gap="$3">
         {app.featured ? <Badge variant="default">⭐ Featured</Badge> : null}
 
@@ -232,11 +266,21 @@ function AppCard({
               ) : null}
             </XStack>
           </YStack>
-          {app.icon ? <img className="app-icon" src={app.icon} alt={app.name} /> : null}
+          <AppIcon app={app} />
         </XStack>
       </CardHeader>
 
-      <CardContent gap="$4" flex={1}>
+      {/* `grow`, NOT `flex`. `flex={1}` is React Native's spelling and it
+          compiles to `flex: 1 1 0px` — a ZERO basis. The card is a column whose
+          height comes from its own content, so a zero-basis body contributed
+          nothing, the card sized itself from header plus footer alone, and the
+          body collapsed to 0px: every description vanished, every tag row and
+          byline spilled out of the box and painted under the buttons, and 202
+          cards rendered that way with no error anywhere. `grow={1}` leaves the
+          basis at `auto`, so the body is as tall as its text and then takes the
+          slack the grid's stretch hands the card — which is what pins every
+          footer to the same line. */}
+      <CardContent gap="$4" grow={1}>
         <Text fontSize="$3" color="$color11" numberOfLines={3}>
           {app.description}
         </Text>
@@ -269,16 +313,18 @@ function AppCard({
       </CardContent>
 
       <CardFooter flexDirection="column" gap="$2">
-        <Button width="100%" asChild>
-          <Link href={`/apps/${app.id}`}>View Details</Link>
-        </Button>
+        <LinkButton width="100%" href={`/apps/${app.id}`}>
+          View Details
+        </LinkButton>
 
-        <Button width="100%" variant="outline" asChild>
-          <a href={installUrl(app, isWalletConnected ? walletAddress : undefined)}>
-            <Download size={16} />
-            Install in Hanzo
-          </a>
-        </Button>
+        <LinkButton
+          width="100%"
+          variant="outline"
+          href={installUrl(app, isWalletConnected ? walletAddress : undefined)}
+        >
+          <Download size={16} />
+          Install in Hanzo
+        </LinkButton>
 
         {app.installCommand ? (
           <Button width="100%" variant="outline" size="sm" onPress={copyInstallCommand}>
@@ -292,12 +338,10 @@ function AppCard({
         ) : null}
 
         {repository ? (
-          <Button width="100%" variant="ghost" size="sm" asChild>
-            <a href={repository} target="_blank" rel="noopener noreferrer">
-              <ExternalLink size={12} />
-              View on GitHub
-            </a>
-          </Button>
+          <LinkButton width="100%" variant="ghost" size="sm" href={repository} newTab>
+            <ExternalLink size={12} />
+            View on GitHub
+          </LinkButton>
         ) : null}
       </CardFooter>
     </Card>

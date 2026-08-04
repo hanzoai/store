@@ -5,6 +5,11 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './e2e',
+  /* The suite runs against `next dev`, which compiles a route the first time it
+   * is asked for — the first navigation to `/` costs ~15s, and every parallel
+   * worker pays it. The default 30s left tests that visit four viewports timing
+   * out on the compile rather than on anything they assert. */
+  timeout: 90_000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
