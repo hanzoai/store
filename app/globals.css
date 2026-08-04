@@ -116,6 +116,61 @@ body {
   object-fit: cover;
 }
 
+/* The app page shows the same mark, larger. One rule, one modifier — a second
+   `.hero-icon` block would be the same icon described twice. */
+.app-icon.lg {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* No artwork: the initial, in the icon's own box. */
+.app-icon.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+/* ── App page ─────────────────────────────────────────────────────────────────
+   One column on a phone; the record on the left and the install/metadata rail
+   on the right from a laptop up. */
+.detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .detail {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.shot {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* Commands and config are prose the theme already typesets — theme.css binds
+   `code`/`pre` to Geist Mono, so this only gives the block its box. */
+.code {
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background: var(--muted);
+  color: var(--foreground);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .site-footer {
   margin-top: 5rem;
   padding-block: 3rem;

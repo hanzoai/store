@@ -12,10 +12,7 @@
  * plain semantic HTML and stays diffable against the legal copy it mirrors.
  */
 import type { ReactNode } from 'react'
-import Link from 'next/link'
-import { HanzoLogo } from '@hanzo/logo'
-import { ChevronLeft } from 'lucide-react'
-import { TopBar, SiteFooter } from './site-chrome'
+import { StoreMark, TopBar, SiteFooter } from './site-chrome'
 
 export function DocPage({
   title,
@@ -29,17 +26,7 @@ export function DocPage({
 }) {
   return (
     <div className="page">
-      <TopBar
-        brand={
-          <>
-            <HanzoLogo size={36} />
-            <Link href="/" className="back">
-              <ChevronLeft size={16} />
-              Back to Store
-            </Link>
-          </>
-        }
-      />
+      <TopBar brand={<StoreMark />} />
 
       <main className="doc">
         <h1>{title}</h1>

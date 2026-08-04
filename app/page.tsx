@@ -8,6 +8,7 @@ import { useAccount } from 'wagmi'
 import { XStack, YStack, Text } from '@hanzo/gui'
 import { Badge, Button, Card, CardContent, CardFooter, CardHeader, Input } from '@hanzo/ui'
 import { TopBar, SiteFooter } from '@/components/site-chrome'
+import { installUrl } from '@/lib/install-url'
 import { sanitizeUrl } from '@/lib/url-utils'
 import type { StoreData, StoreApp } from '@/types'
 
@@ -55,7 +56,7 @@ export default function StorePage() {
   if (loading || !storeData) {
     return (
       <YStack minH="100vh" items="center" justify="center">
-        <Text fontSize="$6" color={storeData || loading ? '$color11' : '$red10'}>
+        <Text fontSize="$6" color={loading ? '$color11' : '$red10'}>
           {loading ? 'Loading store…' : 'Failed to load store data'}
         </Text>
       </YStack>
@@ -175,10 +176,13 @@ export default function StorePage() {
           <Text fontWeight="500" color="$color12">
             Want to add your MCP server?
           </Text>
+          {/* `<code>` rather than a gui font prop: the config declares two
+              families, body and heading, so `fontFamily="$mono"` names a token
+              that does not exist and resolves to nothing at all. theme.css
+              typesets `code` in Geist Mono, which is where mono actually lives. */}
           <Text fontSize="$2" color="$color11">
             Fork the repository and submit a PR with your app&apos;s JSON file in{' '}
-            <Text fontFamily="$mono">data/agents/</Text> or{' '}
-            <Text fontFamily="$mono">data/tools/</Text>
+            <code>data/agents/</code> or <code>data/tools/</code>
           </Text>
         </YStack>
       </SiteFooter>
@@ -202,14 +206,6 @@ function AppCard({
     navigator.clipboard.writeText(app.installCommand)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
-  }
-
-  // The desktop app handles `hanzo://` and performs the install. A connected
-  // wallet rides along so it knows who is installing.
-  const installInHanzo = () => {
-    const params = new URLSearchParams({ name: app.name, type: app.type || 'Tool' })
-    if (isWalletConnected && walletAddress) params.set('wallet', walletAddress)
-    window.location.href = `hanzo://install/${encodeURIComponent(app.id)}?${params}`
   }
 
   const repository = app.repository ? sanitizeUrl(app.repository) : null
@@ -277,9 +273,11 @@ function AppCard({
           <Link href={`/apps/${app.id}`}>View Details</Link>
         </Button>
 
-        <Button width="100%" variant="outline" onPress={installInHanzo}>
-          <Download size={16} />
-          Install in Hanzo
+        <Button width="100%" variant="outline" asChild>
+          <a href={installUrl(app, isWalletConnected ? walletAddress : undefined)}>
+            <Download size={16} />
+            Install in Hanzo
+          </a>
         </Button>
 
         {app.installCommand ? (

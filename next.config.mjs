@@ -31,6 +31,19 @@ const nextConfig = {
       '.web.js',
       ...(config.resolve.extensions || []),
     ]
+    // `@coinbase/cdp-sdk`, reached through wagmi's Base Account connector,
+    // declares the `@x402/*` payment SDKs as OPTIONAL peers and imports them
+    // unconditionally. The store never signs an x402 payment, so they are not
+    // installed — and webpack resolves imports statically, so "optional" alone
+    // does not stop it failing the build. `fallback` is webpack's name for
+    // exactly this: absent module, empty module.
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      '@x402/core': false,
+      '@x402/evm': false,
+      '@x402/svm': false,
+      '@x402/extensions': false,
+    }
     return config
   },
   eslint: {

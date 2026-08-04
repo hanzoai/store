@@ -1,285 +1,250 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+/**
+ * One app, in full.
+ *
+ * Same two vocabularies as the rest of the store: @hanzo/gui style props for
+ * everything inside a card, plain CSS in globals.css for everything that
+ * positions the page. The two-column split, the hero icon and the code blocks
+ * are page furniture, so they are CSS; the stacks, type and tokens are gui.
+ */
+import { useEffect, useState, type ReactNode } from 'react'
 import { notFound } from 'next/navigation'
-import { ChevronLeft, Download, Star, Tag, ExternalLink } from 'lucide-react'
-import { HanzoLogo } from '@hanzo/logo'
-import { Button, Card, CardContent, CardHeader } from '@hanzo/ui'
-import { Badge } from '@hanzo/ui/badge'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { Download, ExternalLink, Star, Tag } from 'lucide-react'
 import { useAccount } from 'wagmi'
+import { Text, XStack, YStack } from '@hanzo/gui'
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from '@hanzo/ui'
+import { SiteFooter, StoreMark, TopBar } from '@/components/site-chrome'
+import { installUrl } from '@/lib/install-url'
 import { sanitizeUrl } from '@/lib/url-utils'
 import type { StoreApp } from '@/types'
 
 export function AppDetailPageClient({ id }: { id: string }) {
-  const { isConnected } = useAccount()
+  const { address, isConnected } = useAccount()
   const [app, setApp] = useState<StoreApp | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch('/store.json')
-      .then(res => res.json())
-      .then(data => {
-        const foundApp = data.apps.find((a: StoreApp) => a.id === id)
-        setApp(foundApp || null)
-        setLoading(false)
-      })
-      .catch(() => {
-        setLoading(false)
-      })
+      .then((res) => res.json())
+      .then((data: { apps: StoreApp[] }) => setApp(data.apps.find((a) => a.id === id) ?? null))
+      .catch(() => setApp(null))
+      .finally(() => setLoading(false))
   }, [id])
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-xl text-muted-foreground">Loading...</div>
-      </div>
+      <YStack minH="100vh" items="center" justify="center">
+        <Text fontSize="$6" color="$color11">
+          Loading…
+        </Text>
+      </YStack>
     )
   }
 
-  if (!app) {
-    notFound()
-  }
+  if (!app) notFound()
+
+  const homepage = app.homepage ? sanitizeUrl(app.homepage) : null
+  const repository = app.repository ? sanitizeUrl(app.repository) : null
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <HanzoLogo size={36} className="text-foreground" />
-              <Link
-                href="/"
-                className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1"
-              >
-                <ChevronLeft className="h-4 w-4" />
-                Back to Store
-              </Link>
-            </div>
-            <ConnectButton />
-          </div>
-        </div>
-      </header>
+    <div className="page">
+      <TopBar brand={<StoreMark />} />
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - App Info */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* App Header */}
-            <div className="flex items-start gap-6">
-              <div className="flex-shrink-0">
-                {app.icon ? (
-                  <img
-                    src={app.icon}
-                    alt={app.name}
-                    className="w-24 h-24 rounded-xl object-cover"
-                  />
-                ) : (
-                  <div className="w-24 h-24 rounded-xl bg-secondary flex items-center justify-center">
-                    <span className="text-4xl font-bold text-secondary-foreground">
-                      {app.name[0]}
-                    </span>
-                  </div>
-                )}
-              </div>
-              <div className="flex-1">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h1 className="text-3xl font-bold tracking-tight mb-2">
-                      {app.name}
-                    </h1>
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
-                      <span className="flex items-center gap-1">
-                        <Tag className="h-3 w-3" />
+      <main className="container main">
+        <div className="detail">
+          <YStack gap="$5">
+            <XStack gap="$5" items="flex-start" flexWrap="wrap">
+              {app.icon ? (
+                <img className="app-icon lg" src={app.icon} alt={app.name} />
+              ) : (
+                <div className="app-icon lg fallback">{app.name[0]}</div>
+              )}
+
+              <YStack flex={1} minW={0} gap="$3">
+                <Text render="h1" fontSize="$10" fontWeight="700">
+                  {app.name}
+                </Text>
+
+                <XStack items="center" gap="$4" flexWrap="wrap">
+                  {app.type ? (
+                    <XStack items="center" gap="$1.5">
+                      <Tag size={12} />
+                      <Text fontSize="$2" color="$color11">
                         {app.type}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Star className="h-3 w-3" />
-                        {app.downloads?.toLocaleString()} downloads
-                      </span>
-                    </div>
-                  </div>
-                  {app.featured && (
-                    <Badge variant="default" className="flex-shrink-0">
-                      ⭐ Featured
-                    </Badge>
-                  )}
-                </div>
-                <p className="text-foreground">
+                      </Text>
+                    </XStack>
+                  ) : null}
+                  {app.downloads ? (
+                    <XStack items="center" gap="$1.5">
+                      <Star size={12} />
+                      <Text fontSize="$2" color="$color11">
+                        {app.downloads.toLocaleString()} downloads
+                      </Text>
+                    </XStack>
+                  ) : null}
+                  {app.featured ? <Badge variant="default">⭐ Featured</Badge> : null}
+                </XStack>
+
+                <Text fontSize="$4" color="$color11">
                   {app.description}
-                </p>
-              </div>
-            </div>
+                </Text>
 
-            {/* Tags */}
-            {app.tags && app.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {app.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            )}
-
-            {/* Screenshots */}
-            {app.screenshots && app.screenshots.length > 0 && (
-              <Card>
-                <CardHeader>
-                  <h2 className="text-xl font-semibold">Screenshots</h2>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 gap-4">
-                    {app.screenshots.map((screenshot, i) => (
-                      <img
-                        key={i}
-                        src={screenshot}
-                        alt={`Screenshot ${i + 1}`}
-                        className="w-full rounded-lg border border-border"
-                      />
+                {app.tags.length ? (
+                  <XStack gap="$1.5" flexWrap="wrap">
+                    {app.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">
+                        {tag}
+                      </Badge>
                     ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
+                  </XStack>
+                ) : null}
+              </YStack>
+            </XStack>
 
-            {/* About */}
-            <Card>
-              <CardHeader>
-                <h2 className="text-xl font-semibold">About</h2>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground/90 whitespace-pre-wrap">
-                  {app.description}
-                </p>
-              </CardContent>
-            </Card>
+            {app.screenshots?.length ? (
+              <Panel title="Screenshots">
+                <YStack gap="$4">
+                  {app.screenshots.map((src, i) => (
+                    <img
+                      key={src}
+                      className="shot"
+                      src={src}
+                      alt={`${app.name} screenshot ${i + 1}`}
+                    />
+                  ))}
+                </YStack>
+              </Panel>
+            ) : null}
 
-            {/* Installation */}
-            <Card>
-              <CardHeader>
-                <h2 className="text-xl font-semibold">Installation</h2>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h3 className="text-sm font-semibold mb-2">Using Hanzo CLI:</h3>
-                  <div className="bg-muted p-3 rounded-md font-mono text-sm">
+            <Panel title="Installation">
+              <YStack gap="$4">
+                <YStack gap="$2">
+                  <Text fontSize="$2" fontWeight="600">
+                    Using the Hanzo CLI
+                  </Text>
+                  <pre className="code">
                     <code>hanzo install {app.id}</code>
-                  </div>
-                </div>
+                  </pre>
+                </YStack>
 
-                {app.installCommand && (
-                  <div>
-                    <h3 className="text-sm font-semibold mb-2">Manual Installation:</h3>
-                    <div className="bg-muted p-3 rounded-md font-mono text-sm">
+                {app.installCommand ? (
+                  <YStack gap="$2">
+                    <Text fontSize="$2" fontWeight="600">
+                      Manual installation
+                    </Text>
+                    <pre className="code">
                       <code>{app.installCommand}</code>
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                    </pre>
+                  </YStack>
+                ) : null}
+              </YStack>
+            </Panel>
 
-            {/* Usage */}
-            <Card>
-              <CardHeader>
-                <h2 className="text-xl font-semibold">Usage</h2>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-foreground/90">
-                  After installation, you can use this {app.type?.toLowerCase() || 'tool'} with Hanzo AI agents or compatible AI assistants.
-                </p>
-                {app.mcpConfig && (
-                  <div>
-                    <h3 className="text-sm font-semibold mb-2">MCP Configuration:</h3>
-                    <div className="bg-muted p-3 rounded-md font-mono text-xs overflow-x-auto">
-                      <pre>{JSON.stringify(app.mcpConfig, null, 2)}</pre>
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </div>
+            <Panel title="Usage">
+              <YStack gap="$4">
+                <Text fontSize="$3" color="$color11">
+                  After installation this {app.type?.toLowerCase() || 'tool'} is available to Hanzo
+                  AI agents and any compatible assistant.
+                </Text>
+                {app.mcpConfig ? (
+                  <YStack gap="$2">
+                    <Text fontSize="$2" fontWeight="600">
+                      MCP configuration
+                    </Text>
+                    <pre className="code">
+                      <code>{JSON.stringify(app.mcpConfig, null, 2)}</code>
+                    </pre>
+                  </YStack>
+                ) : null}
+              </YStack>
+            </Panel>
+          </YStack>
 
-          {/* Right Column - Sidebar */}
-          <div className="space-y-4">
-            {/* Install Button */}
+          <YStack gap="$4">
             <Card>
-              <CardContent className="pt-6">
-                <a
-                  href={`hanzo://config?tool=${encodeURIComponent(app.homepage)}`}
-                  className="block w-full"
-                >
-                  <Button className="w-full" size="lg">
-                    <Download className="mr-2 h-4 w-4" />
+              <CardContent gap="$3">
+                <Button size="lg" asChild>
+                  <a href={installUrl(app, isConnected ? address : undefined)}>
+                    <Download size={16} />
                     Open in Hanzo Desktop
-                  </Button>
-                </a>
-                <p className="text-xs text-muted-foreground text-center mt-3">
-                  Requires Hanzo Desktop app
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Details */}
-            <Card>
-              <CardHeader>
-                <h3 className="font-semibold">Details</h3>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Version</span>
-                  <span className="font-medium">{app.version}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Author</span>
-                  <span className="font-medium">{app.author}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">License</span>
-                  <span className="font-medium">{app.license}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Category</span>
-                  <span className="font-medium">{app.category}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Type</span>
-                  <span className="font-medium">{app.type}</span>
-                </div>
-                {app.price !== undefined && (
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Price</span>
-                    <span className="font-medium">{app.price === 0 ? 'Free' : `$${app.price}`}</span>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Links */}
-            <Card>
-              <CardHeader>
-                <h3 className="font-semibold">Links</h3>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                {app.homepage && sanitizeUrl(app.homepage) && (
-                  <a
-                    href={sanitizeUrl(app.homepage)!}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-primary hover:underline"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    Homepage
                   </a>
-                )}
+                </Button>
+                <Text fontSize="$1" color="$color11" text="center">
+                  Requires the Hanzo Desktop app
+                </Text>
               </CardContent>
             </Card>
-          </div>
+
+            <Panel title="Details">
+              <YStack gap="$3">
+                <Row label="Version" value={app.version} />
+                <Row label="Author" value={app.author} />
+                <Row label="License" value={app.license} />
+                <Row label="Category" value={app.category} />
+                <Row label="Type" value={app.type} />
+                <Row
+                  label="Price"
+                  value={
+                    app.price === undefined ? undefined : app.price === 0 ? 'Free' : `$${app.price}`
+                  }
+                />
+              </YStack>
+            </Panel>
+
+            {homepage || repository ? (
+              <Panel title="Links">
+                <YStack gap="$2" items="flex-start">
+                  {homepage ? <LinkOut href={homepage}>Homepage</LinkOut> : null}
+                  {repository ? <LinkOut href={repository}>Source</LinkOut> : null}
+                </YStack>
+              </Panel>
+            ) : null}
+          </YStack>
         </div>
       </main>
+
+      <SiteFooter />
     </div>
+  )
+}
+
+/** A titled card — every block on this page is one. */
+function Panel({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle render="h2" size="$6">
+          {title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>{children}</CardContent>
+    </Card>
+  )
+}
+
+/** One line of the metadata table; absent facts render nothing at all. */
+function Row({ label, value }: { label: string; value?: string | number }) {
+  if (value === undefined || value === '') return null
+  return (
+    <XStack justify="space-between" gap="$4">
+      <Text fontSize="$2" color="$color11">
+        {label}
+      </Text>
+      <Text fontSize="$2" fontWeight="500">
+        {value}
+      </Text>
+    </XStack>
+  )
+}
+
+function LinkOut({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Button variant="ghost" size="sm" asChild>
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <ExternalLink size={12} />
+        {children}
+      </a>
+    </Button>
   )
 }
