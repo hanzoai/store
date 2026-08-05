@@ -30,6 +30,46 @@ vocabulary is exactly two:
 
 Nothing may introduce a third way.
 
+### The tokens are FINISHED values — never wrap one in `hsl()`
+
+The ladder comes from `@hanzo/design`, which publishes colours ready to use: hex,
+and alpha hairlines already written as `rgb(255 255 255 / .10)`. So a token is
+spent as `var(--border)` and nothing else. `hsl(var(--border))` expands to
+`hsl(rgb(255 255 255 / .10))`, which is invalid at computed-value time — and an
+invalid declaration is not clamped or approximated, it is **dropped**. The rule
+around it still matches, the element still has a border-width, and the colour
+simply never arrives.
+
+That is how it hides. Nothing errors, nothing warns, the build is green and the
+selector is right there in devtools; the page is just quietly colourless. The
+`hsl(var(--x))` form is shadcn's convention, where tokens are bare `H S% L%`
+triples — this repo carried it in the Tailwind config it no longer has, and it
+ate every colour in the app. Tailwind is gone; **the trap is not**, because it
+is a property of the tokens, not of Tailwind. Any new `hsl(`, `rgb(` or
+`oklch(` wrapper around a `var(--…)` is the same bug.
+
+### The faces are a separate import, and omitting it fails silently
+
+`app/globals.css` imports two sheets and needs both:
+
+```css
+@import '@hanzo/design/tokens/fonts.css';   /* the @font-face rules + the woff2 */
+@import '@hanzo/ui/theme.css';              /* the ladder, which only NAMES them */
+```
+
+`@hanzo/ui` 8.0.47 deliberately stopped shipping `@font-face` — it was a
+duplicate of @hanzo/design's, pointing at font files ui does not carry, and on
+webpack the unresolvable `url()` compiled into a throw. ui now only declares
+`--font-sans: "Geist", …`; **@hanzo/design is the single owner of the faces** and
+ships the two variable woff2 beside the CSS, whose urls resolve from inside
+`node_modules` with no configuration.
+
+Drop that first `@import` and nothing complains: the build is green, the CSS
+check is green (it is a font-resolution problem, not a missing class), and every
+page renders in the `ui-sans-serif, system-ui` fallback. Self-hosted on purpose —
+the store makes no third-party request for type. The e2e suite asserts
+`document.fonts.check('16px Geist')` for exactly this reason.
+
 ### The trap
 
 **@hanzo/gui accepts a prop it does not recognise, and lets one prop silently
@@ -69,9 +109,24 @@ specifically, and each was confirmed to fail when its defect is put back.
 Nothing in it asserts that a count is `>= 0`. The suite this replaced was mostly
 those, over Tailwind selectors that no longer exist.
 
+`postbuild` runs `scripts/css-check.mjs`, which fails the build when the markup
+uses a class no delivered sheet defines. It serves `out/` and renders three
+pages rather than reading the exported HTML, and that distinction is the whole
+point: this site fetches its data in the browser, so the exported HTML is a
+shell. Checking the shell found 29 classes and passed; rendering the same pages
+found 227 — and nine of those had no rule behind them. `gui-css-check out/` on
+its own is a **false green** here, which is worse than no check at all.
+
+The nine were `btn-*` / `badge-*`, semantic handles @hanzo/ui stamps on a control
+in addition to the @hanzo/gui atomics that actually paint it. They are inert —
+strip every one off a rendered element and its computed background, padding and
+radius do not move — so they are listed in `gui-css-check.json` with that note,
+rather than given rules that would duplicate what gui already does. The store
+hooks exactly one handle, `.btn`, and that one is defined.
+
 ```bash
 npm run typecheck                              # tsc --noEmit
-npm run build                                  # 209 static pages
+npm run build                                  # 209 static pages, then css-check
 npx playwright test --project=chromium         # 21 tests
 ```
 
@@ -105,8 +160,8 @@ TypeScript is installed.
 ## 5. Known-stale data
 
 Every `icon` and `screenshot` url in the catalog is a **presigned R2 link**
-inherited from the upstream Shinkai store, signed 2025-11-05 with
-`X-Amz-Expires=86400`. All 202 have been dead since the following day, so the
-store renders `AppIcon`'s initial for every app and the Screenshots panel never
-appears. That is the fallback working, not a rendering bug — but the artwork
-itself is real missing data and wants re-hosting.
+inherited from the upstream store this catalog was forked from, signed
+2025-11-05 with `X-Amz-Expires=86400`. All 202 have been dead since the
+following day, so the store renders `AppIcon`'s initial for every app and the
+Screenshots panel never appears. That is the fallback working, not a rendering
+bug — but the artwork itself is real missing data and wants re-hosting.
