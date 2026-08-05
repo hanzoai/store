@@ -177,10 +177,18 @@ npx playwright test --project=chromium         # 21 tests
 
 `.hanzo/workflows/deploy.yml` on the git.hanzo.ai forge
 (`hanzo-build-linux-amd64`): build `out` → `POST /v1/projects/store/deploy`
-(202, queued) → `aws s3 sync` to the bucket and prefix cloud names in that 202 →
-`POST …/complete {"status":"live"}`. The bytes never pass through the API, whose
-BodyLimit is 16 MiB. No GitHub Pages, no Cloudflare Pages and no image — a
-static export has no compute to run.
+(202, carrying a presigned upload grant) → POST each file under that grant →
+`POST …/complete` with the file manifest as `keys`. The bytes never pass through
+the API, whose BodyLimit is 16 MiB. No GitHub Pages, no Cloudflare Pages and no
+image — a static export has no compute to run.
+
+This repo holds NO S3 credential. The grant is confined to this site's prefix and
+expires in 30 minutes, so a leak here cannot reach another org's site the way the
+shared `hanzo-sites` bucket keys could. Deletion rides the manifest — a
+write-only grant cannot remove a file, so cloud prunes the prefix against `keys`.
+The one secret is `HANZO_DEPLOY_TOKEN`, which identifies us rather than granting
+storage, and it is set ON THE FORGE: `.hanzo/workflows` is what the forge reads,
+so GitHub's secret store is not in this path at all.
 
 Telemetry is `@hanzo/event` (`components/analytics.tsx`), posting to
 `api.hanzo.ai/v1/event`. One client for pageviews, events and errors: no GA, no
