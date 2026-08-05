@@ -134,8 +134,8 @@ Before submitting, test your app locally:
 
 ```bash
 # 1. Clone your fork
-git clone https://github.com/yourusername/hanzo-store.git
-cd hanzo-store
+git clone https://github.com/yourusername/store.git
+cd store
 
 # 2. Install dependencies
 npm install
@@ -299,7 +299,7 @@ Please note we have a Code of Conduct. By participating in this project, you agr
 Need help? We're here for you:
 
 - **Discord**: [Join our Discord](https://discord.gg/hanzo)
-- **Issues**: [GitHub Issues](https://github.com/hanzo-ai/hanzo-store/issues)
+- **Issues**: [GitHub Issues](https://github.com/hanzo-apps/store/issues)
 - **Email**: support@hanzo.ai
 
 ## Recognition

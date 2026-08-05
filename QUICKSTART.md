@@ -18,7 +18,7 @@ The Next.js store UI is fully built and deployed via GitHub Actions. Just enable
 
 1. **Go to Settings**
    ```
-   https://github.com/hanzoai/store/settings/pages
+   https://github.com/hanzo-apps/store/settings/pages
    ```
 
 2. **Configure Source**
@@ -28,7 +28,7 @@ The Next.js store UI is fully built and deployed via GitHub Actions. Just enable
 
 3. **Set Permissions** (if deployment fails)
    ```
-   https://github.com/hanzoai/store/settings/actions
+   https://github.com/hanzo-apps/store/settings/actions
    ```
    - Under "Workflow permissions"
    - Select: **"Read and write permissions"**
@@ -36,7 +36,7 @@ The Next.js store UI is fully built and deployed via GitHub Actions. Just enable
    - Click **"Save"**
 
 4. **Wait for Deployment**
-   - Go to: https://github.com/hanzoai/store/actions
+   - Go to: https://github.com/hanzo-apps/store/actions
    - Watch the "Build and Deploy" workflow
    - When complete, your store is live!
 
@@ -44,7 +44,7 @@ The Next.js store UI is fully built and deployed via GitHub Actions. Just enable
 
 ```bash
 # Enable Pages via API (requires repo admin access)
-gh api repos/hanzoai/store/pages \
+gh api repos/hanzo-apps/store/pages \
   -X POST \
   -f source[branch]=main \
   -f source[path]=/
@@ -70,7 +70,7 @@ To use `store.hanzo.ai`:
    ```
 
 2. **Configure in GitHub**
-   - Go to: https://github.com/hanzoai/store/settings/pages
+   - Go to: https://github.com/hanzo-apps/store/settings/pages
    - Under "Custom domain", enter: `store.hanzo.ai`
    - Check "Enforce HTTPS"
    - Click "Save"
@@ -130,13 +130,13 @@ Your store includes:
 
 Check workflow permissions:
 ```
-https://github.com/hanzoai/store/settings/actions
+https://github.com/hanzo-apps/store/settings/actions
 ```
 Enable "Read and write permissions"
 
 ### Pages Not Updating
 
-1. Check workflow logs: https://github.com/hanzoai/store/actions
+1. Check workflow logs: https://github.com/hanzo-apps/store/actions
 2. Verify main branch protection allows workflows
 3. Clear browser cache and reload
 
@@ -152,9 +152,9 @@ Check error messages and fix JSON files if needed.
 
 ## 📞 Support
 
-- **Workflows**: https://github.com/hanzoai/store/actions
-- **Issues**: https://github.com/hanzoai/store/issues
-- **Deployments**: https://github.com/hanzoai/store/deployments
+- **Workflows**: https://github.com/hanzo-apps/store/actions
+- **Issues**: https://github.com/hanzo-apps/store/issues
+- **Deployments**: https://github.com/hanzo-apps/store/deployments
 
 ---
 
