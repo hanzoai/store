@@ -48,6 +48,39 @@ ate every colour in the app. Tailwind is gone; **the trap is not**, because it
 is a property of the tokens, not of Tailwind. Any new `hsl(`, `rgb(` or
 `oklch(` wrapper around a `var(--…)` is the same bug.
 
+### `theme.css`, not `styles.css` — and that is a decision, not an accident
+
+@hanzo/ui publishes two independent sheets; neither imports the other.
+`styles.css` is 437KB — the whole token ladder plus every gui atomic class plus
+the bare-word handles (`mono`, `paper`, `row`, `tnum`, …). `theme.css` is 58KB:
+tokens and typography only. This app imports **theme.css**, because the atomics
+arrive inline from gui at runtime (~724KB per document) and the store's markup
+uses exactly one bare-word handle, `font_body`, which gui's inline block defines.
+Adding styles.css would deliver a second copy of what is already inline.
+
+It also avoids a live footgun. `styles.css` ends with a **bare, unscoped**
+`:root { --background: var(--t189) }` at byte 262038, and `--t189` is near-white
+unconditionally. The dark block that should beat it is scoped
+`:root.t_dark, :root.t_light .t_dark, .tm_xxt` — gui's own theme class. A host
+that drives themes with next-themes writes `dark`/`light`, never `t_dark`, so
+that block never matches and the bare `:root` governs; at equal specificity the
+last sheet imported wins, and importing ui/styles.css last turns the dark ground
+near-white. `theme.css` has no such rule — its single `--background` is a bare
+`:root` set to `#0a0a0a` directly.
+
+Nothing in the toolchain can see that go wrong: build, typecheck and the CSS
+check all pass on the broken variant, because none of them resolves a custom
+property. So it is asserted numerically instead — measured on this tree, ground
+and ink invert and both stay far above AAA:
+
+| | `background-color` | `color` | contrast |
+|---|---|---|---|
+| dark | `rgb(20, 20, 20)` | `rgb(255, 255, 255)` | 18.42:1 |
+| light | `rgb(247, 247, 247)` | `rgb(5, 5, 5)` | 19.02:1 |
+
+If you ever switch to `styles.css`, re-import `@hanzo/design/tokens/colors.css`
+**after** it and re-measure that table. A single theme's pair proves nothing.
+
 ### The faces are a separate import, and omitting it fails silently
 
 `app/globals.css` imports two sheets and needs both:

@@ -203,16 +203,6 @@ body {
   overflow-wrap: anywhere;
 }
 
-/* A button that navigates is still a button. `asChild` renders the control as
-   the anchor it wraps, which is correct markup and correct semantics — and
-   picks up the user-agent underline on every label. `btn` is the class
-   @hanzo/ui publishes for exactly this, hosts hooking the control from CSS, so
-   the underline is refused once for every button in the store rather than at
-   each of the five call sites. */
-.btn {
-  text-decoration: none;
-}
-
 .site-footer {
   margin-top: 5rem;
   padding-block: 3rem;

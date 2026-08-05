@@ -1,6 +1,8 @@
 {
-  "_why": "@hanzo/ui's Button and Badge stamp these semantic handles onto the element in ADDITION to the @hanzo/gui atomic classes that do the actual painting (_bg-color2, _minH-32px, _height-auto …). @hanzo/ui deliberately ships no rules for them — they exist so a host can hook a control from CSS. Verified inert: stripping every btn-*/badge-* class off a rendered element changes none of its computed background, padding or radius. The store hooks exactly one of them, `.btn` in app/globals.css, and that one IS defined; the variant handles below are allowed because nothing styles them and nothing should. If you ever want to style by variant, delete its line here and write the rule instead.",
+  "_why": "These are @hanzo/ui's stable class HANDLES. A ui <Button> renders as `btn btn-<variant> btn-<size>` plus the @hanzo/gui atomic classes that actually paint it, and <Badge> does the same; ui ships no rules for the handles on purpose — they exist so a host can hook a control from CSS. Verified inert rather than assumed: stripping every btn-*/badge-* class off a rendered element leaves its computed background, padding and radius unmoved, and deleting the one `.btn` rule this app used to carry changed the text-decoration of none of its 606 anchors. The store therefore hooks nothing and defines nothing for them.",
+  "_upstream": "This file should be DELETABLE. @hanzo/gui 8.0.2's css-check ships a DEFAULT_ALLOW that still names the retired handles — hanzo-button, hanzo-button--*, hanzo-badge, hanzo-badge--* — from before the rename to btn/badge (see this repo's commit 'adopt @hanzo/ui 8.0.44 class handles'). The defaults simply have not caught up. When a @hanzo/gui release allows btn/btn-*/badge/badge-* by default, drop this file rather than maintaining a second copy of the same list.",
   "allow": [
+    "btn",
     "btn-default",
     "btn-sm",
     "btn-lg",
