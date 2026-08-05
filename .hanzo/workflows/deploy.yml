@@ -73,10 +73,22 @@ jobs:
       # grant, so nothing here holds a bucket key. Do NOT add SITES_S3_* — that is
       # the standing shared-bucket credential the grant replaced, and it could
       # overwrite every other org's site.
+      #
+      # THE SLUG IS `hanzo-store`, NOT `store`, and it cannot be `store`. That label
+      # is in cloud's baked-in reserved set (apps/sites/reserved.go — brand terms an
+      # impersonator would want, beside `hanzo`, `docs` and `blog`), which create
+      # time rejects outright: POST /v1/projects answers 400 "slug is a reserved
+      # subdomain and cannot be used". The set is additive-only by design, so no
+      # operator config can free it. That 400 is why every run of this workflow
+      # since the Sites plane landed here has failed — four in a row, on four
+      # different commits, before the enqueue ever ran.
+      #
+      # The HOSTNAME is unaffected: store.hanzo.ai is a domain binding, a separate
+      # record from the slug, and a build never decides which site owns a host.
       - name: Publish to the Sites plane
         uses: hanzoai/ci/.github/actions/sitedeploy@v1
         with:
-          slug: store
+          slug: hanzo-store
           dir: out
         env:
           HANZO_DEPLOY_TOKEN: ${{ secrets.HANZO_DEPLOY_TOKEN }}
