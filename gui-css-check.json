@@ -1,0 +1,14 @@
+{
+  "_why": "@hanzo/ui's Button and Badge stamp these semantic handles onto the element in ADDITION to the @hanzo/gui atomic classes that do the actual painting (_bg-color2, _minH-32px, _height-auto …). @hanzo/ui deliberately ships no rules for them — they exist so a host can hook a control from CSS. Verified inert: stripping every btn-*/badge-* class off a rendered element changes none of its computed background, padding or radius. The store hooks exactly one of them, `.btn` in app/globals.css, and that one IS defined; the variant handles below are allowed because nothing styles them and nothing should. If you ever want to style by variant, delete its line here and write the rule instead.",
+  "allow": [
+    "btn-default",
+    "btn-sm",
+    "btn-lg",
+    "btn-outline",
+    "btn-ghost",
+    "badge",
+    "badge-default",
+    "badge-secondary",
+    "badge-outline"
+  ]
+}
