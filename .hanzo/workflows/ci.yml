@@ -1,4 +1,14 @@
-name: Build and Deploy
+name: CI
+# Moved from .github/workflows/build-deploy.yml. This forge collects workflows
+# from the FIRST of WORKFLOW_DIRS that exists, so once .hanzo/workflows/deploy.yml
+# landed, anything left under .github/workflows stopped running here — silently,
+# with a green repo.
+#
+# The `deploy` job that used to close that file (upload-pages-artifact +
+# deploy-pages) is GONE, not disabled: store.hanzo.ai ships as
+# ghcr.io/hanzoai/store via deploy.yml. What remains is what this file was
+# actually worth — the catalog JSON gate, which is the only thing standing
+# between a malformed data/agents/*.json and a broken storefront.
 
 on:
   push:
@@ -9,7 +19,7 @@ on:
 jobs:
   validate:
     name: Validate App JSONs
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
 
@@ -22,32 +32,31 @@ jobs:
                 [ -e "$file" ] || continue
                 echo "  Checking $file"
                 if ! jq empty "$file" 2>/dev/null; then
-                  echo "❌ Invalid JSON in $file"
+                  echo "Invalid JSON in $file"
                   exit 1
                 fi
                 # Check required fields
                 for field in id name description version author category tags createdAt updatedAt; do
                   if ! jq -e ".$field" "$file" >/dev/null; then
-                    echo "❌ Missing required field '$field' in $file"
+                    echo "Missing required field '$field' in $file"
                     exit 1
                   fi
                 done
               done
-              echo "✅ All files valid in $dir"
+              echo "All files valid in $dir"
             fi
           done
 
   build:
     name: Build Store
     needs: validate
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -56,26 +65,7 @@ jobs:
       - name: Generate store data
         run: npm run generate-store
 
+      # A compile gate, nothing more. The artifact this job used to upload existed
+      # only to hand ./out to the Pages deploy; what ships now is the image.
       - name: Build
         run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

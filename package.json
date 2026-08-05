@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@hanzo/design": "^0.4.6",
+    "@hanzo/event": "^0.3.11",
     "@hanzo/logo": "^1.0.3",
     "@hanzo/ui": "^5.1.5",
     "@rainbow-me/rainbowkit": "^2.2.9",

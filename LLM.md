@@ -41,6 +41,17 @@ No React Error Boundaries on main pages.
 Created `types/hanzo-ui.d.ts` for @hanzo/ui module (no exported types).
 `types/hanzo.d.ts` has `Badge` typed as `any` -- should get proper `BadgeProps` interface.
 
+## How it ships
+`.hanzo/workflows/deploy.yml` on the git.hanzo.ai forge (`hanzo-build-linux-amd64`):
+build `out` -> `POST /v1/projects/store/deploy` (202, queued) -> `aws s3 sync`
+to the bucket+prefix cloud names in that 202 -> `POST .../complete {"status":"live"}`.
+The bytes never pass through the API; BodyLimit is 16 MiB. No GitHub Pages, no
+Cloudflare Pages, and no image -- a static export has no compute to run.
+
+Telemetry is `@hanzo/event` (`components/analytics.tsx`) posting to `api.hanzo.ai/v1/event`. One
+client for pageviews, events and errors: no GA, no Meta Pixel, no Plausible, no
+separate error SDK.
+
 ## Key Files
 
 ```

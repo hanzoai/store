@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@/components/analytics";
 import { Providers } from "./providers";
 import "@rainbow-me/rainbowkit/styles.css";
 import "./globals.css";
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground">
-        <Providers>
-          {children}
-        </Providers>
+        <Analytics>
+          <Providers>
+            {children}
+          </Providers>
+        </Analytics>
       </body>
     </html>
   );
