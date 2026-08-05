@@ -90,6 +90,19 @@ body {
   flex: none;
 }
 
+/* …and "gives" has to be said out loud, because the words are a @hanzo/gui box
+   and gui's boxes are React Native boxes: there `flex-shrink` defaults to 0,
+   not to the web's 1. So the title block held its full 184px, overflowed the
+   .brand it lives in, and at 390 its right edge landed at 264px while the
+   Connect Wallet button's left edge landed at 257px — the button is opaque, so
+   it painted over the tail of the word. `min-width: 0` is the other half of the
+   fix: a flex item will not shrink past its content's intrinsic width without
+   it, so shrink alone would have changed nothing. */
+.brand > :not(:first-child) {
+  min-width: 0;
+  flex-shrink: 1;
+}
+
 .back {
   display: inline-flex;
   align-items: center;
