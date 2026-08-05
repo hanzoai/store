@@ -1,0 +1,83 @@
+name: CI
+# Moved from .github/workflows/build-deploy.yml. This forge collects workflows
+# from the FIRST of WORKFLOW_DIRS that exists, so once .hanzo/workflows/deploy.yml
+# landed, anything left under .github/workflows stopped running here — silently,
+# with a green repo.
+#
+# The `deploy` job that used to close that file (upload-pages-artifact +
+# deploy-pages) is GONE, not disabled: store.hanzo.ai ships as
+# ghcr.io/hanzoai/store via deploy.yml. What remains is what this file was
+# actually worth — the catalog JSON gate, which is the only thing standing
+# between a malformed data/agents/*.json and a broken storefront.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate App JSONs
+    runs-on: hanzo-build-linux-amd64
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          for dir in data/agents data/tools; do
+            if [ -d "$dir" ]; then
+              echo "Validating $dir..."
+              for file in $dir/*.json; do
+                [ -e "$file" ] || continue
+                echo "  Checking $file"
+                if ! jq empty "$file" 2>/dev/null; then
+                  echo "Invalid JSON in $file"
+                  exit 1
+                fi
+                # Check required fields
+                for field in id name description version author category tags createdAt updatedAt; do
+                  if ! jq -e ".$field" "$file" >/dev/null; then
+                    echo "Missing required field '$field' in $file"
+                    exit 1
+                  fi
+                done
+              done
+              echo "All files valid in $dir"
+            fi
+          done
+
+  build:
+    name: Build Store
+    needs: validate
+    runs-on: hanzo-build-linux-amd64
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Generate store data
+        run: npm run generate-store
+
+      # A compile gate, nothing more. The artifact this job used to upload existed
+      # only to hand ./out to the Pages deploy; what ships now is the image.
+      - name: Build
+        run: npm run build
+
+      # The compile gate above proves the imports resolved and nothing more. This
+      # one renders the export and fails if the markup uses a class no delivered
+      # sheet defines — see scripts/css-check.mjs for why it has to render rather
+      # than read out/. It lives here and NOT in `postbuild` on purpose: deploy.yml
+      # also runs `npm run build`, and shipping a static site should not require
+      # downloading a browser. Verification is this job's business.
+      - name: Install Chromium for the CSS check
+        run: npx playwright install --with-deps chromium
+
+      - name: Check every rendered class has a rule
+        run: npm run css-check

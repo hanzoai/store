@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3200",
     "build": "next build",
-    "postbuild": "node scripts/css-check.mjs",
+    "css-check": "node scripts/css-check.mjs",
     "start": "next start -p 3200",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@hanzo/design": "^0.4.6",
+    "@hanzo/event": "^0.3.11",
     "@hanzo/gui": "^8.0.2",
     "@hanzo/logo": "^1.0.14",
     "@hanzo/ui": "^8.0.47",

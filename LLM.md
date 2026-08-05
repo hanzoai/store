@@ -142,28 +142,52 @@ specifically, and each was confirmed to fail when its defect is put back.
 Nothing in it asserts that a count is `>= 0`. The suite this replaced was mostly
 those, over Tailwind selectors that no longer exist.
 
-`postbuild` runs `scripts/css-check.mjs`, which fails the build when the markup
-uses a class no delivered sheet defines. It serves `out/` and renders three
-pages rather than reading the exported HTML, and that distinction is the whole
+`npm run css-check` (`scripts/css-check.mjs`) fails when the markup uses a class
+no delivered sheet defines. It serves `out/` and renders three pages rather than
+reading the exported HTML, and that distinction is the whole
 point: this site fetches its data in the browser, so the exported HTML is a
 shell. Checking the shell found 29 classes and passed; rendering the same pages
 found 227 — and nine of those had no rule behind them. `gui-css-check out/` on
 its own is a **false green** here, which is worse than no check at all.
 
-The nine were `btn-*` / `badge-*`, semantic handles @hanzo/ui stamps on a control
-in addition to the @hanzo/gui atomics that actually paint it. They are inert —
-strip every one off a rendered element and its computed background, padding and
-radius do not move — so they are listed in `gui-css-check.json` with that note,
-rather than given rules that would duplicate what gui already does. The store
-hooks exactly one handle, `.btn`, and that one is defined.
+They were `btn` / `btn-*` / `badge` / `badge-*`, semantic handles @hanzo/ui
+stamps on a control in addition to the @hanzo/gui atomics that actually paint
+it. They are inert — strip every one off a rendered element and its computed
+background, padding and radius do not move — so they are listed in
+`gui-css-check.json` with that evidence, rather than given local rules that
+would duplicate what gui already does. Do not write a `.btn` rule here; this app
+had one and it was measurably doing nothing.
+
+That file exists only because @hanzo/gui 8.0.2's own `DEFAULT_ALLOW` still names
+the retired `hanzo-button` / `hanzo-badge` handles. When a gui release allows the
+current names by default, delete it rather than keeping a second copy.
+
+It runs in CI's build job rather than in `postbuild`, because `deploy.yml` also
+runs `npm run build` and shipping a static export should not require downloading
+a browser. Building compiles; verifying renders. Two jobs, two concerns.
 
 ```bash
 npm run typecheck                              # tsc --noEmit
-npm run build                                  # 209 static pages, then css-check
+npm run build                                  # 209 static pages
+npm run css-check                              # 227/227 classes, needs chromium
 npx playwright test --project=chromium         # 21 tests
 ```
 
-## 3. TypeScript stays on 5.x
+## 3. How it ships, and what it reports
+
+`.hanzo/workflows/deploy.yml` on the git.hanzo.ai forge
+(`hanzo-build-linux-amd64`): build `out` → `POST /v1/projects/store/deploy`
+(202, queued) → `aws s3 sync` to the bucket and prefix cloud names in that 202 →
+`POST …/complete {"status":"live"}`. The bytes never pass through the API, whose
+BodyLimit is 16 MiB. No GitHub Pages, no Cloudflare Pages and no image — a
+static export has no compute to run.
+
+Telemetry is `@hanzo/event` (`components/analytics.tsx`), posting to
+`api.hanzo.ai/v1/event`. One client for pageviews, events and errors: no GA, no
+Meta Pixel, no Plausible, no separate error SDK. It wraps `<Providers>` in
+`app/layout.tsx` so a pageview still lands if something inside them throws.
+
+## 4. TypeScript stays on 5.x
 
 `typescript@7` is the native Go compiler and its npm package is a launcher for
 that binary and nothing else — `require('typescript')` returns two keys, and
@@ -180,7 +204,7 @@ This is a property of the consumer, not a defect to fix here. Do not add
 through the compiler API, which would make config LOADING depend on which
 TypeScript is installed.
 
-## 4. Two dependency facts the build needs
+## 5. Two dependency facts the build needs
 
 - `@coinbase/cdp-sdk`, reached through wagmi's Base Account connector, imports
   the `@x402/*` payment SDKs unconditionally while declaring them optional
@@ -190,7 +214,7 @@ TypeScript is installed.
 - @hanzo/ui's icons need `react-native-svg`, whose peer floor is react ^19.2.3.
   That is why react is pinned at 19.2.8.
 
-## 5. Known-stale data
+## 6. Known-stale data
 
 Every `icon` and `screenshot` url in the catalog is a **presigned R2 link**
 inherited from the upstream store this catalog was forked from, signed
