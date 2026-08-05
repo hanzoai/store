@@ -3,7 +3,18 @@
    every Hanzo surface reads that same file — a local copy of the semantic block
    is exactly how two surfaces drift a shade apart without anyone editing
    anything. The values `@hanzo/gui` resolves at runtime come from the same
-   source, so CSS and components cannot disagree. */
+   source, so CSS and components cannot disagree.
+
+   The faces themselves are a SEPARATE import, and it is not optional. theme.css
+   only NAMES the fonts (`--font-sans: "Geist", …`); @hanzo/design owns the
+   @font-face rules and ships the woff2 files beside them, so the urls resolve
+   from inside node_modules with no config. Omit this line and nothing fails —
+   the build is green, gui-css-check is green, and every page quietly renders in
+   the `ui-sans-serif, system-ui` fallback. That is why the e2e pass asserts
+   `document.fonts.check('16px Geist')` and not just a class name.
+
+   Self-hosted on purpose: the store makes no third-party request for type. */
+@import '@hanzo/design/tokens/fonts.css';
 @import '@hanzo/ui/theme.css';
 
 html,
