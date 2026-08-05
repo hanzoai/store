@@ -298,7 +298,7 @@ Please note we have a Code of Conduct. By participating in this project, you agr
 
 Need help? We're here for you:
 
-- **Discord**: [Join our Discord](https://discord.gg/hanzo)
+- **Discord**: [Join our Discord](https://discord.gg/CJCyAsm9Vr)
 - **Issues**: [GitHub Issues](https://github.com/hanzo-apps/store/issues)
 - **Email**: support@hanzo.ai
 

@@ -242,5 +242,5 @@ MIT © Hanzo AI
 ## Support
 
 - **Issues**: [GitHub Issues](https://github.com/hanzo-apps/store/issues)
-- **Discord**: [Join our Discord](https://discord.gg/hanzo)
+- **Discord**: [Join our Discord](https://discord.gg/CJCyAsm9Vr)
 - **Email**: support@hanzo.ai
