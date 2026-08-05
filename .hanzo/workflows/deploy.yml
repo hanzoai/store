@@ -48,7 +48,7 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: '1'
           NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID: ${{ secrets.WALLETCONNECT_PROJECT_ID }}
-          NEXT_PUBLIC_EVENT_INGEST_KEY: ${{ secrets.EVENT_INGEST_KEY }}
+          NEXT_PUBLIC_PUBLISHABLE_KEY: ${{ secrets.PUBLISHABLE_KEY }}
         run: |
           set -euo pipefail
           # package-lock.json is lockfileVersion 3 and the tree needs the peer-dep
