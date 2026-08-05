@@ -5,9 +5,9 @@
  *
  * The card grid and the app page both show it, at two sizes, and both have to
  * survive artwork that does not load. Today that is every app: each `icon` in
- * the data is a PRESIGNED R2 URL inherited from the upstream Shinkai store,
- * signed 2025-11-05 with `X-Amz-Expires=86400`, so all 202 have been dead links
- * since the following day. The grid had no fallback at all and rendered the
+ * the data is a PRESIGNED R2 URL inherited from the upstream store this catalog
+ * was forked from, signed 2025-11-05 with `X-Amz-Expires=86400`, so all 202
+ * have been dead links since the following day. The grid had no fallback at all and rendered the
  * browser's broken-image glyph with the alt text spilling out of the 4rem box;
  * the app page had one, but only for a MISSING url, never a failing one. Both
  * are the same fact — "show the artwork, or the initial" — so it is stated

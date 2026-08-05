@@ -38,7 +38,7 @@ export default function TermsPage() {
       </p>
       <ul>
         <li><strong>Provide Accurate Information:</strong> Supply truthful, current, and complete information (e.g., name, email address). You must promptly update your account if any information changes.</li>
-        <li><strong>Maintain Account Security:</strong> Keep your login credentials (username and password) confidential. You are responsible for all activity that occurs under your account. If you suspect unauthorized use, you must notify us immediately at support@shinkai.com.</li>
+        <li><strong>Maintain Account Security:</strong> Keep your login credentials (username and password) confidential. You are responsible for all activity that occurs under your account. If you suspect unauthorized use, you must notify us immediately at support@hanzo.ai.</li>
         <li><strong>One Account Per User:</strong> You may not create multiple accounts to abuse the service or circumvent restrictions.</li>
         <li><strong>No Account Sharing:</strong> Your account is personal to you and may not be shared or transferred to another individual or entity without our prior written consent.</li>
       </ul>
@@ -98,7 +98,7 @@ export default function TermsPage() {
       </p>
       <h3>5.3 Refunds and Cancellations</h3>
       <p>
-        All sales are generally final. However, in certain circumstances (such as if an app is defective, not as described, or violates our guidelines), you may request a refund. Refund requests should be submitted to support@shinkai.com within 14 days of purchase, and we will review each case individually. Approval of refunds is at Hanzo's sole discretion. Please note that once you have downloaded or accessed a Paid App, you may not be eligible for a refund unless there is a demonstrable issue. For subscription-based apps (if any), cancellation policies may vary; please review the specific app's terms.
+        All sales are generally final. However, in certain circumstances (such as if an app is defective, not as described, or violates our guidelines), you may request a refund. Refund requests should be submitted to support@hanzo.ai within 14 days of purchase, and we will review each case individually. Approval of refunds is at Hanzo's sole discretion. Please note that once you have downloaded or accessed a Paid App, you may not be eligible for a refund unless there is a demonstrable issue. For subscription-based apps (if any), cancellation policies may vary; please review the specific app's terms.
       </p>
       <h3>5.4 Taxes</h3>
       <p>
@@ -127,7 +127,7 @@ export default function TermsPage() {
         <li>Your physical or electronic signature.</li>
       </ul>
       <p>
-        Send DMCA notices to: dmca@shinkai.com. We will investigate and take appropriate action, which may include removing or disabling access to the allegedly infringing content.
+        Send DMCA notices to: dmca@hanzo.ai. We will investigate and take appropriate action, which may include removing or disabling access to the allegedly infringing content.
       </p>
 
       <h2>7. Privacy and Data Protection</h2>
@@ -217,8 +217,8 @@ export default function TermsPage() {
         If you have any questions about these Terms, please contact us at:
       </p>
       <ul className="plain">
-        <li><strong>Email:</strong> legal@shinkai.com</li>
-        <li><strong>Support:</strong> support@shinkai.com</li>
+        <li><strong>Email:</strong> legal@hanzo.ai</li>
+        <li><strong>Support:</strong> support@hanzo.ai</li>
       </ul>
 
       <div className="coda">
