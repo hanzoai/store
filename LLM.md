@@ -222,11 +222,29 @@ TypeScript is installed.
 - @hanzo/ui's icons need `react-native-svg`, whose peer floor is react ^19.2.3.
   That is why react is pinned at 19.2.8.
 
-## 6. Known-stale data
+## 6. The catalog carries no artwork, and that is the honest state
 
-Every `icon` and `screenshot` url in the catalog is a **presigned R2 link**
-inherited from the upstream store this catalog was forked from, signed
-2025-11-05 with `X-Amz-Expires=86400`. All 202 have been dead since the
-following day, so the store renders `AppIcon`'s initial for every app and the
-Screenshots panel never appears. That is the fallback working, not a rendering
-bug — but the artwork itself is real missing data and wants re-hosting.
+No app has an `icon` or a `screenshots` entry. Every app renders `AppIcon`'s
+initial and no Screenshots panel — the fallback is the whole design here, not a
+degraded mode.
+
+It reads that way because the artwork the catalog was forked with is gone. All
+457 urls across all 202 apps were **presigned** links to one bucket, signed
+2025-11-05 with `X-Amz-Expires=86400`; the day after, every one began answering
+`403 ExpiredRequest`, and a presigned url cannot be re-signed by whoever holds
+it. The images are not merely unreachable — they are unrecoverable through the
+only address anyone ever had for them, and no copy exists elsewhere in the
+estate. There is nothing to re-host.
+
+A url that cannot resolve is not artwork, it is an outbound request that always
+fails, so those fields were removed rather than repointed. Keeping them cost
+every page load 202 third-party requests and 245 KB of catalog: `store.json`
+went 494 KB → 249 KB.
+
+**Artwork is served from this site's own origin, as a root-relative path**, and
+that is the only form the catalog accepts. When an app ships real artwork it is
+committed under `public/` and referenced as `/…`; a submission carrying an
+absolute url elsewhere is asking the store to depend on a host it does not
+control, and review rejects it. `scripts/generate-store.js` copies each record
+verbatim, so `data/` is the single place this holds — clean data is a clean
+`store.json` and a clean `hanzoai/cdn` market build, with no rule stated twice.

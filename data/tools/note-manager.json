@@ -12,12 +12,6 @@
     "notes",
     "note"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Anote_manager/note_manager_logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=7db60a70c3106bcbbb975a3ad878332e88a3a0505046eac6fb831bc1f0bceeaa&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-  "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Anote_manager/note_manager_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=670091d2c50515f39b0cca9e692ac2ca5c5666174489b8cf655b4ef2aebb8711&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Anote_manager/note_manager_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=bdc4346342c10624d38db041d286d914a2a0199f6ae35337ede406a5e558ba92&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Anote_manager/note_manager_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044119Z&X-Amz-Expires=86400&X-Amz-Signature=e700d1e6524a7c1b51f2612d2805e27bd072795fd0c99e4150c0e43691eac3c5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-  ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",

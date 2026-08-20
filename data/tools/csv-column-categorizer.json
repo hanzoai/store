@@ -14,12 +14,6 @@
     "categorizer",
     "data"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_categorizer/CSV_column_categorizer_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=dbb535debd5c4324b359cf74885f183c3059493a876dc1b12f681d11bc40a1cf&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-  "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_categorizer/CSV_column_categorizer_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=40150308478be65938064452adc1e4bf5c964b295b6f058447ff7939345c54ef&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_categorizer/CSV_column_categorizer_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=5249c358f8c4df2da9202b7e223b4673c1aafcaa6bb44a5f2c248c535a3eebdc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_categorizer/CSV_column_categorizer_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251106%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251106T044122Z&X-Amz-Expires=86400&X-Amz-Signature=28129b79b99a80eaea0c9088d1068753a0874212b27cd8ad6da95f2884b76207&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-  ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",

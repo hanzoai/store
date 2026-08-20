@@ -14,11 +14,6 @@
     "column",
     "combine"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_ai_combinator/csv_column_ai_combinator_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=6482796c86d7682ccfe881e97a217ed32f747d0f99f4945e81ead80041f1b6e9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-  "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_ai_combinator/CSV_column_ai_combinator_preview.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=599c1a2665abe42297522d97105b81c16d16eadb958e37aec6c6cf3243dacbcd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Acsv_column_ai_combinator/csv_column_ai_combinator_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142252Z&X-Amz-Expires=86400&X-Amz-Signature=e8e0b653bdb5f5c8dd805280511e20aeec431b66e448dfa6a9dd544b6ce857b5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-  ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",
