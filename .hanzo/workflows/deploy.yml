@@ -86,7 +86,7 @@ jobs:
       # The HOSTNAME is unaffected: store.hanzo.ai is a domain binding, a separate
       # record from the slug, and a build never decides which site owns a host.
       - name: Publish to the Sites plane
-        uses: hanzoai/ci/.github/actions/site@v1
+        uses: https://git.hanzo.ai/hanzoai/ci/.github/actions/site@v1
         with:
           slug: hanzo-store
           dir: out
