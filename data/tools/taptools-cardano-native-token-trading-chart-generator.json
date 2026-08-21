@@ -13,12 +13,6 @@
     "candlestick chart",
     "cryptocurrency"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=f8ca9865f74bdbb3947408140315761ffa1bb19c4078a07190fefed7857f550d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-  "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=a10a442f6a1fd6bed5e4cc03796006f948348a49960e57bddd9c32559798fb59&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=6fdc785f4e120ff4455f5c68eceaa3dd8c70bab8cf4ca8f36a41345972b3ab1b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__gilles_test2_sep_hanzo%3A%3A%3Ataptools_cardano_native_token_trading_chart_generator/taptools_chart_2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T152925Z&X-Amz-Expires=86400&X-Amz-Signature=5b91c128549cf0c3b871d24d2d12fa05c82cb358d72935cb8237a7729c55bded&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-  ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",

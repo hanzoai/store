@@ -14,10 +14,6 @@
     "journey",
     "soudscape"
   ],
-  "icon": "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aambient_sound_journey_composer/icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=a008b74a14c92c86d46db01343e8cd11ecf531096d33fbf95f501547094ef658&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-  "screenshots": [
-    "https://shinkai-store.54bf1bf573b3e6471e574cc4d318db64.r2.cloudflarestorage.com/local%3A%3A%3A__hanzo%3A%3A%3Aambient_sound_journey_composer/banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0cfac524550f96df0a110872ae39d2e3%2F20251105%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251105T142021Z&X-Amz-Expires=86400&X-Amz-Signature=e7719bec768a104f7fc56bfca78e017a52fe4f51891a1b26afb669965fbf7e1d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-  ],
   "installCommand": "",
   "mcpConfig": {
     "command": "any",

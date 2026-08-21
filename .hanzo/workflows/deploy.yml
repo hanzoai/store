@@ -16,9 +16,11 @@ name: deploy
 # created idempotently before the enqueue, so committing this file is enough to
 # stand the site up.
 #
-# The one secret is HANZO_DEPLOY_TOKEN, which identifies us rather than granting
-# storage. It is set ON THE FORGE: this file lives under .hanzo/workflows/, which
-# only git.hanzo.ai reads, so GitHub's secret store is not in this path at all.
+# The only credentials are KMS_CLIENT_ID / KMS_CLIENT_SECRET, which identify us
+# to kms.hanzo.ai; the action fetches the deploy grant there, so no storage key
+# is held in a repo. They are set ON THE FORGE: this file lives under
+# .hanzo/workflows/, which only git.hanzo.ai reads, so GitHub's secret store is
+# not in this path at all.
 
 on:
   push:
