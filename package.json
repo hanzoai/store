@@ -15,7 +15,7 @@
     "test:e2e:debug": "playwright test --debug"
   },
   "dependencies": {
-    "@hanzo/gui": "8.3.0",
+    "@hanzo/gui": "8.3.1",
     "@hanzo/logo": "1.0.26",
     "@hanzo/ui": "8.27.0",
     "@hanzogui/config": "8.3.1",
